@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Keyboard v0.1.0 API Documentation : src\USLocale.js</title>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
+  <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
+  <link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+</head>
+
+<body>
+  <header>
+    <div class='container'>
+      <div class='version pull-right'>
+        <em>API Documentation for: 0.1.0</em>
+      </div>
+      <div class='logo'>
+
+        <h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
+      </div>
+<div class='scope-toggles pull-right'>
+  <input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
+  <input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
+  <input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
+  <input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
+</div>    </div>
+  </header>
+  <div class='container'>
+    <div class='row'>
+      <nav id='sidebar' class='col-sm-4 col-md-3'>
+<h2>APIs</h2>
+<div class='input-group'>
+  <div class='input-group-addon'>
+    <span class='glyphicon glyphicon-search'></span>
+  </div>
+  <input type='search' class='form-control' id='api-filter' placeholder='Type to filter APIs'>
+</div>
+<nav class='navbar navbar-default'>
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="sidebar-toggle collapsed btn btn-default" id='toggle-classes' data-target='#classes-collapse'>
+      Classes
+      <span class='collapsed glyphicon glyphicon-chevron-up'></span>
+      <span class='expanded glyphicon glyphicon-chevron-down'></span>
+    </button>
+    <button type="button" class="sidebar-toggle collapsed btn btn-default"id='toggle-modules'  data-target='#modules-collapse'>
+      Modules
+      <span class='collapsed glyphicon glyphicon-chevron-up'></span>
+      <span class='expanded glyphicon glyphicon-chevron-down'></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class='collapse' id='classes-collapse'>
+    <ul class='nav navbar-nav'>
+        <li class=''>
+          <a href='../classes/cloudkid.Keyboard.html'>cloudkid.Keyboard</a>
+        </li>
+        <li class=''>
+          <a href='../classes/cloudkid.KeyboardPlugin.html'>cloudkid.KeyboardPlugin</a>
+        </li>
+        <li class=''>
+          <a href='../classes/cloudkid.USLocale.html'>cloudkid.USLocale</a>
+        </li>
+    </ul>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class='collapse' id='modules-collapse'>
+    <ul class='nav navbar-nav'>
+    </ul>
+  </div>
+  <!-- /.container-fluid -->
+</nav>      </nav>
+      <div class='col-sm-8 col-md-9'>
+        <div id='docs-main' class='apidocs'>
+<script>
+  var name = {
+  	{
+  		name
+  	}
+  }
+</script>
+<h1 class="file-heading">File:src\USLocale.js</h1>
+
+<div class="file">
+  <pre class="code prettyprint linenums">/**
+ * @namespace cloudkid
+ */
+(function()
+{
+	var parsed = include(&#x27;cloudkid.Detect&#x27;).parse(navigator.userAgent);
+	var browser, os;
+	if(parsed.browser.family.indexOf(&quot;Safari&quot;) &gt;= 0)
+	{
+		browser = &quot;Safari&quot;;
+	}
+	else if(parsed.browser.family.indexOf(&quot;Firefox&quot;) &gt;= 0)
+	{
+		browser = &quot;Firefox&quot;;
+	}
+	else if(parsed.browser.family.indexOf(&quot;IE&quot;) &gt;= 0)
+	{
+		browser = &quot;IE&quot;;
+	}
+	else//Assume browser with the qualities of Chrome
+	{
+		browser = &quot;Chrome&quot;;
+	}
+	if(parsed.os.name.indexOf(&quot;Windows&quot;) &gt;= 0)
+	{
+		os = &quot;Windows&quot;;
+	}
+	else if(parsed.os.name.indexOf(&quot;Mac&quot;) &gt;= 0)
+	{
+		os = &quot;Mac&quot;;
+	}
+	else if(parsed.os.name.indexOf(&quot;iOS&quot;) &gt;= 0)
+	{
+		//iOS would probably report the same as OSX, right?
+		os = &quot;Mac&quot;;
+		//all iOS browsers use a WebView that is similar to iOS Safari
+		browser = &quot;Safari&quot;;
+	}
+	else//Assume some form of Linux, including Android
+	{
+		os = &quot;Linux&quot;;
+	}
+	
+	/**
+	*  USLocale is the standard keyboard layout for US computers. All standard keys are included.
+	*  Keys to note:
+	*
+	*  * &#x27;OS&#x27; represents both the Windows key and the &#x27;command&#x27; key, although &#x27;command&#x27;
+	*    is also available when the client is running MacOS.
+	*    
+	*  * &#x27;meta&#x27; represents &#x27;ctrl&#x27; on Windows and Linux, and &#x27;command&#x27; on OSX. Use this when creating
+	*    keyboard shortcuts in web apps.
+	*
+	*  @class USLocale
+	*  @static
+	*/
+	var USLocale =
+	{
+		//general
+		&quot;cancel&quot;:3,
+		&quot;backspace&quot;:8,
+		&quot;tab&quot;:9,
+		&quot;enter&quot;:13,
+		&quot;shift&quot;:16,
+		&quot;ctrl&quot;:17,
+		&quot;alt&quot;:18,
+		&quot;pause/break&quot;: os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 126 : 19,
+		&quot;caps_lock&quot;:20,
+		&quot;esc&quot;:27,
+		&quot;spacebar&quot;:32,
+		&quot;pageup&quot;:33,
+		&quot;pagedown&quot;:34,
+		&quot;end&quot;:35,
+		&quot;home&quot;:36,
+		&quot;arrow_left&quot;:37,
+		&quot;arrow_up&quot;:38,
+		&quot;arrow_right&quot;:39,
+		&quot;arrow_down&quot;:40,
+		//Note: on windows, only keyUp is fired for print_screen
+		&quot;print_screen&quot;: os == &quot;Linux&quot; ? 42 : (os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 124 : 44),
+		&quot;insert&quot;:45,
+		&quot;delete&quot;:46,
+		&quot;scroll_lock&quot;: os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 125 : 145,
+		
+		//command/windows - may be different for left/right, depending on browser
+		//also might be 93, depending on OS
+		&quot;OS&quot;: browser == &quot;Firefox&quot; ?
+			//Firefox uses the same keycode for left &amp; right
+			(os == &quot;Mac&quot; ? 224 : 91) :
+			//other browsers use different codes for left/right, although webkit uses a different
+			//code on OSX than Windows/Linux
+			[
+				91,
+				os == &quot;Mac&quot; ? 93 : 92
+			],
+		//on windows keyboard, located where the right &#x27;windows&#x27; key might be
+		//not fired by Safari/Chrome on OSX (but is on FF?)
+		&quot;context_menu&quot;: os == &quot;Mac&quot; ? 0 : 93,
+		
+		&quot;;&quot;:186,
+		&quot;=&quot;:187,
+		&quot;,&quot;:188,
+		&quot;-&quot;:189,
+		&quot;.&quot;:190,
+		&quot;/&quot;:191,
+		&quot;&#x60;&quot;:192,
+		&quot;\\&quot;:220,
+		&quot;[&quot;:219,
+		&quot;]&quot;:221,
+		&quot;&#x27;&quot;:222,
+		
+		//number pad keys
+		&quot;num_*&quot;:106,
+		&quot;num_+&quot;:107,
+		&quot;num_enter&quot;:108,
+		&quot;num_-&quot;:109,
+		&quot;num_.&quot;:110,
+		&quot;num_/&quot;:111,
+		//&#x27;num lock&#x27; is &#x27;clear&#x27; on Mac keyboards
+		&quot;num_lock&quot;: os == &quot;Mac&quot; ? 12 : 144,
+		&quot;clear&quot;: os == &quot;Mac&quot; ? 12 : 144
+	};
+	var i;
+	//A-Z
+	for(i = 65; i &lt;= 90; ++i)
+	{
+		//use the capital letter as the value for the keyCode
+		USLocale[String.fromCharCode(i + 32)] = i;
+	}
+	//0-9
+	for(i = 48; i &lt;= 57; ++i)
+	{
+		USLocale[String.fromCharCode(i)] = i;
+	}
+	//0-9, number pad: num_0-num_9
+	for(i = 96; i &lt;= 105; ++i)
+	{
+		USLocale[&quot;num_&quot; + (i-96)] = i;
+	}
+	//F1-F12
+	for(i = 112; i &lt;= 123; ++i)
+	{
+		USLocale[&quot;F&quot; + (i - 111)] = i;
+	}
+	
+	//OS specfic &#x27;meta&#x27; key - pick ctrl or command
+	if(os == &quot;Mac&quot;)
+	{
+		//also create &#x27;command&#x27; for people that only want command
+		USLocale.meta = USLocale.command = USLocale.OS;
+	}
+	else
+	{
+		USLocale.meta = USLocale.ctrl;
+		USLocale.command = 0;
+	}
+	
+	// Assign to namespace
+	namespace(&#x27;cloudkid.keyboard&#x27;).USLocale = USLocale;
+
+}());</pre>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+  <script src='../assets/js/libraries.js?v=0.1.0'></script>
+  <script src='../assets/js/main.js?v=0.1.0'></script>
+</body>
+</html>

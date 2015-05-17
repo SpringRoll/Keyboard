@@ -1,0 +1,652 @@
+{
+    "project": {
+        "name": "Keyboard",
+        "description": "A SpringRoll plugin to ease keyboard input use",
+        "version": "0.1.0",
+        "url": "https://github.com/CloudKidStudio/Keyboard"
+    },
+    "files": {
+        "src\\Detect.js": {
+            "name": "src\\Detect.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "cloudkid": 1
+            }
+        },
+        "src\\Keyboard.js": {
+            "name": "src\\Keyboard.js",
+            "modules": {},
+            "classes": {
+                "cloudkid.Keyboard": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "cloudkid": 1
+            }
+        },
+        "src\\KeyboardPlugin.js": {
+            "name": "src\\KeyboardPlugin.js",
+            "modules": {},
+            "classes": {
+                "cloudkid.KeyboardPlugin": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "cloudkid": 1
+            }
+        },
+        "src\\USLocale.js": {
+            "name": "src\\USLocale.js",
+            "modules": {},
+            "classes": {
+                "cloudkid.USLocale": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "cloudkid": 1
+            }
+        }
+    },
+    "modules": {},
+    "classes": {
+        "cloudkid.Keyboard": {
+            "name": "cloudkid.Keyboard",
+            "shortname": "Keyboard",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "cloudkid",
+            "file": "src\\Keyboard.js",
+            "line": 9,
+            "description": "A class for easier keyboard controls, from simple key events to complex key combinations.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "target",
+                    "description": "The DOM element to listen to key events on.",
+                    "type": "DOMElement"
+                },
+                {
+                    "name": "locale",
+                    "description": "The keyboard locale, like cloudkid.USLocale, which defines keys to\n                       keep track of.",
+                    "type": "Object"
+                }
+            ]
+        },
+        "cloudkid.KeyboardPlugin": {
+            "name": "cloudkid.KeyboardPlugin",
+            "shortname": "KeyboardPlugin",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "cloudkid",
+            "file": "src\\KeyboardPlugin.js",
+            "line": 11,
+            "description": "Create an app plugin for Keyboard, all properties and methods documented\nin this class are mixed-in to the main Application",
+            "extends": "springroll.ApplicationPlugin"
+        },
+        "cloudkid.USLocale": {
+            "name": "cloudkid.USLocale",
+            "shortname": "USLocale",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "namespace": "cloudkid",
+            "file": "src\\USLocale.js",
+            "line": 44,
+            "description": "USLocale is the standard keyboard layout for US computers. All standard keys are included.\nKeys to note:\n\n* 'OS' represents both the Windows key and the 'command' key, although 'command'\n  is also available when the client is running MacOS.\n  \n* 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating\n  keyboard shortcuts in web apps.",
+            "static": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\Detect.js",
+            "line": 1,
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 1,
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 28,
+            "description": "The DOM element that the key event listeners are attached to.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "DOMElement",
+            "access": "private",
+            "tagname": "",
+            "readonly": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 37,
+            "description": "All keys that are listened to, arranged by key code.",
+            "itemtype": "property",
+            "name": "_keysByCode",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 43,
+            "description": "All keys that are listened to, arranged by key name.",
+            "itemtype": "property",
+            "name": "_keysByName",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 49,
+            "description": "All key combinations that have been registered",
+            "itemtype": "property",
+            "name": "_activeCombos",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 55,
+            "description": "Keys that have been updated since the most recent frame update. This array gets wiped\neach _update call.",
+            "itemtype": "property",
+            "name": "_updatedKeys",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 63,
+            "description": "The callback used when key detection has ended.",
+            "itemtype": "property",
+            "name": "detectKeyCallback",
+            "type": "Function",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 69,
+            "description": "The key object that is used to cancel key detection.",
+            "itemtype": "property",
+            "name": "detectCancelKey",
+            "type": "Key",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 114,
+            "description": "Adds a listener for keydown events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
+            "itemtype": "method",
+            "name": "addKeyDown",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key, from the locale, to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to call when the key is first pressed.",
+                    "type": "Function"
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "If the key should have the default action prevented\n                                        while this listener is attached.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 136,
+            "description": "Removes a listener for keydown events on a specific key.",
+            "itemtype": "method",
+            "name": "removeKeyDown",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key, from the locale, to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to be removed from the listener list.",
+                    "type": "Function"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 149,
+            "description": "Adds a listener for keyup events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
+            "itemtype": "method",
+            "name": "addKeyUp",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key, from the locale, to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to call when the key is released.",
+                    "type": "Function"
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "If the key should have the default action prevented\n                                        while this listener is attached.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 171,
+            "description": "Removes a listener for keyup events on a specific key.",
+            "itemtype": "method",
+            "name": "removeKeyUp",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key, from the locale, to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to be removed from the listener list.",
+                    "type": "Function"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 184,
+            "description": "Sets if the default browser action should be prevented on a specific key. This is good\nfor keys that are only checked with justPressed(), isDown(), and justReleased().",
+            "itemtype": "method",
+            "name": "setPreventDefaultOnKey",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key, from the locale, to listen for.",
+                    "type": "String"
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "If the key should have the default action prevented.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 198,
+            "description": "Creates a key combination. NOTE: this feature has not yet been completed.",
+            "itemtype": "method",
+            "name": "addCombo",
+            "params": [
+                {
+                    "name": "comboString",
+                    "description": "A string defining how the key combination functions.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to called when the combination successfully fires.",
+                    "type": "Function"
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "If the combo should have the default action prevented,\n                                       for any successful step of it that is completed.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 231,
+            "description": "Removes a listener for a key combination. If no listeners remain, that key\ncombination is destroyed.",
+            "itemtype": "method",
+            "name": "removeKeyUp",
+            "params": [
+                {
+                    "name": "comboString",
+                    "description": "The comboString used to create the combination.",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to be removed from the listener list.",
+                    "type": "Function"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 256,
+            "description": "Begins listening for the next key to be pressed (or repeated). The callback is passed\nthe name of that key, so that it can then be used with other functions. Additionally, if\nthe key pressed does not have a recognized keyCode, then an entry is created for it with the\nname <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed\n<code>null</code>.",
+            "itemtype": "method",
+            "name": "detectNextKey",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "The function to be called when a key is pressed.",
+                    "type": "Function"
+                },
+                {
+                    "name": "cancelKey",
+                    "description": "The name of the key to cancel the listener. If explictly\n                                  passed <code>null</code>, then the \"esc\" key can be\n                                  detected and this action can only be cancelled with\n                                  stopDetecting().",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"esc\""
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 280,
+            "description": "Cancels a detectNextKey() action.",
+            "itemtype": "method",
+            "name": "stopDetecting",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 293,
+            "description": "Checks to see if a key has begun to be pressed since the last Application 'update' event.",
+            "itemtype": "method",
+            "name": "justPressed",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "If the key was just pressed or not.",
+                "type": "Boolean"
+            },
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 308,
+            "description": "Checks to see if a key is being held down.",
+            "itemtype": "method",
+            "name": "isDown",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "If the key is down or not.",
+                "type": "Boolean"
+            },
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 323,
+            "description": "Checks to see if a key has been released since the last Application 'update' event.",
+            "itemtype": "method",
+            "name": "justReleased",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name of the key to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "If the key was just released or not.",
+                "type": "Boolean"
+            },
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 338,
+            "description": "If the Keyboard should be handling key events or not. Setting this to false immediately\nresets the status of any keys that are currently pressed.",
+            "itemtype": "property",
+            "name": "enabled",
+            "type": "Object",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 365,
+            "description": "Clears the status of all keys that are pressed, requiring them to be released and pressed\nagain.",
+            "itemtype": "method",
+            "name": "clearKeys",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 383,
+            "description": "Listener for when the target has lost focus, to call clearKeys().",
+            "itemtype": "method",
+            "name": "_onFocusLost",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "ev",
+                    "description": "The event from the DOM.",
+                    "type": "Event"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 394,
+            "description": "Listener for Application 'paused' events. Disables the Keyboard.",
+            "itemtype": "method",
+            "name": "_onPaused",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 404,
+            "description": "Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus\nto the target.",
+            "itemtype": "method",
+            "name": "_onResumed",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 419,
+            "description": "Listener for Application 'update' events. This is created with a priority of -1000 so that\nit can reset justPressed() and justReleased() states after other code has had a chance to\ncheck them.",
+            "itemtype": "method",
+            "name": "_update",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "elapsed",
+                    "description": "Milliseconds elapsed since the previous update.",
+                    "type": "Number"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 440,
+            "description": "Listener for keydown events on the target.",
+            "itemtype": "method",
+            "name": "_keyDown",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "ev",
+                    "description": "The keyboard event.",
+                    "type": "KeyboardEvent"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 496,
+            "description": "Listener for keyup events on the target.",
+            "itemtype": "method",
+            "name": "_keyUp",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "ev",
+                    "description": "The keyboard event.",
+                    "type": "KeyboardEvent"
+                }
+            ],
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 525,
+            "description": "Destroys the keyboard and removes all listeners. Do not use after this is called.",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\KeyboardPlugin.js",
+            "line": 1,
+            "class": "cloudkid.KeyboardPlugin",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\KeyboardPlugin.js",
+            "line": 28,
+            "description": "The locale to use for keycodes.",
+            "itemtype": "property",
+            "name": "options.keyboardLocale",
+            "type": "Object",
+            "default": "cloudkid.USLocale",
+            "class": "cloudkid.KeyboardPlugin",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\KeyboardPlugin.js",
+            "line": 35,
+            "description": "The target DOM to listen to all keyboard events from.",
+            "itemtype": "property",
+            "name": "options.keyboardTarget",
+            "type": "DOMElement|String",
+            "default": "document",
+            "class": "cloudkid.KeyboardPlugin",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\KeyboardPlugin.js",
+            "line": 51,
+            "description": "The Keyboard instance",
+            "itemtype": "property",
+            "name": "keyboard",
+            "type": "cloudkid.Keyboard",
+            "class": "cloudkid.KeyboardPlugin",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\USLocale.js",
+            "line": 1,
+            "class": "cloudkid.USLocale",
+            "namespace": "cloudkid"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type",
+            "line": " src\\Detect.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src\\Keyboard.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src\\KeyboardPlugin.js:1"
+        },
+        {
+            "message": "Missing item type",
+            "line": " src\\USLocale.js:1"
+        }
+    ]
+}

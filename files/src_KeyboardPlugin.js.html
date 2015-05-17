@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>Keyboard v0.1.0 API Documentation : src\KeyboardPlugin.js</title>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+  <link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
+  <link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
+  <link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+</head>
+
+<body>
+  <header>
+    <div class='container'>
+      <div class='version pull-right'>
+        <em>API Documentation for: 0.1.0</em>
+      </div>
+      <div class='logo'>
+
+        <h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
+      </div>
+<div class='scope-toggles pull-right'>
+  <input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
+  <input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
+  <input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
+  <input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
+</div>    </div>
+  </header>
+  <div class='container'>
+    <div class='row'>
+      <nav id='sidebar' class='col-sm-4 col-md-3'>
+<h2>APIs</h2>
+<div class='input-group'>
+  <div class='input-group-addon'>
+    <span class='glyphicon glyphicon-search'></span>
+  </div>
+  <input type='search' class='form-control' id='api-filter' placeholder='Type to filter APIs'>
+</div>
+<nav class='navbar navbar-default'>
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="button" class="sidebar-toggle collapsed btn btn-default" id='toggle-classes' data-target='#classes-collapse'>
+      Classes
+      <span class='collapsed glyphicon glyphicon-chevron-up'></span>
+      <span class='expanded glyphicon glyphicon-chevron-down'></span>
+    </button>
+    <button type="button" class="sidebar-toggle collapsed btn btn-default"id='toggle-modules'  data-target='#modules-collapse'>
+      Modules
+      <span class='collapsed glyphicon glyphicon-chevron-up'></span>
+      <span class='expanded glyphicon glyphicon-chevron-down'></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class='collapse' id='classes-collapse'>
+    <ul class='nav navbar-nav'>
+        <li class=''>
+          <a href='../classes/cloudkid.Keyboard.html'>cloudkid.Keyboard</a>
+        </li>
+        <li class=''>
+          <a href='../classes/cloudkid.KeyboardPlugin.html'>cloudkid.KeyboardPlugin</a>
+        </li>
+        <li class=''>
+          <a href='../classes/cloudkid.USLocale.html'>cloudkid.USLocale</a>
+        </li>
+    </ul>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class='collapse' id='modules-collapse'>
+    <ul class='nav navbar-nav'>
+    </ul>
+  </div>
+  <!-- /.container-fluid -->
+</nav>      </nav>
+      <div class='col-sm-8 col-md-9'>
+        <div id='docs-main' class='apidocs'>
+<script>
+  var name = {
+  	{
+  		name
+  	}
+  }
+</script>
+<h1 class="file-heading">File:src\KeyboardPlugin.js</h1>
+
+<div class="file">
+  <pre class="code prettyprint linenums">/**
+ * @namespace cloudkid
+ */
+(function()
+{
+	// Include classes
+	var ApplicationPlugin = include(&#x27;springroll.ApplicationPlugin&#x27;),
+		Keyboard = include(&#x27;cloudkid.Keyboard&#x27;),
+		USLocale = include(&#x27;cloudkid.keyboard.USLocale&#x27;);
+
+	/**
+	 * Create an app plugin for Keyboard, all properties and methods documented
+	 * in this class are mixed-in to the main Application
+	 * @class KeyboardPlugin
+	 * @extends springroll.ApplicationPlugin
+	 */
+	var KeyboardPlugin = function()
+	{
+		ApplicationPlugin.call(this);
+	};
+
+	// Reference to the prototype
+	var p = extend(KeyboardPlugin, ApplicationPlugin);
+
+	// Init the Keyboard
+	p.setup = function()
+	{
+		/**
+		 *	The locale to use for keycodes.
+		 *	@property {Object} options.keyboardLocale
+		 *	@default cloudkid.USLocale
+		 */
+		this.options.add(&quot;keyboardLocale&quot;, null, true);
+		
+		/**
+		 *	The target DOM to listen to all keyboard events from.
+		 *	@property {DOMElement|String} options.keyboardTarget
+		 *	@default document
+		 */
+		this.options.add(&quot;keyboardTarget&quot;, null, true);
+	};
+	
+	//not actually async, but needs to happen after App options have been done
+	p.preload = function(done)
+	{
+		this.options.asDOMElement(&quot;keyboardTarget&quot;);
+		var target = this.options.keyboardTarget || document;
+		
+		var locale = this.options.keyboardLocale || USLocale;
+		
+		/**
+		 * The Keyboard instance
+		 * @property {cloudkid.Keyboard} keyboard
+		 */
+		this.keyboard = new Keyboard(target, locale);
+		
+		done();
+	};
+
+	// Destroy the animator
+	p.teardown = function()
+	{
+		this.keyboard.destroy();
+		this.keyboard = null;
+	};
+
+	// register plugin
+	ApplicationPlugin.register(KeyboardPlugin);
+
+}());</pre>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+  <script src='../assets/js/libraries.js?v=0.1.0'></script>
+  <script src='../assets/js/main.js?v=0.1.0'></script>
+</body>
+</html>
