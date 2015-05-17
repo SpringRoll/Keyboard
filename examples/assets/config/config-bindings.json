@@ -1,0 +1,26 @@
+{
+	"scaling": {
+		"flower" : {
+			"x" : 400,
+			"y" : 400,
+			"align": "bottom-center"
+		},
+		"rebindButton" : {
+			"x" : 660,
+			"y" : 10,
+			"align": "top-right",
+			"titleSafe": true
+		},
+		"animHint" : {
+			"x" : 600,
+			"y" : 100,
+			"align": "top-right",
+			"titleSafe": true
+		}
+	},
+	"scalingSize": {
+		"width": 800,
+		"height": 500,
+		"maxWidth": 1000
+	}
+}

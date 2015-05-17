@@ -1,0 +1,13 @@
+{
+	"name": "Keyboard",
+	"version": "0.1.0",
+	"description": "A SpringRoll plugin to ease keyboard input use",
+	"url": "https://github.com/CloudKidStudio/Keyboard",
+	"output": "keyboard",
+	"main": [
+		"src/Detect.js",
+		"src/USLocale.js",
+		"src/Keyboard.js",
+		"src/KeyboardPlugin.js"
+	]
+}
