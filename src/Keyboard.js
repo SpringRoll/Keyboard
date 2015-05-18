@@ -196,7 +196,8 @@
 	};
 	
 	/**
-	 * Creates a key combination. NOTE: this feature has not yet been completed.
+	 * Creates a key combination. Combination syntax is key names separated by '+' for simultaneous
+	 * keys and '>' for sequential keys.
 	 * @method addCombo
 	 * @param {String} comboString A string defining how the key combination functions.
 	 * @param {Function} callback The function to called when the combination successfully fires.
@@ -222,7 +223,7 @@
 		}
 		if(!combo)
 		{
-			combo = new Combo(name, preventDefault, this._keysByName);
+			combo = new Combo(comboString, preventDefault, this._keysByName);
 			_activeCombos.push(combo);
 		}
 		combo.addListener(callback);
@@ -480,9 +481,10 @@
 			if(key.trigger())
 				preventDefault = true;
 			
+			//handle combos
 			for(var i = this._activeCombos.length - 1; i >= 0; --i)
 			{
-				if(this._activeCombos.testKey(key.code))
+				if(this._activeCombos[i].testKeyDown(ev.keyCode))
 					preventDefault = true;
 			}
 		}
@@ -513,7 +515,12 @@
 			if(key.trigger())
 				preventDefault = true;
 			
-			//TODO: handle combos?
+			//handle combos
+			for(var i = this._activeCombos.length - 1; i >= 0; --i)
+			{
+				if(this._activeCombos[i].testKeyUp(ev.keyCode))
+					preventDefault = true;
+			}
 		}
 		if(preventDefault)
 		{
@@ -657,17 +664,149 @@
 		this.currentStep = 0;
 		this.preventDefault = preventDefault;
 		
-		//TODO: use regex & keysByNameRef to generate steps
+		//1: reverse string, because JS doesn't support lookbehind in RegEx
+		name = name.reverse();
+		//2: split based on steps, > not preceded(followed) by \
+		var steps = name.split(/>(?!\\)/g);
+		for(var i = 0; i < steps.length; ++i)
+		{
+			//3: split step components, + not preceded(followed) by \
+			var stepNames = steps[i].split(/\+(?!\\)/g);
+			var step = [];
+			for(var j = 0; j < stepNames.length; ++j)
+			{
+				//get the actual key
+				var keyName = stepNames[j].trim().reverse();
+				var key = keysByNameRef[keyName];
+				if(!key)
+				{
+					if(Debug)
+						Debug.warn("Issue while creating combo - no key with name " + keyName);
+					continue;
+				}
+				//push an object to track that key
+				step.push({sated: false, released: false, codes: key.codes});
+			}
+			//if the step is valid, put this step at the beginning, since we are building
+			//in reverse
+			if(step.length)
+				this.steps.unshift(step);
+		}
 	};
 	
 	p = Combo.prototype;
 	
-	//key is a keycode
-	p.testKey = function(key)
+	p.testKeyDown = function(keyCode)
 	{
-		//TODO: check key against current step
-		//TODO: Trigger combo on own when complete
-		//TODO: return a value if the combo was successful and the event default should be prevented
+		var step = this.steps[this.currentStep];
+		var found = false,
+			i,
+			key;
+		//see if we are waiting on that key
+		for(i = 0; i < step.length; ++i)
+		{
+			key = step[i];
+			if(key.codes.indexOf(keyCode) >= 0)
+			{
+				if(key.sated)//key was pressed twice - cancel everything
+					break;
+				key.sated = true;
+				found = true;
+				break;
+			}
+		}
+		//if the key is not one of ours, reset the combo to the beginning
+		if(!found)
+		{
+			this.resetStep();
+			this.currentStep = 0;
+			return false;
+		}
+		//see if we are ready to complete the combo or move on to the next step
+		var allSuccess = true;
+		for(i = 0; i < step.length; ++i)
+		{
+			key = step[i];
+			if(!key.sated)
+			{
+				allSuccess = false;
+				break;
+			}
+		}
+		
+		//if that was the last step, trigger listeners immediately
+		if(allSuccess && this.currentStep + 1 == this.steps.length)
+		{
+			this.trigger();
+			this.resetStep();
+			this.currentStep = 0;
+		}
+		
+		//let Keyboard know if the default key behavior should be prevented
+		return this.preventDefault;
+	};
+	
+	p.testKeyUp = function(keyCode)
+	{
+		var step = this.steps[this.currentStep];
+		var found = false,
+			i,
+			key;
+		//see if we are waiting on that key
+		for(i = 0; i < step.length; ++i)
+		{
+			key = step[i];
+			//only note keys that have been sated, to avoid marking keys as released
+			//when the combo was cancelled while being held
+			if(key.sated && key.codes.indexOf(keyCode) >= 0)
+			{
+				key.released = true;
+				found = true;
+				break;
+			}
+		}
+		
+		if(found)
+		{
+			var allReleased = true;
+			for(i = 0; i < step.length; ++i)
+			{
+				if(!step[i].released)
+				{
+					allReleased = false;
+					break;
+				}
+			}
+			//if all keys for the current step have been released,
+			//move on to the next one
+			if(allReleased)
+			{
+				this.resetStep();
+				++this.currentStep;
+			}
+		}
+		
+		//if the key was valid, then let Keyboard know if we should prevent default behavior
+		return found && this.preventDefault;
+	};
+	
+	p.resetStep = function()
+	{
+		var step = this.steps[this.currentStep];
+		for(i = 0; i < step.length; ++i)
+		{
+			key = step[i];
+			key.sated = key.released = false;
+		}
+	};
+	
+	p.trigger = function()
+	{
+		var listeners = this.listeners;
+		for(var i = 0; i < listeners.length; ++i)
+		{
+			listeners[i](this.name);
+		}
 	};
 	
 	p.addListener = function(listener)

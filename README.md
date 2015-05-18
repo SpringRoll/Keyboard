@@ -1,4 +1,4 @@
-Keyboard is a plugin for [SpringRoll](http://github.com/SpringRoll/SpringRoll). It is designed to make working with the keyboard outside of text editing easier. Keyboard has capabilities for detecting key presses and releases, tracking pressed keys, custom key binding, and complex key combinations (key combos coming soon).
+Keyboard is a plugin for [SpringRoll](http://github.com/SpringRoll/SpringRoll). It is designed to make working with the keyboard outside of text editing easier. Keyboard has capabilities for detecting key presses and releases, tracking pressed keys, custom key binding, and complex key combinations.
 
 ##Installation
 
@@ -20,6 +20,20 @@ grunt examples
 
 Include keyboard.min.js in your libraries js or html, after SpringRoll's core.min.js.
 After the Application is created, access the Keyboard instance with Application.instance.keyboard.
+
+Key combo syntax:
+
+```javascript
+// '+' separates simultaneous keys
+"ctrl + s";
+// '>' separates sequential keys
+"arrow_up > arrow_down";
+// escape '>' and '+' with '\' character, although standard US keyboards don't have those
+// characters without using shift and another key
+"\\+ + \\>";
+// sequential steps can have multiple simultaneous keys
+"ctrl + x > ctrl + v";
+```
 
 ##License
 

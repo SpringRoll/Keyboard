@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>Bindings Example</title>
+		<title>Key Combinations Example</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="assets/css/main.css">
@@ -63,16 +63,18 @@ var app = new Application({
 	resizeElement : "stageContainer",
 	framerate: "framerate",
 	canvasId: "stage",
-	configPath: "assets/config/config-bindings.json",
+	configPath: "assets/config/config-combos.json",
 	display: EaselJSDisplay,
 	displayOptions: {
 		clearView: true // clear the stage on render
 	}
 });
 
-var leftKey = "arrow_left",
-	rightKey = "arrow_right",
-	animKey = "spacebar";
+	//combo to play flower open anim is the Konami Code
+var wetCombo = "arrow_up > arrow_up > arrow_down > arrow_down > arrow_left > arrow_right > " +
+		"arrow_left > arrow_right > b > a",
+	//combo to play flower closed anim is an override of the browser's save command
+	dryCombo = "meta + s";
 
 var images = {};
 
@@ -87,10 +89,6 @@ app.on('loading', function(tasks)
 		{
 			id:'background',
 			src:'assets/images/background.jpg'
-		},
-		{
-			id:'button',
-			src:'assets/images/button.png'
 		},
 		{
 			id:'FlowerData',
@@ -120,72 +118,35 @@ app.on('init', function(){
 									AssetManager.getAtlas("FlowerSheet"),
 									AssetManager.getBitmapMovieClipConfig("FlowerData"));
 	
-	//create a button for key rebinding
-	this.rebindButton = new Button(images.button, {
-		text: 'Rebind Anim',
-		font: "16px Arial",
-		color: "#ffffff"
-	});
-	this.animHint = new createjs.Text('Press ' + animKey + ' to animate', "16px Arial", "#ffffff");
+	var text = "Close flower: " + dryCombo +
+			"\nOpen Flower: " + wetCombo;
+	this.animHint = new createjs.Text(text, "16px Arial", "#ffffff");
+	this.animHint.textAlign = "center";
+	this.animHint.lineWidth = 400;
 
 	stage.addChild(background);
 	stage.addChild(this.flower);
-	stage.addChild(this.rebindButton);
 	stage.addChild(this.animHint);
 
 	// Add the background to the scaling
 	this.scaling.addBackground(background);
 	
-	this.rebindButton.addEventListener(Button.BUTTON_PRESS, rebind);
-	
 	Animator.play(this.flower, "dry");
 	
-	this.on("update", update);
+	this.keyboard.addCombo(wetCombo, onWetCombo);
+	//preventDefault defaults to true for combos, so dryCombo will override the browser's save
+	//command
+	this.keyboard.addCombo(dryCombo, onDryCombo);
 });
 
-function update(elapsed)
+function onWetCombo()
 {
-	var keyboard = app.keyboard;
-	if(keyboard.isDown(leftKey))
-	{
-		app.flower.x -= 100 * elapsed * 0.001;//move 100 px per sec
-		if(app.flower.x < 0)
-			app.flower.x = 0;
-	}
-	else if(keyboard.isDown(rightKey))
-	{
-		app.flower.x += 100 * elapsed * 0.001;//move 100 px per sec
-		if(app.flower.x > 800)
-			app.flower.x = 800;
-	}
-	//justPressed only returns true if the key was pressed down since the last frame,
-	//meaning it is not true for repeat events
-	if(keyboard.justPressed(animKey))
-	{
-		Animator.play(this.flower, ["wet", "dry"]);
-	}
+	Animator.play(app.flower, "wet");
 }
 
-function rebind()
+function onDryCombo()
 {
-	app.keyboard.detectNextKey(onRebind);
-	app.rebindButton.enabled = false;
-	app.animHint.text = 'Press any key to rebind the \nanim key, or esc to cancel';
-}
-
-function onRebind(newKey)
-{
-	app.rebindButton.enabled = true;
-	if(newKey)
-	{
-		//Because we are allowing any key, we should prevent any browser defaults
-		//like backspace going back in history
-		//Howver, this doesn't prevent any OS defaults, like toggling caps lock
-		app.keyboard.setPreventDefaultOnKey(animKey, false);
-		animKey = newKey;
-		app.keyboard.setPreventDefaultOnKey(animKey, true);
-	}
-	app.animHint.text = 'Press ' + animKey + ' to animate';
+	Animator.play(app.flower, "dry");
 }
 
 </script>

@@ -1,0 +1,20 @@
+{
+	"scaling": {
+		"flower" : {
+			"x" : 400,
+			"y" : 400,
+			"align": "bottom-center"
+		},
+		"animHint" : {
+			"x" : 400,
+			"y" : 50,
+			"align": "top-center",
+			"titleSafe": true
+		}
+	},
+	"scalingSize": {
+		"width": 800,
+		"height": 500,
+		"maxWidth": 1000
+	}
+}
