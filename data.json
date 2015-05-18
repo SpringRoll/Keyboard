@@ -206,7 +206,31 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 114,
+            "line": 76,
+            "description": "If key detection should allow key modifiers, instead of just detecting those keys\nby themselves",
+            "itemtype": "property",
+            "name": "detectModifiers",
+            "type": "Boolean",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 84,
+            "description": "The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.",
+            "itemtype": "property",
+            "name": "modifiers",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "cloudkid.Keyboard",
+            "namespace": "cloudkid"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 129,
             "description": "Adds a listener for keydown events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
             "itemtype": "method",
             "name": "addKeyDown",
@@ -234,7 +258,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 136,
+            "line": 151,
             "description": "Removes a listener for keydown events on a specific key.",
             "itemtype": "method",
             "name": "removeKeyDown",
@@ -255,7 +279,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 149,
+            "line": 164,
             "description": "Adds a listener for keyup events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
             "itemtype": "method",
             "name": "addKeyUp",
@@ -283,7 +307,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 171,
+            "line": 186,
             "description": "Removes a listener for keyup events on a specific key.",
             "itemtype": "method",
             "name": "removeKeyUp",
@@ -304,7 +328,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 184,
+            "line": 199,
             "description": "Sets if the default browser action should be prevented on a specific key. This is good\nfor keys that are only checked with justPressed(), isDown(), and justReleased().",
             "itemtype": "method",
             "name": "setPreventDefaultOnKey",
@@ -325,8 +349,8 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 198,
-            "description": "Creates a key combination. NOTE: this feature has not yet been completed.",
+            "line": 213,
+            "description": "Creates a key combination. Combination syntax is key names separated by '+' for simultaneous\nkeys and '>' for sequential keys. Whitespace is required around the '+' and '>' separators.\nKeys must be fully released between '>' stages.",
             "itemtype": "method",
             "name": "addCombo",
             "params": [
@@ -353,7 +377,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 231,
+            "line": 248,
             "description": "Removes a listener for a key combination. If no listeners remain, that key\ncombination is destroyed.",
             "itemtype": "method",
             "name": "removeKeyUp",
@@ -374,8 +398,8 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 256,
-            "description": "Begins listening for the next key to be pressed (or repeated). The callback is passed\nthe name of that key, so that it can then be used with other functions. Additionally, if\nthe key pressed does not have a recognized keyCode, then an entry is created for it with the\nname <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed\n<code>null</code>.",
+            "line": 273,
+            "description": "Begins listening for the next key to be pressed (or repeated). The callback is passed\nthe name of that key, so that it can then be used with other functions. Additionally, if\nthe key pressed does not have a recognized keyCode, then an entry is created for it with the\nname <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed\n<code>null</code>. If allowModifiers is true, then the result should be considered a key\ncombination to be used with addCombo().",
             "itemtype": "method",
             "name": "detectNextKey",
             "params": [
@@ -390,6 +414,13 @@
                     "type": "String",
                     "optional": true,
                     "optdefault": "\"esc\""
+                },
+                {
+                    "name": "allowModifiers",
+                    "description": "If key modifiers (ctrl, alt, shift, command) should\n                                        be detected as modifications of the pressed key\n                                        instead of as their own keypresses.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
                 }
             ],
             "class": "cloudkid.Keyboard",
@@ -397,7 +428,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 280,
+            "line": 302,
             "description": "Cancels a detectNextKey() action.",
             "itemtype": "method",
             "name": "stopDetecting",
@@ -406,7 +437,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 293,
+            "line": 315,
             "description": "Checks to see if a key has begun to be pressed since the last Application 'update' event.",
             "itemtype": "method",
             "name": "justPressed",
@@ -426,7 +457,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 308,
+            "line": 330,
             "description": "Checks to see if a key is being held down.",
             "itemtype": "method",
             "name": "isDown",
@@ -446,7 +477,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 323,
+            "line": 345,
             "description": "Checks to see if a key has been released since the last Application 'update' event.",
             "itemtype": "method",
             "name": "justReleased",
@@ -466,7 +497,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 338,
+            "line": 360,
             "description": "If the Keyboard should be handling key events or not. Setting this to false immediately\nresets the status of any keys that are currently pressed.",
             "itemtype": "property",
             "name": "enabled",
@@ -476,7 +507,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 365,
+            "line": 387,
             "description": "Clears the status of all keys that are pressed, requiring them to be released and pressed\nagain.",
             "itemtype": "method",
             "name": "clearKeys",
@@ -485,7 +516,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 383,
+            "line": 405,
             "description": "Listener for when the target has lost focus, to call clearKeys().",
             "itemtype": "method",
             "name": "_onFocusLost",
@@ -503,7 +534,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 394,
+            "line": 416,
             "description": "Listener for Application 'paused' events. Disables the Keyboard.",
             "itemtype": "method",
             "name": "_onPaused",
@@ -514,7 +545,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 404,
+            "line": 426,
             "description": "Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus\nto the target.",
             "itemtype": "method",
             "name": "_onResumed",
@@ -525,7 +556,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 419,
+            "line": 441,
             "description": "Listener for Application 'update' events. This is created with a priority of -1000 so that\nit can reset justPressed() and justReleased() states after other code has had a chance to\ncheck them.",
             "itemtype": "method",
             "name": "_update",
@@ -543,7 +574,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 440,
+            "line": 462,
             "description": "Listener for keydown events on the target.",
             "itemtype": "method",
             "name": "_keyDown",
@@ -561,7 +592,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 496,
+            "line": 550,
             "description": "Listener for keyup events on the target.",
             "itemtype": "method",
             "name": "_keyUp",
@@ -579,7 +610,7 @@
         },
         {
             "file": "src\\Keyboard.js",
-            "line": 525,
+            "line": 584,
             "description": "Destroys the keyboard and removes all listeners. Do not use after this is called.",
             "itemtype": "method",
             "name": "destroy",

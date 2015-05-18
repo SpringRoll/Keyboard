@@ -301,8 +301,16 @@
                 <a href='#property_detectKeyCallback'>detectKeyCallback</a>
 
               </li>
+              <li class='col-xs-6 col-md-4 index-item property private'>
+                <a href='#property_detectModifiers'>detectModifiers</a>
+
+              </li>
               <li class='col-xs-6 col-md-4 index-item property'>
                 <a href='#property_enabled'>enabled</a>
+
+              </li>
+              <li class='col-xs-6 col-md-4 index-item property private'>
+                <a href='#property_modifiers'>modifiers</a>
 
               </li>
               <li class='col-xs-6 col-md-4 index-item property private'>
@@ -342,7 +350,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l440'><code>_keyDown:440</code></a>
+                <a href='../files/src_Keyboard.js.html#l462'><code>_keyDown:462</code></a>
               </p>
           
           
@@ -398,7 +406,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l496'><code>_keyUp:496</code></a>
+                <a href='../files/src_Keyboard.js.html#l550'><code>_keyUp:550</code></a>
               </p>
           
           
@@ -454,7 +462,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l383'><code>_onFocusLost:383</code></a>
+                <a href='../files/src_Keyboard.js.html#l405'><code>_onFocusLost:405</code></a>
               </p>
           
           
@@ -503,7 +511,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l394'><code>_onPaused:394</code></a>
+                <a href='../files/src_Keyboard.js.html#l416'><code>_onPaused:416</code></a>
               </p>
           
           
@@ -535,7 +543,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l404'><code>_onResumed:404</code></a>
+                <a href='../files/src_Keyboard.js.html#l426'><code>_onResumed:426</code></a>
               </p>
           
           
@@ -575,7 +583,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l419'><code>_update:419</code></a>
+                <a href='../files/src_Keyboard.js.html#l441'><code>_update:441</code></a>
               </p>
           
           
@@ -638,7 +646,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l198'><code>addCombo:198</code></a>
+                <a href='../files/src_Keyboard.js.html#l213'><code>addCombo:213</code></a>
               </p>
           
           
@@ -646,7 +654,9 @@
             </div>
           
             <div class='description'>
-              <p>Creates a key combination. NOTE: this feature has not yet been completed.</p>
+              <p>Creates a key combination. Combination syntax is key names separated by &#39;+&#39; for simultaneous
+          keys and &#39;&gt;&#39; for sequential keys. Whitespace is required around the &#39;+&#39; and &#39;&gt;&#39; separators.
+          Keys must be fully released between &#39;&gt;&#39; stages.</p>
           
             </div>
           
@@ -723,7 +733,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l114'><code>addKeyDown:114</code></a>
+                <a href='../files/src_Keyboard.js.html#l129'><code>addKeyDown:129</code></a>
               </p>
           
           
@@ -809,7 +819,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l149'><code>addKeyUp:149</code></a>
+                <a href='../files/src_Keyboard.js.html#l164'><code>addKeyUp:164</code></a>
               </p>
           
           
@@ -882,7 +892,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l365'><code>clearKeys:365</code></a>
+                <a href='../files/src_Keyboard.js.html#l387'><code>clearKeys:387</code></a>
               </p>
           
           
@@ -914,7 +924,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l525'><code>destroy:525</code></a>
+                <a href='../files/src_Keyboard.js.html#l584'><code>destroy:584</code></a>
               </p>
           
           
@@ -940,6 +950,9 @@
                     <li class='arg'>
                         <code class='optional'>[cancelKey=&quot;esc&quot;]</code>
                     </li>
+                    <li class='arg'>
+                        <code class='optional'>[allowModifiers=false]</code>
+                    </li>
               </ul><span class='paren'>)</span>
               </div>
           
@@ -955,7 +968,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l256'><code>detectNextKey:256</code></a>
+                <a href='../files/src_Keyboard.js.html#l273'><code>detectNextKey:273</code></a>
               </p>
           
           
@@ -967,7 +980,8 @@
           the name of that key, so that it can then be used with other functions. Additionally, if
           the key pressed does not have a recognized keyCode, then an entry is created for it with the
           name <code>&#39;key_%keyCode%&#39;</code>. If the cancel key is pressed, then the callback is passed
-          <code>null</code>.</p>
+          <code>null</code>. If allowModifiers is true, then the result should be considered a key
+          combination to be used with addCombo().</p>
           
             </div>
           
@@ -997,6 +1011,20 @@
                                             passed <code>null</code>, then the "esc" key can be
                                             detected and this action can only be cancelled with
                                             stopDetecting().</p>
+          
+                      </div>
+          
+                    </li>
+                    <li class='param'>
+                        <code class='param-name optional'>[allowModifiers=false]</code>
+                        <span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                        <span class='flag optional' title='This parameter is optional.'>optional</span>
+          
+          
+                      <div class='param-description'>
+                        <p>If key modifiers (ctrl, alt, shift, command) should
+                                                  be detected as modifications of the pressed key
+                                                  instead of as their own keypresses.</p>
           
                       </div>
           
@@ -1032,7 +1060,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l308'><code>isDown:308</code></a>
+                <a href='../files/src_Keyboard.js.html#l330'><code>isDown:330</code></a>
               </p>
           
           
@@ -1099,7 +1127,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l293'><code>justPressed:293</code></a>
+                <a href='../files/src_Keyboard.js.html#l315'><code>justPressed:315</code></a>
               </p>
           
           
@@ -1166,7 +1194,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l323'><code>justReleased:323</code></a>
+                <a href='../files/src_Keyboard.js.html#l345'><code>justReleased:345</code></a>
               </p>
           
           
@@ -1233,7 +1261,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l136'><code>removeKeyDown:136</code></a>
+                <a href='../files/src_Keyboard.js.html#l151'><code>removeKeyDown:151</code></a>
               </p>
           
           
@@ -1302,7 +1330,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l231'><code>removeKeyUp:231</code></a>
+                <a href='../files/src_Keyboard.js.html#l248'><code>removeKeyUp:248</code></a>
               </p>
           
           
@@ -1372,7 +1400,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l171'><code>removeKeyUp:171</code></a>
+                <a href='../files/src_Keyboard.js.html#l186'><code>removeKeyUp:186</code></a>
               </p>
           
           
@@ -1441,7 +1469,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l184'><code>setPreventDefaultOnKey:184</code></a>
+                <a href='../files/src_Keyboard.js.html#l199'><code>setPreventDefaultOnKey:199</code></a>
               </p>
           
           
@@ -1501,7 +1529,7 @@
             <div class='meta'>
                   <p>
                       Defined in
-                <a href='../files/src_Keyboard.js.html#l280'><code>stopDetecting:280</code></a>
+                <a href='../files/src_Keyboard.js.html#l302'><code>stopDetecting:302</code></a>
               </p>
           
           
@@ -1670,6 +1698,32 @@
           
           
           
+          </div>          <div id="property_detectModifiers" class="property item private">
+            <h3 class="name"><code>detectModifiers</code></h3>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+          
+          
+              <span class="flag private">private</span>
+          
+          
+          
+            <div class="meta">
+                  <p>
+                      Defined in
+                <a href="../files/src_Keyboard.js.html#l76"><code>detectModifiers:76</code></a>
+              </p>
+          
+          
+            </div>
+          
+            <div class="description">
+              <p>If key detection should allow key modifiers, instead of just detecting those keys
+          by themselves</p>
+          
+            </div>
+          
+          
+          
           </div>          <div id="property_enabled" class="property item">
             <h3 class="name"><code>enabled</code></h3>
             <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
@@ -1681,7 +1735,7 @@
             <div class="meta">
                   <p>
                       Defined in
-                <a href="../files/src_Keyboard.js.html#l338"><code>enabled:338</code></a>
+                <a href="../files/src_Keyboard.js.html#l360"><code>enabled:360</code></a>
               </p>
           
           
@@ -1690,6 +1744,31 @@
             <div class="description">
               <p>If the Keyboard should be handling key events or not. Setting this to false immediately
           resets the status of any keys that are currently pressed.</p>
+          
+            </div>
+          
+          
+          
+          </div>          <div id="property_modifiers" class="property item private">
+            <h3 class="name"><code>modifiers</code></h3>
+            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+          
+          
+              <span class="flag private">private</span>
+          
+          
+          
+            <div class="meta">
+                  <p>
+                      Defined in
+                <a href="../files/src_Keyboard.js.html#l84"><code>modifiers:84</code></a>
+              </p>
+          
+          
+            </div>
+          
+            <div class="description">
+              <p>The list of key names for modifier keys - &#39;ctrl&#39;, &#39;alt&#39;, &#39;shift&#39;, and &#39;command&#39;.</p>
           
             </div>
           
