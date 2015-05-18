@@ -1440,6 +1440,21 @@
 		 */
 		this.detectCancelKey = null;
 		
+		/**
+		 * If key detection should allow key modifiers, instead of just detecting those keys
+		 * by themselves
+		 * @property {Boolean} detectModifiers
+		 * @private
+		 */
+		this.detectModifiers = false;
+		
+		/**
+		 * The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.
+		 * @property {Array} modifiers
+		 * @private
+		 */
+		this.modifiers = ["ctrl", "alt", "shift", "command"];
+		
 		for(var keyName in locale)
 		{
 			var codes = locale[keyName];
@@ -1564,7 +1579,8 @@
 	
 	/**
 	 * Creates a key combination. Combination syntax is key names separated by '+' for simultaneous
-	 * keys and '>' for sequential keys.
+	 * keys and '>' for sequential keys. Whitespace is required around the '+' and '>' separators.
+	 * Keys must be fully released between '>' stages.
 	 * @method addCombo
 	 * @param {String} comboString A string defining how the key combination functions.
 	 * @param {Function} callback The function to called when the combination successfully fires.
@@ -1626,15 +1642,19 @@
 	 * the name of that key, so that it can then be used with other functions. Additionally, if
 	 * the key pressed does not have a recognized keyCode, then an entry is created for it with the
 	 * name <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed
-	 * <code>null</code>.
+	 * <code>null</code>. If allowModifiers is true, then the result should be considered a key
+	 * combination to be used with addCombo().
 	 * @method detectNextKey
 	 * @param {Function} callback The function to be called when a key is pressed.
 	 * @param {String} [cancelKey="esc"] The name of the key to cancel the listener. If explictly
 	 *                                   passed <code>null</code>, then the "esc" key can be
 	 *                                   detected and this action can only be cancelled with
 	 *                                   stopDetecting().
+	 * @param {Boolean} [allowModifiers=false] If key modifiers (ctrl, alt, shift, command) should
+	 *                                         be detected as modifications of the pressed key
+	 *                                         instead of as their own keypresses.
 	 */
-	p.detectNextKey = function(callback, cancelKey)
+	p.detectNextKey = function(callback, cancelKey, allowModifiers)
 	{
 		if(cancelKey === undefined)
 			cancelKey = this._keysByName.esc;
@@ -1643,6 +1663,7 @@
 		
 		this.detectKeyCallback = callback;
 		this.detectCancelKey = cancelKey || null;
+		this.detectModifiers = !!allowModifiers;
 	};
 	
 	/**
@@ -1814,28 +1835,59 @@
 	p._keyDown = function(ev)
 	{
 		var key = this._keysByCode[ev.keyCode];
+		var i;
 		
 		if(this.detectKeyCallback)
 		{
 			var callback = this.detectKeyCallback;
-			this.detectKeyCallback = null;
 			
 			if(key && key == this.detectCancelKey)
 			{
+				this.detectKeyCallback = null;
 				callback(null);
 			}
 			else
 			{
-				//because we are detecting the next key pressed, we should create
-				//a new key - this feature is largely for creating keybindings, and it's probable
-				//we aren't expecting all keycodes
-				if(!key)
+				//make sure it wasn't a modifier we should handle
+				var wasModifier = false;
+				var modifiers = this.modifiers;
+				if(this.detectModifiers)
 				{
-					key = new Key(ev.keyCode, "key_" + ev.keyCode);
-					this._keysByCode[ev.keyCode] = key;
-					this._keysByName[key.name] = key;
+					for(i = 0; i < modifiers.length; ++i)
+					{
+						if(key === this._keysByName[modifiers[i]])
+						{
+							wasModifier = true;
+							break;
+						}
+					}
 				}
-				callback(key.preferredName);
+				//skip modifier keys when they are used as modifiers
+				if(!wasModifier)
+				{
+					this.detectKeyCallback = null;
+					//because we are detecting the next key pressed, we should create
+					//a new key - this feature is largely for creating keybindings, and it's probable
+					//we aren't expecting all keycodes
+					if(!key)
+					{
+						key = new Key(ev.keyCode, "key_" + ev.keyCode);
+						this._keysByCode[ev.keyCode] = key;
+						this._keysByName[key.name] = key;
+					}
+					var detected = key.preferredName;
+					if(this.detectModifiers)
+					{
+						for(i = 0; i < modifiers.length; ++i)
+						{
+							if(this._keysByName[modifiers[i]].isDown)
+							{
+								detected = modifiers[i] + " + " + detected;
+							}
+						}
+					}
+					callback(detected);
+				}
 			}
 		}
 		
@@ -1849,7 +1901,7 @@
 				preventDefault = true;
 			
 			//handle combos
-			for(var i = this._activeCombos.length - 1; i >= 0; --i)
+			for(i = this._activeCombos.length - 1; i >= 0; --i)
 			{
 				if(this._activeCombos[i].testKeyDown(ev.keyCode))
 					preventDefault = true;
@@ -2031,19 +2083,21 @@
 		this.currentStep = 0;
 		this.preventDefault = preventDefault;
 		
-		//1: reverse string, because JS doesn't support lookbehind in RegEx
-		name = name.reverse();
-		//2: split based on steps, > not preceded(followed) by \
-		var steps = name.split(/>(?!\\)/g);
+		//2: split based on steps, > surrounded by whitespace
+		var steps = name.split(/\s+>\s+/g);
 		for(var i = 0; i < steps.length; ++i)
 		{
-			//3: split step components, + not preceded(followed) by \
-			var stepNames = steps[i].split(/\+(?!\\)/g);
+			//3: split step components, + surrounded by whitespace
+			var stepNames = steps[i].split(/\s+\+\s+/g);
 			var step = [];
 			for(var j = 0; j < stepNames.length; ++j)
 			{
 				//get the actual key
-				var keyName = stepNames[j].trim().reverse();
+				var keyName = stepNames[j];
+				if(keyName == "\\>")
+					keyName = ">";
+				else if(keyName == "\\+")
+					keyName = "+";
 				var key = keysByNameRef[keyName];
 				if(!key)
 				{
@@ -2054,10 +2108,9 @@
 				//push an object to track that key
 				step.push({sated: false, released: false, codes: key.codes});
 			}
-			//if the step is valid, put this step at the beginning, since we are building
-			//in reverse
+			//if the step is valid, add the step to the list
 			if(step.length)
-				this.steps.unshift(step);
+				this.steps.push(step);
 		}
 	};
 	

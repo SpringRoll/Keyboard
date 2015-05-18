@@ -24,6 +24,7 @@ After the Application is created, access the Keyboard instance with Application.
 Key combo syntax:
 
 ```javascript
+// Whitespace is required around the '+' and '>' separators.
 // '+' separates simultaneous keys
 "ctrl + s";
 // '>' separates sequential keys
