@@ -6,61 +6,61 @@
         "url": "https://github.com/CloudKidStudio/Keyboard"
     },
     "files": {
-        "src\\Detect.js": {
-            "name": "src\\Detect.js",
+        "src/Detect.js": {
+            "name": "src/Detect.js",
             "modules": {},
             "classes": {},
             "fors": {},
             "namespaces": {
-                "cloudkid": 1
+                "springroll": 1
             }
         },
-        "src\\Keyboard.js": {
-            "name": "src\\Keyboard.js",
+        "src/Keyboard.js": {
+            "name": "src/Keyboard.js",
             "modules": {},
             "classes": {
-                "cloudkid.Keyboard": 1
+                "springroll.Keyboard": 1
             },
             "fors": {},
             "namespaces": {
-                "cloudkid": 1
+                "springroll": 1
             }
         },
-        "src\\KeyboardPlugin.js": {
-            "name": "src\\KeyboardPlugin.js",
+        "src/KeyboardPlugin.js": {
+            "name": "src/KeyboardPlugin.js",
             "modules": {},
             "classes": {
-                "cloudkid.KeyboardPlugin": 1
+                "springroll.KeyboardPlugin": 1
             },
             "fors": {},
             "namespaces": {
-                "cloudkid": 1
+                "springroll": 1
             }
         },
-        "src\\USLocale.js": {
-            "name": "src\\USLocale.js",
+        "src/USLocale.js": {
+            "name": "src/USLocale.js",
             "modules": {},
             "classes": {
-                "cloudkid.USLocale": 1
+                "springroll.USLocale": 1
             },
             "fors": {},
             "namespaces": {
-                "cloudkid": 1
+                "springroll": 1
             }
         }
     },
     "modules": {},
     "classes": {
-        "cloudkid.Keyboard": {
-            "name": "cloudkid.Keyboard",
+        "springroll.Keyboard": {
+            "name": "springroll.Keyboard",
             "shortname": "Keyboard",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "cloudkid",
-            "file": "src\\Keyboard.js",
+            "namespace": "springroll",
+            "file": "src/Keyboard.js",
             "line": 9,
             "description": "A class for easier keyboard controls, from simple key events to complex key combinations.",
             "is_constructor": 1,
@@ -72,35 +72,35 @@
                 },
                 {
                     "name": "locale",
-                    "description": "The keyboard locale, like cloudkid.USLocale, which defines keys to\n                       keep track of.",
+                    "description": "The keyboard locale, like springroll.USLocale, which defines keys to\n                       keep track of.",
                     "type": "Object"
                 }
             ]
         },
-        "cloudkid.KeyboardPlugin": {
-            "name": "cloudkid.KeyboardPlugin",
+        "springroll.KeyboardPlugin": {
+            "name": "springroll.KeyboardPlugin",
             "shortname": "KeyboardPlugin",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "cloudkid",
-            "file": "src\\KeyboardPlugin.js",
+            "namespace": "springroll",
+            "file": "src/KeyboardPlugin.js",
             "line": 11,
             "description": "Create an app plugin for Keyboard, all properties and methods documented\nin this class are mixed-in to the main Application",
             "extends": "springroll.ApplicationPlugin"
         },
-        "cloudkid.USLocale": {
-            "name": "cloudkid.USLocale",
+        "springroll.USLocale": {
+            "name": "springroll.USLocale",
             "shortname": "USLocale",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "cloudkid",
-            "file": "src\\USLocale.js",
+            "namespace": "springroll",
+            "file": "src/USLocale.js",
             "line": 44,
             "description": "USLocale is the standard keyboard layout for US computers. All standard keys are included.\nKeys to note:\n\n* 'OS' represents both the Windows key and the 'command' key, although 'command'\n  is also available when the client is running MacOS.\n  \n* 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating\n  keyboard shortcuts in web apps.",
             "static": 1
@@ -108,19 +108,19 @@
     },
     "classitems": [
         {
-            "file": "src\\Detect.js",
+            "file": "src/Detect.js",
             "line": 1,
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 1,
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 28,
             "description": "The DOM element that the key event listeners are attached to.",
             "itemtype": "property",
@@ -129,11 +129,11 @@
             "access": "private",
             "tagname": "",
             "readonly": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 37,
             "description": "All keys that are listened to, arranged by key code.",
             "itemtype": "property",
@@ -141,11 +141,11 @@
             "type": "Object",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 43,
             "description": "All keys that are listened to, arranged by key name.",
             "itemtype": "property",
@@ -153,11 +153,11 @@
             "type": "Object",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 49,
             "description": "All key combinations that have been registered",
             "itemtype": "property",
@@ -165,11 +165,11 @@
             "type": "Array",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 55,
             "description": "Keys that have been updated since the most recent frame update. This array gets wiped\neach _update call.",
             "itemtype": "property",
@@ -177,11 +177,11 @@
             "type": "Array",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 63,
             "description": "The callback used when key detection has ended.",
             "itemtype": "property",
@@ -189,11 +189,11 @@
             "type": "Function",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 69,
             "description": "The key object that is used to cancel key detection.",
             "itemtype": "property",
@@ -201,11 +201,11 @@
             "type": "Key",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 76,
             "description": "If key detection should allow key modifiers, instead of just detecting those keys\nby themselves",
             "itemtype": "property",
@@ -213,11 +213,11 @@
             "type": "Boolean",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 84,
             "description": "The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.",
             "itemtype": "property",
@@ -225,11 +225,11 @@
             "type": "Array",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 129,
             "description": "Adds a listener for keydown events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
             "itemtype": "method",
@@ -253,11 +253,11 @@
                     "optdefault": "false"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 151,
             "description": "Removes a listener for keydown events on a specific key.",
             "itemtype": "method",
@@ -274,11 +274,11 @@
                     "type": "Function"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 164,
             "description": "Adds a listener for keyup events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
             "itemtype": "method",
@@ -302,11 +302,11 @@
                     "optdefault": "false"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 186,
             "description": "Removes a listener for keyup events on a specific key.",
             "itemtype": "method",
@@ -323,11 +323,11 @@
                     "type": "Function"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 199,
             "description": "Sets if the default browser action should be prevented on a specific key. This is good\nfor keys that are only checked with justPressed(), isDown(), and justReleased().",
             "itemtype": "method",
@@ -344,11 +344,11 @@
                     "type": "Boolean"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 213,
             "description": "Creates a key combination. Combination syntax is key names separated by '+' for simultaneous\nkeys and '>' for sequential keys. Whitespace is required around the '+' and '>' separators.\nKeys must be fully released between '>' stages.",
             "itemtype": "method",
@@ -372,11 +372,11 @@
                     "optdefault": "true"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 248,
             "description": "Removes a listener for a key combination. If no listeners remain, that key\ncombination is destroyed.",
             "itemtype": "method",
@@ -393,11 +393,11 @@
                     "type": "Function"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 273,
             "description": "Begins listening for the next key to be pressed (or repeated). The callback is passed\nthe name of that key, so that it can then be used with other functions. Additionally, if\nthe key pressed does not have a recognized keyCode, then an entry is created for it with the\nname <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed\n<code>null</code>. If allowModifiers is true, then the result should be considered a key\ncombination to be used with addCombo().",
             "itemtype": "method",
@@ -423,20 +423,20 @@
                     "optdefault": "false"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 302,
             "description": "Cancels a detectNextKey() action.",
             "itemtype": "method",
             "name": "stopDetecting",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 315,
             "description": "Checks to see if a key has begun to be pressed since the last Application 'update' event.",
             "itemtype": "method",
@@ -452,11 +452,11 @@
                 "description": "If the key was just pressed or not.",
                 "type": "Boolean"
             },
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 330,
             "description": "Checks to see if a key is being held down.",
             "itemtype": "method",
@@ -472,11 +472,11 @@
                 "description": "If the key is down or not.",
                 "type": "Boolean"
             },
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 345,
             "description": "Checks to see if a key has been released since the last Application 'update' event.",
             "itemtype": "method",
@@ -492,30 +492,30 @@
                 "description": "If the key was just released or not.",
                 "type": "Boolean"
             },
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 360,
             "description": "If the Keyboard should be handling key events or not. Setting this to false immediately\nresets the status of any keys that are currently pressed.",
             "itemtype": "property",
             "name": "enabled",
             "type": "Object",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 387,
             "description": "Clears the status of all keys that are pressed, requiring them to be released and pressed\nagain.",
             "itemtype": "method",
             "name": "clearKeys",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 405,
             "description": "Listener for when the target has lost focus, to call clearKeys().",
             "itemtype": "method",
@@ -529,33 +529,33 @@
                     "type": "Event"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 416,
             "description": "Listener for Application 'paused' events. Disables the Keyboard.",
             "itemtype": "method",
             "name": "_onPaused",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 426,
             "description": "Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus\nto the target.",
             "itemtype": "method",
             "name": "_onResumed",
             "access": "private",
             "tagname": "",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 441,
             "description": "Listener for Application 'update' events. This is created with a priority of -1000 so that\nit can reset justPressed() and justReleased() states after other code has had a chance to\ncheck them.",
             "itemtype": "method",
@@ -569,11 +569,11 @@
                     "type": "Number"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 462,
             "description": "Listener for keydown events on the target.",
             "itemtype": "method",
@@ -587,11 +587,11 @@
                     "type": "KeyboardEvent"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 550,
             "description": "Listener for keyup events on the target.",
             "itemtype": "method",
@@ -605,79 +605,79 @@
                     "type": "KeyboardEvent"
                 }
             ],
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\Keyboard.js",
+            "file": "src/Keyboard.js",
             "line": 584,
             "description": "Destroys the keyboard and removes all listeners. Do not use after this is called.",
             "itemtype": "method",
             "name": "destroy",
-            "class": "cloudkid.Keyboard",
-            "namespace": "cloudkid"
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\KeyboardPlugin.js",
+            "file": "src/KeyboardPlugin.js",
             "line": 1,
-            "class": "cloudkid.KeyboardPlugin",
-            "namespace": "cloudkid"
+            "class": "springroll.KeyboardPlugin",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\KeyboardPlugin.js",
+            "file": "src/KeyboardPlugin.js",
             "line": 28,
             "description": "The locale to use for keycodes.",
             "itemtype": "property",
             "name": "options.keyboardLocale",
             "type": "Object",
-            "default": "cloudkid.USLocale",
-            "class": "cloudkid.KeyboardPlugin",
-            "namespace": "cloudkid"
+            "default": "springroll.USLocale",
+            "class": "springroll.KeyboardPlugin",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\KeyboardPlugin.js",
+            "file": "src/KeyboardPlugin.js",
             "line": 35,
             "description": "The target DOM to listen to all keyboard events from.",
             "itemtype": "property",
             "name": "options.keyboardTarget",
             "type": "DOMElement|String",
             "default": "document",
-            "class": "cloudkid.KeyboardPlugin",
-            "namespace": "cloudkid"
+            "class": "springroll.KeyboardPlugin",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\KeyboardPlugin.js",
+            "file": "src/KeyboardPlugin.js",
             "line": 51,
             "description": "The Keyboard instance",
             "itemtype": "property",
             "name": "keyboard",
-            "type": "cloudkid.Keyboard",
-            "class": "cloudkid.KeyboardPlugin",
-            "namespace": "cloudkid"
+            "type": "springroll.Keyboard",
+            "class": "springroll.KeyboardPlugin",
+            "namespace": "springroll"
         },
         {
-            "file": "src\\USLocale.js",
+            "file": "src/USLocale.js",
             "line": 1,
-            "class": "cloudkid.USLocale",
-            "namespace": "cloudkid"
+            "class": "springroll.USLocale",
+            "namespace": "springroll"
         }
     ],
     "warnings": [
         {
             "message": "Missing item type",
-            "line": " src\\Detect.js:1"
+            "line": " src/Detect.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src\\Keyboard.js:1"
+            "line": " src/Keyboard.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src\\KeyboardPlugin.js:1"
+            "line": " src/KeyboardPlugin.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src\\USLocale.js:1"
+            "line": " src/USLocale.js:1"
         }
     ]
 }
