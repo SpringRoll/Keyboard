@@ -1,6 +1,6 @@
 /*! Keyboard 0.1.0 */
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
@@ -1201,15 +1201,15 @@
 
 	
 	// Assign to namespace
-	namespace('cloudkid').Detect = detect();
+	namespace('springroll').Detect = detect();
 
 }());
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
-	var parsed = include('cloudkid.Detect').parse(navigator.userAgent);
+	var parsed = include('springroll.Detect').parse(navigator.userAgent);
 	var browser, os;
 	if(parsed.browser.family.indexOf("Safari") >= 0)
 	{
@@ -1362,11 +1362,11 @@
 	}
 	
 	// Assign to namespace
-	namespace('cloudkid.keyboard').USLocale = USLocale;
+	namespace('springroll.keyboard').USLocale = USLocale;
 
 }());
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
@@ -1379,7 +1379,7 @@
 	*  @class Keyboard
 	*  @constructor
 	*  @param {DOMElement} target The DOM element to listen to key events on.
-	*  @param {Object} locale The keyboard locale, like cloudkid.USLocale, which defines keys to
+	*  @param {Object} locale The keyboard locale, like springroll.USLocale, which defines keys to
 	*                         keep track of.
 	*/
 	var Keyboard = function(target, locale)
@@ -1974,7 +1974,7 @@
 	};
 	
 	// Assign to namespace
-	namespace('cloudkid').Keyboard = Keyboard;
+	namespace('springroll').Keyboard = Keyboard;
 	
 	
 	//================= Internal Helper Classes ============
@@ -2258,14 +2258,14 @@
 
 }());
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
 	// Include classes
 	var ApplicationPlugin = include('springroll.ApplicationPlugin'),
-		Keyboard = include('cloudkid.Keyboard'),
-		USLocale = include('cloudkid.keyboard.USLocale');
+		Keyboard = include('springroll.Keyboard'),
+		USLocale = include('springroll.keyboard.USLocale');
 
 	/**
 	 * Create an app plugin for Keyboard, all properties and methods documented
@@ -2287,7 +2287,7 @@
 		/**
 		 *	The locale to use for keycodes.
 		 *	@property {Object} options.keyboardLocale
-		 *	@default cloudkid.USLocale
+		 *	@default springroll.USLocale
 		 */
 		this.options.add("keyboardLocale", null, true);
 		
@@ -2309,7 +2309,7 @@
 		
 		/**
 		 * The Keyboard instance
-		 * @property {cloudkid.Keyboard} keyboard
+		 * @property {springroll.Keyboard} keyboard
 		 */
 		this.keyboard = new Keyboard(target, locale);
 		

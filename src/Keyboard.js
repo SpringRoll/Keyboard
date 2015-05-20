@@ -1,5 +1,5 @@
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
@@ -12,7 +12,7 @@
 	*  @class Keyboard
 	*  @constructor
 	*  @param {DOMElement} target The DOM element to listen to key events on.
-	*  @param {Object} locale The keyboard locale, like cloudkid.USLocale, which defines keys to
+	*  @param {Object} locale The keyboard locale, like springroll.USLocale, which defines keys to
 	*                         keep track of.
 	*/
 	var Keyboard = function(target, locale)
@@ -607,7 +607,7 @@
 	};
 	
 	// Assign to namespace
-	namespace('cloudkid').Keyboard = Keyboard;
+	namespace('springroll').Keyboard = Keyboard;
 	
 	
 	//================= Internal Helper Classes ============

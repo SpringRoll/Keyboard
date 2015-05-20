@@ -1,9 +1,9 @@
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
-	var parsed = include('cloudkid.Detect').parse(navigator.userAgent);
+	var parsed = include('springroll.Detect').parse(navigator.userAgent);
 	var browser, os;
 	if(parsed.browser.family.indexOf("Safari") >= 0)
 	{
@@ -156,6 +156,6 @@
 	}
 	
 	// Assign to namespace
-	namespace('cloudkid.keyboard').USLocale = USLocale;
+	namespace('springroll.keyboard').USLocale = USLocale;
 
 }());

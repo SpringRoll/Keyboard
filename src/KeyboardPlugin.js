@@ -1,12 +1,12 @@
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
 	// Include classes
 	var ApplicationPlugin = include('springroll.ApplicationPlugin'),
-		Keyboard = include('cloudkid.Keyboard'),
-		USLocale = include('cloudkid.keyboard.USLocale');
+		Keyboard = include('springroll.Keyboard'),
+		USLocale = include('springroll.keyboard.USLocale');
 
 	/**
 	 * Create an app plugin for Keyboard, all properties and methods documented
@@ -28,7 +28,7 @@
 		/**
 		 *	The locale to use for keycodes.
 		 *	@property {Object} options.keyboardLocale
-		 *	@default cloudkid.USLocale
+		 *	@default springroll.USLocale
 		 */
 		this.options.add("keyboardLocale", null, true);
 		
@@ -50,7 +50,7 @@
 		
 		/**
 		 * The Keyboard instance
-		 * @property {cloudkid.Keyboard} keyboard
+		 * @property {springroll.Keyboard} keyboard
 		 */
 		this.keyboard = new Keyboard(target, locale);
 		

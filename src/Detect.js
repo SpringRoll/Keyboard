@@ -1,5 +1,5 @@
 /**
- * @namespace cloudkid
+ * @namespace springroll
  */
 (function()
 {
@@ -1200,6 +1200,6 @@
 
 	
 	// Assign to namespace
-	namespace('cloudkid').Detect = detect();
+	namespace('springroll').Detect = detect();
 
 }());
