@@ -4,8 +4,7 @@
 (function()
 {
 	// Include classes
-	var ApplicationPlugin = include('springroll.ApplicationPlugin'),
-		Keyboard = include('springroll.Keyboard'),
+	var Keyboard = include('springroll.Keyboard'),
 		USLocale = include('springroll.keyboard.USLocale');
 
 	/**
@@ -14,16 +13,10 @@
 	 * @class KeyboardPlugin
 	 * @extends springroll.ApplicationPlugin
 	 */
-	var KeyboardPlugin = function()
-	{
-		ApplicationPlugin.call(this);
-	};
-
-	// Reference to the prototype
-	var p = extend(KeyboardPlugin, ApplicationPlugin);
+	var plugin = mixin({}, 'springroll.ApplicationPlugin');
 
 	// Init the Keyboard
-	p.setup = function()
+	plugin.setup = function()
 	{
 		/**
 		 *	The locale to use for keycodes.
@@ -41,7 +34,7 @@
 	};
 	
 	//not actually async, but needs to happen after App options have been done
-	p.preload = function(done)
+	plugin.preload = function(done)
 	{
 		this.options.asDOMElement("keyboardTarget");
 		var target = this.options.keyboardTarget || document;
@@ -58,13 +51,10 @@
 	};
 
 	// Destroy the animator
-	p.teardown = function()
+	plugin.teardown = function()
 	{
 		this.keyboard.destroy();
 		this.keyboard = null;
 	};
-
-	// register plugin
-	ApplicationPlugin.register(KeyboardPlugin);
 
 }());

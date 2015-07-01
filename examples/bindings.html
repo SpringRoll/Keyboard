@@ -78,16 +78,9 @@ var images = {};
 
 app.on('loading', function(tasks)
 {
-	//global initialization of AssetManager
-	AssetManager.init();
-	
-	//load the background and button
+	//load the button
 	AssetManager.load(
 	[
-		{
-			id:'background',
-			src:'assets/images/background.jpg'
-		},
 		{
 			id:'button',
 			src:'assets/images/button.png'
@@ -103,22 +96,18 @@ app.on('loading', function(tasks)
 			atlasImage:'assets/images/FlowerSheet.png'
 		}
 	],
-	null,
 	tasks);
 });
 
 // Wait until the app is ready
-app.on('init', function(){
-
-	console.log("Main app init");
+app.on('init', function()
+{
 	var stage = this.display.stage;
 
-	// Add the background to the stage
-	var background = new createjs.Bitmap(images.background);
-	
 	this.flower = new BitmapMovieClip(
-									AssetManager.getAtlas("FlowerSheet"),
-									AssetManager.getBitmapMovieClipConfig("FlowerData"));
+		AssetManager.getAtlas("FlowerSheet"),
+		AssetManager.getBitmapMovieClipConfig("FlowerData")
+	);
 	
 	//create a button for key rebinding
 	this.rebindButton = new Button(images.button, {
@@ -126,15 +115,14 @@ app.on('init', function(){
 		font: "16px Arial",
 		color: "#ffffff"
 	});
-	this.animHint = new createjs.Text('Press ' + animKey + ' to animate', "16px Arial", "#ffffff");
+	this.animHint = new createjs.Text(
+		'Press ' + animKey + ' to animate', "16px Arial", "#000000");
 
-	stage.addChild(background);
-	stage.addChild(this.flower);
-	stage.addChild(this.rebindButton);
-	stage.addChild(this.animHint);
-
-	// Add the background to the scaling
-	this.scaling.addBackground(background);
+	stage.addChild(
+		this.flower, 
+		this.rebindButton, 
+		this.animHint
+	);
 	
 	this.rebindButton.addEventListener(Button.BUTTON_PRESS, rebind);
 	

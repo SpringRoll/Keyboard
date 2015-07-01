@@ -79,17 +79,10 @@ var wetCombo = "arrow_up > arrow_up > arrow_down > arrow_down > arrow_left > arr
 var images = {};
 
 app.on('loading', function(tasks)
-{
-	//global initialization of AssetManager
-	AssetManager.init();
-	
-	//load the background and button
+{	
+	//load the button
 	AssetManager.load(
 	[
-		{
-			id:'background',
-			src:'assets/images/background.jpg'
-		},
 		{
 			id:'FlowerData',
 			src:'assets/images/FlowerData.json',
@@ -101,35 +94,26 @@ app.on('loading', function(tasks)
 			atlasImage:'assets/images/FlowerSheet.png'
 		}
 	],
-	null,
 	tasks);
 });
 
 // Wait until the app is ready
-app.on('init', function(){
-
-	console.log("Main app init");
+app.on('init', function()
+{
 	var stage = this.display.stage;
-
-	// Add the background to the stage
-	var background = new createjs.Bitmap(images.background);
 	
 	this.flower = new BitmapMovieClip(
-									AssetManager.getAtlas("FlowerSheet"),
-									AssetManager.getBitmapMovieClipConfig("FlowerData"));
+		AssetManager.getAtlas("FlowerSheet"),
+		AssetManager.getBitmapMovieClipConfig("FlowerData")
+	);
 	
 	var text = "Close flower: " + dryCombo +
 			"\nOpen Flower: " + wetCombo;
-	this.animHint = new createjs.Text(text, "16px Arial", "#ffffff");
+	this.animHint = new createjs.Text(text, "16px Arial", "#000000");
 	this.animHint.textAlign = "center";
 	this.animHint.lineWidth = 400;
 
-	stage.addChild(background);
-	stage.addChild(this.flower);
-	stage.addChild(this.animHint);
-
-	// Add the background to the scaling
-	this.scaling.addBackground(background);
+	stage.addChild(this.flower, this.animHint);
 	
 	Animator.play(this.flower, "dry");
 	
