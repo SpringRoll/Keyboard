@@ -5,6 +5,7 @@
 {
 	// Include classes
 	var Keyboard = include('springroll.Keyboard'),
+		ApplicationPlugin = include('springroll.ApplicationPlugin'),
 		USLocale = include('springroll.keyboard.USLocale');
 
 	/**
@@ -13,7 +14,7 @@
 	 * @class KeyboardPlugin
 	 * @extends springroll.ApplicationPlugin
 	 */
-	var plugin = mixin({}, 'springroll.ApplicationPlugin');
+	var plugin = new ApplicationPlugin();
 
 	// Init the Keyboard
 	plugin.setup = function()
