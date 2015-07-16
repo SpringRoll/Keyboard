@@ -145,7 +145,7 @@
 			return;
 		}
 		
-		key.addListener(callback, true, keyName, !!preventDefault);
+		key.addListener(callback, false, keyName, !!preventDefault);
 	};
 	
 	/**
@@ -158,7 +158,7 @@
 	{
 		var key = this._keysByName[keyName];
 		if(key)
-			key.addListener(callback, true);
+			key.removeListener(callback, false);
 	};
 	
 	/**
@@ -180,7 +180,7 @@
 			return;
 		}
 		
-		key.addListener(callback, false, keyName, !!preventDefault);
+		key.addListener(callback, true, keyName, !!preventDefault);
 	};
 	
 	/**
@@ -193,7 +193,7 @@
 	{
 		var key = this._keysByName[keyName];
 		if(key)
-			key.addListener(callback, false);
+			key.removeListener(callback, true);
 	};
 	
 	/**
