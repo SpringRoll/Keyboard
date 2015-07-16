@@ -5,7 +5,7 @@ Keyboard is a plugin for [SpringRoll](http://github.com/SpringRoll/SpringRoll). 
 Keyboard can be installed using Bower.
 
 ```bash
-bower install http://github.com/SpringRoll/Keyboard
+bower install http://github.com/SpringRoll/Keyboard.git
 ```
 
 ##Examples
