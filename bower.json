@@ -1,9 +1,9 @@
 {
-	"name": "keyboard",
+	"name": "springroll-keyboard",
 	"version": "0.1.1",
 	"main": "dist/keyboard.min.js",
 	"dependencies": {
-		"springroll": "master"
+		"springroll": "*"
 	},
 	"devDependencies": {
 		"easeljs": "https://github.com/SpringRoll/EaselJS.git",
