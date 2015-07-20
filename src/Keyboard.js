@@ -681,7 +681,7 @@
 		var preventDefault = false;
 		for(index = listeners.length - 1; index >= 0; --index)
 		{
-			if(listeners[i].preventDefault)
+			if(listeners[i] && listeners[i].preventDefault)
 			{
 				preventDefault = true;
 				break;
