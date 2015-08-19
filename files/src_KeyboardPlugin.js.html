@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
-<title>Keyboard v0.1.0 API Documentation : src/KeyboardPlugin.js</title>
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
-<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
-<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+	<title>Keyboard v0.1.2 API Documentation : src/KeyboardPlugin.js</title>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.2'>
+	<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.2'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.2'>
 </head>
-
 <body>
 <header>
-<div class='container'>
-<div class='version pull-right'>
-<em>API Documentation for: 0.1.0</em>
-</div>
-<div class='logo'>
-
-<h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
-</div>
-<div class='scope-toggles pull-right'>
-<input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
-<input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
-<input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
-<input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
-</div></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docs-navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href='https://github.com/CloudKidStudio/Keyboard'>
+						<img src='../assets/images/logo.png?v=0.1.2' class="logo">
+					<span class='project-name'>Keyboard</span>
+					<span class="sr-only">API Documentation for:</span>
+					<span class='version hidden-xs'>v0.1.2</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="docs-navbar">
+	      <ul class="scope-toggles text-center nav navbar-nav navbar-right">
+					<li><input class='scope-toggle' 
+						id='toggle-inherited' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Inherited' 
+						data-off='Inherited' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-protected' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Protected' 
+						data-off='Protected' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-private' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Private' 
+						data-off='Private' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-deprecated' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Deprecated' 
+						data-off='Deprecated' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </header>
 <div class='container'>
 <div class='row'>
@@ -58,13 +100,13 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class='collapse' id='classes-collapse'>
     <ul class='nav navbar-nav'>
-        <li class=''>
+        <li class='public'>
+          <a href='../classes/springroll.Application.html'>springroll.Application</a>
+        </li>
+        <li class='public'>
           <a href='../classes/springroll.Keyboard.html'>springroll.Keyboard</a>
         </li>
-        <li class=''>
-          <a href='../classes/springroll.KeyboardPlugin.html'>springroll.KeyboardPlugin</a>
-        </li>
-        <li class=''>
+        <li class='public'>
           <a href='../classes/springroll.USLocale.html'>springroll.USLocale</a>
         </li>
     </ul>
@@ -79,13 +121,6 @@
 </nav></nav>
 <div class='col-sm-8 col-md-9'>
 <div id='docs-main' class='apidocs'>
-<script>
-var name = {
-{
-name
-}
-}
-</script>
 <h1 class="file-heading">File:KeyboardPlugin.js</h1>
 
 <div class="file">
@@ -95,26 +130,19 @@ name
 (function()
 {
 	// Include classes
-	var ApplicationPlugin = include(&#x27;springroll.ApplicationPlugin&#x27;),
-		Keyboard = include(&#x27;springroll.Keyboard&#x27;),
+	var Keyboard = include(&#x27;springroll.Keyboard&#x27;),
+		ApplicationPlugin = include(&#x27;springroll.ApplicationPlugin&#x27;),
 		USLocale = include(&#x27;springroll.keyboard.USLocale&#x27;);
 
 	/**
 	 * Create an app plugin for Keyboard, all properties and methods documented
 	 * in this class are mixed-in to the main Application
-	 * @class KeyboardPlugin
-	 * @extends springroll.ApplicationPlugin
+	 * @class Application
 	 */
-	var KeyboardPlugin = function()
-	{
-		ApplicationPlugin.call(this);
-	};
-
-	// Reference to the prototype
-	var p = extend(KeyboardPlugin, ApplicationPlugin);
+	var plugin = new ApplicationPlugin();
 
 	// Init the Keyboard
-	p.setup = function()
+	plugin.setup = function()
 	{
 		/**
 		 *	The locale to use for keycodes.
@@ -132,7 +160,7 @@ name
 	};
 	
 	//not actually async, but needs to happen after App options have been done
-	p.preload = function(done)
+	plugin.preload = function(done)
 	{
 		this.options.asDOMElement(&quot;keyboardTarget&quot;);
 		var target = this.options.keyboardTarget || document;
@@ -149,21 +177,18 @@ name
 	};
 
 	// Destroy the animator
-	p.teardown = function()
+	plugin.teardown = function()
 	{
 		this.keyboard.destroy();
 		this.keyboard = null;
 	};
-
-	// register plugin
-	ApplicationPlugin.register(KeyboardPlugin);
 
 }());</pre>
 </div></div>
 </div>
 </div>
 </div>
-<script src='../assets/js/libraries.js?v=0.1.0'></script>
-<script src='../assets/js/main.js?v=0.1.0'></script>
+<script src='../assets/js/libraries.js?v=0.1.2'></script>
+<script src='../assets/js/main.js?v=0.1.2'></script>
 </body>
 </html>

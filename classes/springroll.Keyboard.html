@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
-<title>Keyboard v0.1.0 API Documentation : springroll.Keyboard</title>
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
-<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
-<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+	<title>Keyboard v0.1.2 API Documentation : springroll.Keyboard</title>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.2'>
+	<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.2'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.2'>
 </head>
-
 <body>
 <header>
-<div class='container'>
-<div class='version pull-right'>
-<em>API Documentation for: 0.1.0</em>
-</div>
-<div class='logo'>
-
-<h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
-</div>
-<div class='scope-toggles pull-right'>
-<input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
-<input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
-<input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
-<input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
-</div></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docs-navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href='https://github.com/CloudKidStudio/Keyboard'>
+						<img src='../assets/images/logo.png?v=0.1.2' class="logo">
+					<span class='project-name'>Keyboard</span>
+					<span class="sr-only">API Documentation for:</span>
+					<span class='version hidden-xs'>v0.1.2</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="docs-navbar">
+	      <ul class="scope-toggles text-center nav navbar-nav navbar-right">
+					<li><input class='scope-toggle' 
+						id='toggle-inherited' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Inherited' 
+						data-off='Inherited' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-protected' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Protected' 
+						data-off='Protected' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-private' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Private' 
+						data-off='Private' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-deprecated' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Deprecated' 
+						data-off='Deprecated' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </header>
 <div class='container'>
 <div class='row'>
@@ -58,13 +100,13 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class='collapse' id='classes-collapse'>
     <ul class='nav navbar-nav'>
-        <li class=''>
+        <li class='public'>
+          <a href='../classes/springroll.Application.html'>springroll.Application</a>
+        </li>
+        <li class='public'>
           <a href='../classes/springroll.Keyboard.html'>springroll.Keyboard</a>
         </li>
-        <li class=''>
-          <a href='../classes/springroll.KeyboardPlugin.html'>springroll.KeyboardPlugin</a>
-        </li>
-        <li class=''>
+        <li class='public'>
           <a href='../classes/springroll.USLocale.html'>springroll.USLocale</a>
         </li>
     </ul>
@@ -98,8 +140,8 @@ Defined in: <a href='../files/src_Keyboard.js.html#l9'><code>springroll.Keyboard
 </div>
 
 <div class='constructor'>
-<h2>Constructor</h2> <div id='method_springroll.Keyboard' class='method item'>
-<h3 class='name'><code>springroll.Keyboard</code></h3>
+<h2>Constructor</h2> <div class='method_springroll.Keyboard method item'>
+<h3 class='name'><a class="deeplink" href="#method_springroll.Keyboard"><span class="glyphicon glyphicon-link"></span></a> <code>springroll.Keyboard</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -158,7 +200,7 @@ Defined in
 
 <div class='param-description'>
 <p>The keyboard locale, like springroll.USLocale, which defines keys to
-                       keep track of.</p>
+keep track of.</p>
 
 </div>
 
@@ -326,8 +368,8 @@ Defined in
 
 <div role='tabpanel' id='docs-methods' class='tab-pane'>
 
-<div id='method__keyDown' class='method item private'>
-<h3 class='name'><code>_keyDown</code></h3>
+<div class='method__keyDown method item private'>
+<h3 class='name'><a class="deeplink" href="#method__keyDown"><span class="glyphicon glyphicon-link"></span></a> <code>_keyDown</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -382,8 +424,8 @@ Defined in
 </div>
 
 
-</div><div id='method__keyUp' class='method item private'>
-<h3 class='name'><code>_keyUp</code></h3>
+</div><div class='method__keyUp method item private'>
+<h3 class='name'><a class="deeplink" href="#method__keyUp"><span class="glyphicon glyphicon-link"></span></a> <code>_keyUp</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -438,8 +480,8 @@ Defined in
 </div>
 
 
-</div><div id='method__onFocusLost' class='method item private'>
-<h3 class='name'><code>_onFocusLost</code></h3>
+</div><div class='method__onFocusLost method item private'>
+<h3 class='name'><a class="deeplink" href="#method__onFocusLost"><span class="glyphicon glyphicon-link"></span></a> <code>_onFocusLost</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -494,8 +536,8 @@ Defined in
 </div>
 
 
-</div><div id='method__onPaused' class='method item private'>
-<h3 class='name'><code>_onPaused</code></h3>
+</div><div class='method__onPaused method item private'>
+<h3 class='name'><a class="deeplink" href="#method__onPaused"><span class="glyphicon glyphicon-link"></span></a> <code>_onPaused</code></h3>
 
 <span class='paren'>()</span>
 
@@ -520,14 +562,14 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;paused&#39; events. Disables the Keyboard.</p>
+<p>Listener for Application 'paused' events. Disables the Keyboard.</p>
 
 </div>
 
 
 
-</div><div id='method__onResumed' class='method item private'>
-<h3 class='name'><code>_onResumed</code></h3>
+</div><div class='method__onResumed method item private'>
+<h3 class='name'><a class="deeplink" href="#method__onResumed"><span class="glyphicon glyphicon-link"></span></a> <code>_onResumed</code></h3>
 
 <span class='paren'>()</span>
 
@@ -552,15 +594,15 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;resumed&#39; events. Enables the Keyboard and gives browser focus
+<p>Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus
 to the target.</p>
 
 </div>
 
 
 
-</div><div id='method__update' class='method item private'>
-<h3 class='name'><code>_update</code></h3>
+</div><div class='method__update method item private'>
+<h3 class='name'><a class="deeplink" href="#method__update"><span class="glyphicon glyphicon-link"></span></a> <code>_update</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -592,7 +634,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;update&#39; events. This is created with a priority of -1000 so that
+<p>Listener for Application 'update' events. This is created with a priority of -1000 so that
 it can reset justPressed() and justReleased() states after other code has had a chance to
 check them.</p>
 
@@ -617,8 +659,8 @@ check them.</p>
 </div>
 
 
-</div><div id='method_addCombo' class='method item'>
-<h3 class='name'><code>addCombo</code></h3>
+</div><div class='method_addCombo method item'>
+<h3 class='name'><a class="deeplink" href="#method_addCombo"><span class="glyphicon glyphicon-link"></span></a> <code>addCombo</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -655,9 +697,9 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Creates a key combination. Combination syntax is key names separated by &#39;+&#39; for simultaneous
-keys and &#39;&gt;&#39; for sequential keys. Whitespace is required around the &#39;+&#39; and &#39;&gt;&#39; separators.
-Keys must be fully released between &#39;&gt;&#39; stages.</p>
+<p>Creates a key combination. Combination syntax is key names separated by '+' for simultaneous
+keys and '&gt;' for sequential keys. Whitespace is required around the '+' and '&gt;' separators.
+Keys must be fully released between '&gt;' stages.</p>
 
 </div>
 
@@ -695,7 +737,7 @@ Keys must be fully released between &#39;&gt;&#39; stages.</p>
 
 <div class='param-description'>
 <p>If the combo should have the default action prevented,
-                                       for any successful step of it that is completed.</p>
+for any successful step of it that is completed.</p>
 
 </div>
 
@@ -704,8 +746,8 @@ Keys must be fully released between &#39;&gt;&#39; stages.</p>
 </div>
 
 
-</div><div id='method_addKeyDown' class='method item'>
-<h3 class='name'><code>addKeyDown</code></h3>
+</div><div class='method_addKeyDown method item'>
+<h3 class='name'><a class="deeplink" href="#method_addKeyDown"><span class="glyphicon glyphicon-link"></span></a> <code>addKeyDown</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -781,7 +823,7 @@ name, in case the same callback is used for multiple keys.</p>
 
 <div class='param-description'>
 <p>If the key should have the default action prevented
-                                        while this listener is attached.</p>
+while this listener is attached.</p>
 
 </div>
 
@@ -790,8 +832,8 @@ name, in case the same callback is used for multiple keys.</p>
 </div>
 
 
-</div><div id='method_addKeyUp' class='method item'>
-<h3 class='name'><code>addKeyUp</code></h3>
+</div><div class='method_addKeyUp method item'>
+<h3 class='name'><a class="deeplink" href="#method_addKeyUp"><span class="glyphicon glyphicon-link"></span></a> <code>addKeyUp</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -867,7 +909,7 @@ name, in case the same callback is used for multiple keys.</p>
 
 <div class='param-description'>
 <p>If the key should have the default action prevented
-                                        while this listener is attached.</p>
+while this listener is attached.</p>
 
 </div>
 
@@ -876,8 +918,8 @@ name, in case the same callback is used for multiple keys.</p>
 </div>
 
 
-</div><div id='method_clearKeys' class='method item'>
-<h3 class='name'><code>clearKeys</code></h3>
+</div><div class='method_clearKeys method item'>
+<h3 class='name'><a class="deeplink" href="#method_clearKeys"><span class="glyphicon glyphicon-link"></span></a> <code>clearKeys</code></h3>
 
 <span class='paren'>()</span>
 
@@ -908,8 +950,8 @@ again.</p>
 
 
 
-</div><div id='method_destroy' class='method item'>
-<h3 class='name'><code>destroy</code></h3>
+</div><div class='method_destroy method item'>
+<h3 class='name'><a class="deeplink" href="#method_destroy"><span class="glyphicon glyphicon-link"></span></a> <code>destroy</code></h3>
 
 <span class='paren'>()</span>
 
@@ -939,8 +981,8 @@ Defined in
 
 
 
-</div><div id='method_detectNextKey' class='method item'>
-<h3 class='name'><code>detectNextKey</code></h3>
+</div><div class='method_detectNextKey method item'>
+<h3 class='name'><a class="deeplink" href="#method_detectNextKey"><span class="glyphicon glyphicon-link"></span></a> <code>detectNextKey</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -980,7 +1022,7 @@ Defined in
 <p>Begins listening for the next key to be pressed (or repeated). The callback is passed
 the name of that key, so that it can then be used with other functions. Additionally, if
 the key pressed does not have a recognized keyCode, then an entry is created for it with the
-name <code>&#39;key_%keyCode%&#39;</code>. If the cancel key is pressed, then the callback is passed
+name <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed
 <code>null</code>. If allowModifiers is true, then the result should be considered a key
 combination to be used with addCombo().</p>
 
@@ -1009,9 +1051,9 @@ combination to be used with addCombo().</p>
 
 <div class='param-description'>
 <p>The name of the key to cancel the listener. If explictly
-                                  passed <code>null</code>, then the "esc" key can be
-                                  detected and this action can only be cancelled with
-                                  stopDetecting().</p>
+passed <code>null</code>, then the "esc" key can be
+detected and this action can only be cancelled with
+stopDetecting().</p>
 
 </div>
 
@@ -1024,8 +1066,8 @@ combination to be used with addCombo().</p>
 
 <div class='param-description'>
 <p>If key modifiers (ctrl, alt, shift, command) should
-                                        be detected as modifications of the pressed key
-                                        instead of as their own keypresses.</p>
+be detected as modifications of the pressed key
+instead of as their own keypresses.</p>
 
 </div>
 
@@ -1034,8 +1076,8 @@ combination to be used with addCombo().</p>
 </div>
 
 
-</div><div id='method_isDown' class='method item'>
-<h3 class='name'><code>isDown</code></h3>
+</div><div class='method_isDown method item'>
+<h3 class='name'><a class="deeplink" href="#method_isDown"><span class="glyphicon glyphicon-link"></span></a> <code>isDown</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1101,8 +1143,8 @@ Defined in
 </div>
 </div>
 
-</div><div id='method_justPressed' class='method item'>
-<h3 class='name'><code>justPressed</code></h3>
+</div><div class='method_justPressed method item'>
+<h3 class='name'><a class="deeplink" href="#method_justPressed"><span class="glyphicon glyphicon-link"></span></a> <code>justPressed</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1136,7 +1178,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Checks to see if a key has begun to be pressed since the last Application &#39;update&#39; event.</p>
+<p>Checks to see if a key has begun to be pressed since the last Application 'update' event.</p>
 
 </div>
 
@@ -1168,8 +1210,8 @@ Defined in
 </div>
 </div>
 
-</div><div id='method_justReleased' class='method item'>
-<h3 class='name'><code>justReleased</code></h3>
+</div><div class='method_justReleased method item'>
+<h3 class='name'><a class="deeplink" href="#method_justReleased"><span class="glyphicon glyphicon-link"></span></a> <code>justReleased</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1203,7 +1245,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Checks to see if a key has been released since the last Application &#39;update&#39; event.</p>
+<p>Checks to see if a key has been released since the last Application 'update' event.</p>
 
 </div>
 
@@ -1235,8 +1277,8 @@ Defined in
 </div>
 </div>
 
-</div><div id='method_removeKeyDown' class='method item'>
-<h3 class='name'><code>removeKeyDown</code></h3>
+</div><div class='method_removeKeyDown method item'>
+<h3 class='name'><a class="deeplink" href="#method_removeKeyDown"><span class="glyphicon glyphicon-link"></span></a> <code>removeKeyDown</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1304,8 +1346,8 @@ Defined in
 </div>
 
 
-</div><div id='method_removeKeyUp' class='method item'>
-<h3 class='name'><code>removeKeyUp</code></h3>
+</div><div class='method_removeKeyUp method item'>
+<h3 class='name'><a class="deeplink" href="#method_removeKeyUp"><span class="glyphicon glyphicon-link"></span></a> <code>removeKeyUp</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1374,8 +1416,8 @@ combination is destroyed.</p>
 </div>
 
 
-</div><div id='method_removeKeyUp' class='method item'>
-<h3 class='name'><code>removeKeyUp</code></h3>
+</div><div class='method_removeKeyUp method item'>
+<h3 class='name'><a class="deeplink" href="#method_removeKeyUp"><span class="glyphicon glyphicon-link"></span></a> <code>removeKeyUp</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1443,8 +1485,8 @@ Defined in
 </div>
 
 
-</div><div id='method_setPreventDefaultOnKey' class='method item'>
-<h3 class='name'><code>setPreventDefaultOnKey</code></h3>
+</div><div class='method_setPreventDefaultOnKey method item'>
+<h3 class='name'><a class="deeplink" href="#method_setPreventDefaultOnKey"><span class="glyphicon glyphicon-link"></span></a> <code>setPreventDefaultOnKey</code></h3>
 
 <div class='args'>
 <span class='paren'>(</span>
@@ -1513,8 +1555,8 @@ for keys that are only checked with justPressed(), isDown(), and justReleased().
 </div>
 
 
-</div><div id='method_stopDetecting' class='method item'>
-<h3 class='name'><code>stopDetecting</code></h3>
+</div><div class='method_stopDetecting method item'>
+<h3 class='name'><a class="deeplink" href="#method_stopDetecting"><span class="glyphicon glyphicon-link"></span></a> <code>stopDetecting</code></h3>
 
 <span class='paren'>()</span>
 
@@ -1548,8 +1590,8 @@ Defined in
 
 <div role='tabpanel' id='docs-properties' class='tab-pane'>
 
-<div id="property__activeCombos" class="property item private">
-<h3 class="name"><code>_activeCombos</code></h3>
+<div class="property__activeCombos property item private">
+<h3 class="name"><a class="deeplink" href="#property__activeCombos"><span class="glyphicon glyphicon-link"></span></a> <code>_activeCombos</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
@@ -1573,8 +1615,8 @@ Defined in
 
 
 
-</div><div id="property__keysByCode" class="property item private">
-<h3 class="name"><code>_keysByCode</code></h3>
+</div><div class="property__keysByCode property item private">
+<h3 class="name"><a class="deeplink" href="#property__keysByCode"><span class="glyphicon glyphicon-link"></span></a> <code>_keysByCode</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
 
@@ -1598,8 +1640,8 @@ Defined in
 
 
 
-</div><div id="property__keysByName" class="property item private">
-<h3 class="name"><code>_keysByName</code></h3>
+</div><div class="property__keysByName property item private">
+<h3 class="name"><a class="deeplink" href="#property__keysByName"><span class="glyphicon glyphicon-link"></span></a> <code>_keysByName</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
 
@@ -1623,8 +1665,8 @@ Defined in
 
 
 
-</div><div id="property__updatedKeys" class="property item private">
-<h3 class="name"><code>_updatedKeys</code></h3>
+</div><div class="property__updatedKeys property item private">
+<h3 class="name"><a class="deeplink" href="#property__updatedKeys"><span class="glyphicon glyphicon-link"></span></a> <code>_updatedKeys</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
@@ -1649,8 +1691,8 @@ each _update call.</p>
 
 
 
-</div><div id="property_detectCancelKey" class="property item private">
-<h3 class="name"><code>detectCancelKey</code></h3>
+</div><div class="property_detectCancelKey property item private">
+<h3 class="name"><a class="deeplink" href="#property_detectCancelKey"><span class="glyphicon glyphicon-link"></span></a> <code>detectCancelKey</code></h3>
 <span class="type">Key</span>
 
 
@@ -1674,8 +1716,8 @@ Defined in
 
 
 
-</div><div id="property_detectKeyCallback" class="property item private">
-<h3 class="name"><code>detectKeyCallback</code></h3>
+</div><div class="property_detectKeyCallback property item private">
+<h3 class="name"><a class="deeplink" href="#property_detectKeyCallback"><span class="glyphicon glyphicon-link"></span></a> <code>detectKeyCallback</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
 
 
@@ -1699,8 +1741,8 @@ Defined in
 
 
 
-</div><div id="property_detectModifiers" class="property item private">
-<h3 class="name"><code>detectModifiers</code></h3>
+</div><div class="property_detectModifiers property item private">
+<h3 class="name"><a class="deeplink" href="#property_detectModifiers"><span class="glyphicon glyphicon-link"></span></a> <code>detectModifiers</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
 
 
@@ -1725,8 +1767,8 @@ by themselves</p>
 
 
 
-</div><div id="property_enabled" class="property item">
-<h3 class="name"><code>enabled</code></h3>
+</div><div class="property_enabled property item">
+<h3 class="name"><a class="deeplink" href="#property_enabled"><span class="glyphicon glyphicon-link"></span></a> <code>enabled</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
 
@@ -1750,8 +1792,8 @@ resets the status of any keys that are currently pressed.</p>
 
 
 
-</div><div id="property_modifiers" class="property item private">
-<h3 class="name"><code>modifiers</code></h3>
+</div><div class="property_modifiers property item private">
+<h3 class="name"><a class="deeplink" href="#property_modifiers"><span class="glyphicon glyphicon-link"></span></a> <code>modifiers</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
@@ -1769,14 +1811,14 @@ Defined in
 </div>
 
 <div class="description">
-<p>The list of key names for modifier keys - &#39;ctrl&#39;, &#39;alt&#39;, &#39;shift&#39;, and &#39;command&#39;.</p>
+<p>The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.</p>
 
 </div>
 
 
 
-</div><div id="property_target" class="property item private">
-<h3 class="name"><code>target</code></h3>
+</div><div class="property_target property item private">
+<h3 class="name"><a class="deeplink" href="#property_target"><span class="glyphicon glyphicon-link"></span></a> <code>target</code></h3>
 <span class="type">DOMElement</span>
 
 
@@ -1808,7 +1850,7 @@ Defined in
 </div>
 </div>
 </div>
-<script src='../assets/js/libraries.js?v=0.1.0'></script>
-<script src='../assets/js/main.js?v=0.1.0'></script>
+<script src='../assets/js/libraries.js?v=0.1.2'></script>
+<script src='../assets/js/main.js?v=0.1.2'></script>
 </body>
 </html>

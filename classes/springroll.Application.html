@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
-<title>Keyboard v0.1.0 API Documentation : springroll.KeyboardPlugin</title>
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
-<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
-<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+	<title>Keyboard v0.1.2 API Documentation : springroll.Application</title>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.2'>
+	<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.2'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.2'>
 </head>
-
 <body>
 <header>
-<div class='container'>
-<div class='version pull-right'>
-<em>API Documentation for: 0.1.0</em>
-</div>
-<div class='logo'>
-
-<h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
-</div>
-<div class='scope-toggles pull-right'>
-<input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
-<input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
-<input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
-<input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
-</div></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docs-navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href='https://github.com/CloudKidStudio/Keyboard'>
+						<img src='../assets/images/logo.png?v=0.1.2' class="logo">
+					<span class='project-name'>Keyboard</span>
+					<span class="sr-only">API Documentation for:</span>
+					<span class='version hidden-xs'>v0.1.2</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="docs-navbar">
+	      <ul class="scope-toggles text-center nav navbar-nav navbar-right">
+					<li><input class='scope-toggle' 
+						id='toggle-inherited' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Inherited' 
+						data-off='Inherited' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-protected' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Protected' 
+						data-off='Protected' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-private' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Private' 
+						data-off='Private' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-deprecated' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Deprecated' 
+						data-off='Deprecated' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </header>
 <div class='container'>
 <div class='row'>
@@ -58,13 +100,13 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class='collapse' id='classes-collapse'>
     <ul class='nav navbar-nav'>
-        <li class=''>
+        <li class='public'>
+          <a href='../classes/springroll.Application.html'>springroll.Application</a>
+        </li>
+        <li class='public'>
           <a href='../classes/springroll.Keyboard.html'>springroll.Keyboard</a>
         </li>
-        <li class=''>
-          <a href='../classes/springroll.KeyboardPlugin.html'>springroll.KeyboardPlugin</a>
-        </li>
-        <li class=''>
+        <li class='public'>
           <a href='../classes/springroll.USLocale.html'>springroll.USLocale</a>
         </li>
     </ul>
@@ -80,16 +122,12 @@
 <div class='col-sm-8 col-md-9'>
 <div id='docs-main' class='apidocs'>
 
-<h1>springroll.KeyboardPlugin Class</h1>
+<h1>springroll.Application Class</h1>
 <div class='box meta'>
 
-<div class='extends'>
-Extends
-springroll.ApplicationPlugin
-</div>
 
 <div class='foundat'>
-Defined in: <a href='../files/src_KeyboardPlugin.js.html#l11'><code>springroll.KeyboardPlugin:11</code></a>
+Defined in: <a href='../files/src_KeyboardPlugin.js.html#l11'><code>springroll.Application:11</code></a>
 </div>
 
 
@@ -121,7 +159,7 @@ in this class are mixed-in to the main Application</p>
 <div class='index-section tab-pane properties'>
 <h3>Properties</h3>
 
-<ul class='list-group row properties extends'>
+<ul class='list-group row properties'>
 <li class='col-xs-6 col-md-4 index-item property'>
 <a href='#property_keyboard'>keyboard</a>
 
@@ -143,8 +181,8 @@ in this class are mixed-in to the main Application</p>
 
 <div role='tabpanel' id='docs-properties' class='tab-pane'>
 
-<div id="property_keyboard" class="property item">
-<h3 class="name"><code>keyboard</code></h3>
+<div class="property_keyboard property item">
+<h3 class="name"><a class="deeplink" href="#property_keyboard"><span class="glyphicon glyphicon-link"></span></a> <code>keyboard</code></h3>
 <span class="type"><a href="../classes/springroll.Keyboard.html" class="crosslink">springroll.Keyboard</a></span>
 
 
@@ -154,7 +192,7 @@ in this class are mixed-in to the main Application</p>
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_KeyboardPlugin.js.html#l51"><code>keyboard:51</code></a>
+<a href="../files/src_KeyboardPlugin.js.html#l44"><code>keyboard:44</code></a>
 </p>
 
 
@@ -167,8 +205,8 @@ Defined in
 
 
 
-</div><div id="property_options.keyboardLocale" class="property item">
-<h3 class="name"><code>options.keyboardLocale</code></h3>
+</div><div class="property_options.keyboardLocale property item">
+<h3 class="name"><a class="deeplink" href="#property_options.keyboardLocale"><span class="glyphicon glyphicon-link"></span></a> <code>options.keyboardLocale</code></h3>
 <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
 
 
@@ -178,7 +216,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_KeyboardPlugin.js.html#l28"><code>options.keyboardLocale:28</code></a>
+<a href="../files/src_KeyboardPlugin.js.html#l21"><code>options.keyboardLocale:21</code></a>
 </p>
 
 
@@ -192,8 +230,8 @@ Defined in
 <p><strong>Default:</strong> springroll.USLocale</p>
 
 
-</div><div id="property_options.keyboardTarget" class="property item">
-<h3 class="name"><code>options.keyboardTarget</code></h3>
+</div><div class="property_options.keyboardTarget property item">
+<h3 class="name"><a class="deeplink" href="#property_options.keyboardTarget"><span class="glyphicon glyphicon-link"></span></a> <code>options.keyboardTarget</code></h3>
 <span class="type">DOMElement | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
 
 
@@ -203,7 +241,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_KeyboardPlugin.js.html#l35"><code>options.keyboardTarget:35</code></a>
+<a href="../files/src_KeyboardPlugin.js.html#l28"><code>options.keyboardTarget:28</code></a>
 </p>
 
 
@@ -225,7 +263,7 @@ Defined in
 </div>
 </div>
 </div>
-<script src='../assets/js/libraries.js?v=0.1.0'></script>
-<script src='../assets/js/main.js?v=0.1.0'></script>
+<script src='../assets/js/libraries.js?v=0.1.2'></script>
+<script src='../assets/js/main.js?v=0.1.2'></script>
 </body>
 </html>

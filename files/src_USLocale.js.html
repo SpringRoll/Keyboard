@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang='en'>
-
 <head>
-<title>Keyboard v0.1.0 API Documentation : src/USLocale.js</title>
-<meta charset='utf-8'>
-<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.0'>
-<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.0'>
-<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.0'>
+	<title>Keyboard v0.1.2 API Documentation : src/USLocale.js</title>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.2'>
+	<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.2'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.2'>
 </head>
-
 <body>
 <header>
-<div class='container'>
-<div class='version pull-right'>
-<em>API Documentation for: 0.1.0</em>
-</div>
-<div class='logo'>
-
-<h1><a href='https://github.com/CloudKidStudio/Keyboard'><img src='../assets/images/logo.png?v=0.1.0' title='Keyboard'><span class='project-name'>Keyboard</span></a></h1> 
-</div>
-<div class='scope-toggles pull-right'>
-<input class='scope-toggle' id='toggle-inherited' type='checkbox' data-toggle='toggle' data-on='Inherited' data-off='Inherited' data-size='mini'>
-<input class='scope-toggle' id='toggle-protected' type='checkbox' data-toggle='toggle' data-on='Protected' data-off='Protected' data-size='mini'>
-<input class='scope-toggle' id='toggle-private' type='checkbox' data-toggle='toggle' data-on='Private' data-off='Private' data-size='mini'>
-<input class='scope-toggle' id='toggle-deprecated' type='checkbox' data-toggle='toggle' data-on='Deprecated' data-off='Deprecated' data-size='mini'>
-</div></div>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class='container'>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#docs-navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href='https://github.com/CloudKidStudio/Keyboard'>
+						<img src='../assets/images/logo.png?v=0.1.2' class="logo">
+					<span class='project-name'>Keyboard</span>
+					<span class="sr-only">API Documentation for:</span>
+					<span class='version hidden-xs'>v0.1.2</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="docs-navbar">
+	      <ul class="scope-toggles text-center nav navbar-nav navbar-right">
+					<li><input class='scope-toggle' 
+						id='toggle-inherited' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Inherited' 
+						data-off='Inherited' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-protected' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Protected' 
+						data-off='Protected' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-private' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Private' 
+						data-off='Private' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+					<li><input class='scope-toggle' 
+						id='toggle-deprecated' 
+						type='checkbox' 
+						data-toggle='toggle' 
+						data-on='Deprecated' 
+						data-off='Deprecated' 
+						data-size='mini'
+						data-width='80'>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </header>
 <div class='container'>
 <div class='row'>
@@ -58,13 +100,13 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class='collapse' id='classes-collapse'>
     <ul class='nav navbar-nav'>
-        <li class=''>
+        <li class='public'>
+          <a href='../classes/springroll.Application.html'>springroll.Application</a>
+        </li>
+        <li class='public'>
           <a href='../classes/springroll.Keyboard.html'>springroll.Keyboard</a>
         </li>
-        <li class=''>
-          <a href='../classes/springroll.KeyboardPlugin.html'>springroll.KeyboardPlugin</a>
-        </li>
-        <li class=''>
+        <li class='public'>
           <a href='../classes/springroll.USLocale.html'>springroll.USLocale</a>
         </li>
     </ul>
@@ -79,13 +121,6 @@
 </nav></nav>
 <div class='col-sm-8 col-md-9'>
 <div id='docs-main' class='apidocs'>
-<script>
-var name = {
-{
-name
-}
-}
-</script>
 <h1 class="file-heading">File:USLocale.js</h1>
 
 <div class="file">
@@ -147,32 +182,173 @@ name
 	*/
 	var USLocale =
 	{
-		//general
+		/**
+		 * Cancel key
+		 * @property {int} cancel
+		 * @readOnly
+		 */
 		&quot;cancel&quot;:3,
+
+		/**
+		 * backspace key
+		 * @property {int} backspace
+		 * @readOnly
+		 */
 		&quot;backspace&quot;:8,
+
+		/**
+		 * tab key
+		 * @property {int} tab
+		 * @readOnly
+		 */
 		&quot;tab&quot;:9,
+
+		/**
+		 * enter key
+		 * @property {int} enter
+		 * @readOnly
+		 */
 		&quot;enter&quot;:13,
+
+		/**
+		 * shift key
+		 * @property {int} shift
+		 * @readOnly
+		 */
 		&quot;shift&quot;:16,
+
+		/**
+		 * ctrl key
+		 * @property {int} ctrl
+		 * @readOnly
+		 */
 		&quot;ctrl&quot;:17,
+
+		/**
+		 * alt key
+		 * @property {int} alt
+		 * @readOnly
+		 */
 		&quot;alt&quot;:18,
+
+		/**
+		 * Pause or break key
+		 * @property {int} pause/break
+		 * @readOnly
+		 */
 		&quot;pause/break&quot;: os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 126 : 19,
+
+		/**
+		 * CAPS lock key
+		 * @property {int} caps_lock
+		 * @readOnly
+		 */
 		&quot;caps_lock&quot;:20,
+
+		/**
+		 * Escape key
+		 * @property {int} esc
+		 * @readOnly
+		 */
 		&quot;esc&quot;:27,
+
+		/**
+		 * Spacebar key
+		 * @property {int} spacebar
+		 * @readOnly
+		 */
 		&quot;spacebar&quot;:32,
+
+		/**
+		 * Page Up key
+		 * @property {int} pageup
+		 * @readOnly
+		 */
 		&quot;pageup&quot;:33,
+
+		/**
+		 * Page Down key
+		 * @property {int} pagedown
+		 * @readOnly
+		 */
 		&quot;pagedown&quot;:34,
+
+		/**
+		 * end key
+		 * @property {int} end
+		 * @readOnly
+		 */
 		&quot;end&quot;:35,
+
+		/**
+		 * home key
+		 * @property {int} home
+		 * @readOnly
+		 */
 		&quot;home&quot;:36,
+
+		/**
+		 * Toggle left key
+		 * @property {int} arrow_left
+		 * @readOnly
+		 */
 		&quot;arrow_left&quot;:37,
+
+		/**
+		 * Toggle up key
+		 * @property {int} arrow_up
+		 * @readOnly
+		 */
 		&quot;arrow_up&quot;:38,
+
+		/**
+		 * Toggle right key
+		 * @property {int} arrow_right
+		 * @readOnly
+		 */
 		&quot;arrow_right&quot;:39,
+
+		/**
+		 * Toggle down key
+		 * @property {int} arrow_down
+		 * @readOnly
+		 */
 		&quot;arrow_down&quot;:40,
+
+		/**
+		 * Print screen key
+		 * @property {int} print_screen
+		 * @readOnly
+		 */
 		//Note: on windows, only keyUp is fired for print_screen
 		&quot;print_screen&quot;: os == &quot;Linux&quot; ? 42 : (os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 124 : 44),
+
+		/**
+		 * insert key
+		 * @property {int} insert
+		 * @readOnly
+		 */
 		&quot;insert&quot;:45,
+
+		/**
+		 * delete key
+		 * @property {int} delete
+		 * @readOnly
+		 */
 		&quot;delete&quot;:46,
+
+		/**
+		 * Scroll lock key
+		 * @property {int} scroll_lock
+		 * @readOnly
+		 */
 		&quot;scroll_lock&quot;: os == &quot;Mac&quot; &amp;&amp; browser != &quot;Firefox&quot; ? 125 : 145,
 		
+		/**
+		 * The OS button, either Windows or Apple Button
+		 * @property {int} OS
+		 * @readOnly
+		 */
 		//command/windows - may be different for left/right, depending on browser
 		//also might be 93, depending on OS
 		&quot;OS&quot;: browser == &quot;Firefox&quot; ?
@@ -184,34 +360,280 @@ name
 				91,
 				os == &quot;Mac&quot; ? 93 : 92
 			],
-		//on windows keyboard, located where the right &#x27;windows&#x27; key might be
-		//not fired by Safari/Chrome on OSX (but is on FF?)
+
+		/**
+		 * on windows keyboard, located where the right &#x27;windows&#x27; key might be
+		 * not fired by Safari/Chrome on OSX (but is on FF?)
+		 * @property {int} context_menu
+		 * @readOnly
+		 */
 		&quot;context_menu&quot;: os == &quot;Mac&quot; ? 0 : 93,
 		
+		/**
+		 * Semi-colon
+		 * @property {int} ;
+		 * @readOnly
+		 */
 		&quot;;&quot;:186,
+
+		/**
+		 * Equals
+		 * @property {int} =
+		 * @readOnly
+		 */
 		&quot;=&quot;:187,
+
+		/**
+		 * Comma
+		 * @property {int} ,
+		 * @readOnly
+		 */
 		&quot;,&quot;:188,
+
+		/**
+		 * Hyphen
+		 * @property {int} -
+		 * @readOnly
+		 */
 		&quot;-&quot;:189,
+
+		/**
+		 * Period
+		 * @property {int} .
+		 * @readOnly
+		 */
 		&quot;.&quot;:190,
+
+		/**
+		 * Backslash
+		 * @property {int} /
+		 * @readOnly
+		 */
 		&quot;/&quot;:191,
+
+		/**
+		 * Tick mark
+		 * @property {int} &#x60;
+		 * @readOnly
+		 */
 		&quot;&#x60;&quot;:192,
+
+		/**
+		 * Forward slash
+		 * @property {int} \
+		 * @readOnly
+		 */
 		&quot;\\&quot;:220,
+
+		/**
+		 * Left bracket
+		 * @property {int} [
+		 * @readOnly
+		 */
 		&quot;[&quot;:219,
+
+		/**
+		 * Right bracket
+		 * @property {int} ]
+		 * @readOnly
+		 */
 		&quot;]&quot;:221,
+
+		/**
+		 * An apostrophe
+		 * @property {int} &#x27;
+		 * @readOnly
+		 */
 		&quot;&#x27;&quot;:222,
 		
 		//number pad keys
+		/**
+		 * Number pad times
+		 * @property {int} num_*
+		 * @readOnly
+		 */
 		&quot;num_*&quot;:106,
+
+		/**
+		 * Number pad plus
+		 * @property {int} num_+
+		 * @readOnly
+		 */
 		&quot;num_+&quot;:107,
+
+		/**
+		 * Number pad enter
+		 * @property {int} num_enter
+		 * @readOnly
+		 */
 		&quot;num_enter&quot;:108,
+
+		/**
+		 * Number pad minus
+		 * @property {int} num_-
+		 * @readOnly
+		 */
 		&quot;num_-&quot;:109,
+
+		/**
+		 * Number pad decimal
+		 * @property {int} num_.
+		 * @readOnly
+		 */
 		&quot;num_.&quot;:110,
+
+		/**
+		 * Number pad divide
+		 * @property {int} num_/
+		 * @readOnly
+		 */
 		&quot;num_/&quot;:111,
-		//&#x27;num lock&#x27; is &#x27;clear&#x27; on Mac keyboards
+
+		/**
+		 * Number pad lock, &#x27;num lock&#x27; is &#x27;clear&#x27; on Mac keyboards
+		 * @property {int} num_lock
+		 * @readOnly
+		 */
 		&quot;num_lock&quot;: os == &quot;Mac&quot; ? 12 : 144,
+
+		/**
+		 * Number pad clear
+		 * @property {int} clear
+		 * @readOnly
+		 */
 		&quot;clear&quot;: os == &quot;Mac&quot; ? 12 : 144
 	};
 	var i;
+	/**
+	 * Alpha letter A
+	 * @property {int} A
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter B
+	 * @property {int} B
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter C
+	 * @property {int} C
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter D
+	 * @property {int} D
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter E
+	 * @property {int} E
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter F
+	 * @property {int} F
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter G
+	 * @property {int} G
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter H
+	 * @property {int} H
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter I
+	 * @property {int} I
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter J
+	 * @property {int} J
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter K
+	 * @property {int} K
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter L
+	 * @property {int} L
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter M
+	 * @property {int} M
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter N
+	 * @property {int} N
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter O
+	 * @property {int} O
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter P
+	 * @property {int} P
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter Q
+	 * @property {int} Q
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter R
+	 * @property {int} R
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter S
+	 * @property {int} S
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter T
+	 * @property {int} T
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter U
+	 * @property {int} U
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter V
+	 * @property {int} V
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter W
+	 * @property {int} W
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter X
+	 * @property {int} X
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter Y
+	 * @property {int} Y
+	 * @readOnly
+	 */
+	/**
+	 * Alpha letter Z
+	 * @property {int} Z
+	 * @readOnly
+	 */
 	//A-Z
 	for(i = 65; i &lt;= 90; ++i)
 	{
@@ -224,11 +646,121 @@ name
 		USLocale[String.fromCharCode(i)] = i;
 	}
 	//0-9, number pad: num_0-num_9
+
+	/**
+	 * Number pad 1
+	 * @property {int} num_1
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 2
+	 * @property {int} num_2
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 3
+	 * @property {int} num_3
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 4
+	 * @property {int} num_4
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 5
+	 * @property {int} num_5
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 6
+	 * @property {int} num_6
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 7
+	 * @property {int} num_7
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 8
+	 * @property {int} num_8
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 9
+	 * @property {int} num_9
+	 * @readOnly
+	 */
+	/**
+	 * Number pad 0
+	 * @property {int} num_0
+	 * @readOnly
+	 */
 	for(i = 96; i &lt;= 105; ++i)
 	{
 		USLocale[&quot;num_&quot; + (i-96)] = i;
 	}
-	//F1-F12
+	/**
+	 * Function key F1
+	 * @property {int} F1
+	 * @readOnly
+	 */
+	/**
+	 * Function key F2
+	 * @property {int} F2
+	 * @readOnly
+	 */
+	/**
+	 * Function key F3
+	 * @property {int} F3
+	 * @readOnly
+	 */
+	/**
+	 * Function key F4
+	 * @property {int} F4
+	 * @readOnly
+	 */
+	/**
+	 * Function key F5
+	 * @property {int} F5
+	 * @readOnly
+	 */
+	/**
+	 * Function key F6
+	 * @property {int} F6
+	 * @readOnly
+	 */
+	/**
+	 * Function key F7
+	 * @property {int} F7
+	 * @readOnly
+	 */
+	/**
+	 * Function key F8
+	 * @property {int} F8
+	 * @readOnly
+	 */
+	/**
+	 * Function key F9
+	 * @property {int} F9
+	 * @readOnly
+	 */
+	/**
+	 * Function key F10
+	 * @property {int} F10
+	 * @readOnly
+	 */
+	/**
+	 * Function key F11
+	 * @property {int} F11
+	 * @readOnly
+	 */
+	/**
+	 * Function key F12
+	 * @property {int} F12
+	 * @readOnly
+	 */
 	for(i = 112; i &lt;= 123; ++i)
 	{
 		USLocale[&quot;F&quot; + (i - 111)] = i;
@@ -238,6 +770,11 @@ name
 	if(os == &quot;Mac&quot;)
 	{
 		//also create &#x27;command&#x27; for people that only want command
+		/**
+		 * The command (Mac OSX) or ctrl (Windows) key
+		 * @property {int} meta
+		 * @readOnly
+		 */
 		USLocale.meta = USLocale.command = USLocale.OS;
 	}
 	else
@@ -254,7 +791,7 @@ name
 </div>
 </div>
 </div>
-<script src='../assets/js/libraries.js?v=0.1.0'></script>
-<script src='../assets/js/main.js?v=0.1.0'></script>
+<script src='../assets/js/libraries.js?v=0.1.2'></script>
+<script src='../assets/js/main.js?v=0.1.2'></script>
 </body>
 </html>
