@@ -2,7 +2,7 @@
     "project": {
         "name": "Keyboard",
         "description": "A SpringRoll plugin to ease keyboard input use",
-        "version": "0.1.2",
+        "version": "0.1.3",
         "url": "https://github.com/CloudKidStudio/Keyboard"
     },
     "files": {
@@ -646,7 +646,7 @@
         },
         {
             "file": "src/KeyboardPlugin.js",
-            "line": 44,
+            "line": 47,
             "description": "The Keyboard instance",
             "itemtype": "property",
             "name": "keyboard",
