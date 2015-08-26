@@ -36,10 +36,13 @@
 	//not actually async, but needs to happen after App options have been done
 	plugin.preload = function(done)
 	{
-		this.options.asDOMElement("keyboardTarget");
-		var target = this.options.keyboardTarget || document;
-		
-		var locale = this.options.keyboardLocale || USLocale;
+		var options = this.options;
+
+		options.asDOMElement("keyboardTarget");
+		options.keepFocus = true;
+
+		var target = options.keyboardTarget || document;
+		var locale = options.keyboardLocale || USLocale;
 		
 		/**
 		 * The Keyboard instance
