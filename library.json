@@ -1,6 +1,6 @@
 {
 	"name": "Keyboard",
-	"version": "0.1.3",
+	"version": "0.1.4",
 	"description": "A SpringRoll plugin to ease keyboard input use",
 	"url": "https://github.com/CloudKidStudio/Keyboard",
 	"output": "keyboard",

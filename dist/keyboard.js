@@ -1,4 +1,4 @@
-/*! Keyboard 0.1.3 */
+/*! Keyboard 0.1.4 */
 /**
  * @namespace springroll
  */
@@ -2550,7 +2550,7 @@
 		var preventDefault = false;
 		for(index = listeners.length - 1; index >= 0; --index)
 		{
-			if(listeners[i] && listeners[i].preventDefault)
+			if(listeners[index] && listeners[index].preventDefault)
 			{
 				preventDefault = true;
 				break;
@@ -2797,11 +2797,13 @@
 	//not actually async, but needs to happen after App options have been done
 	plugin.preload = function(done)
 	{
-		this.options.asDOMElement("keyboardTarget");
-		this.options.keepFocus = true;
+		var options = this.options;
 
-		var target = this.options.keyboardTarget || document;
-		var locale = this.options.keyboardLocale || USLocale;
+		options.asDOMElement("keyboardTarget");
+		options.keepFocus = true;
+
+		var target = options.keyboardTarget || document;
+		var locale = options.keyboardLocale || USLocale;
 		
 		/**
 		 * The Keyboard instance
