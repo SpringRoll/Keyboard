@@ -3,7 +3,7 @@ YUI.add("yuidoc-meta", function(Y) {
     "classes": [
         "springroll.Application",
         "springroll.Keyboard",
-        "springroll.USLocale"
+        "springroll.keyboard.USLocale"
     ],
     "modules": [],
     "allModules": []

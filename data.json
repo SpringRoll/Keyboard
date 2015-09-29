@@ -2,7 +2,7 @@
     "project": {
         "name": "Keyboard",
         "description": "A SpringRoll plugin to ease keyboard input use",
-        "version": "0.1.3",
+        "version": "0.1.5",
         "url": "https://github.com/CloudKidStudio/Keyboard"
     },
     "files": {
@@ -41,11 +41,11 @@
             "name": "src/USLocale.js",
             "modules": {},
             "classes": {
-                "springroll.USLocale": 1
+                "springroll.keyboard.USLocale": 1
             },
             "fors": {},
             "namespaces": {
-                "springroll": 1
+                "springroll.keyboard": 1
             }
         }
     },
@@ -90,18 +90,18 @@
             "line": 11,
             "description": "Create an app plugin for Keyboard, all properties and methods documented\nin this class are mixed-in to the main Application"
         },
-        "springroll.USLocale": {
-            "name": "springroll.USLocale",
+        "springroll.keyboard.USLocale": {
+            "name": "springroll.keyboard.USLocale",
             "shortname": "USLocale",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "namespace": "springroll",
+            "namespace": "springroll.keyboard",
             "file": "src/USLocale.js",
             "line": 44,
-            "description": "USLocale is the standard keyboard layout for US computers. All standard keys are included.\nKeys to note:\n\n* 'OS' represents both the Windows key and the 'command' key, although 'command'\n  is also available when the client is running MacOS.\n  \n* 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating\n  keyboard shortcuts in web apps.",
+            "description": "USLocale is the standard keyboard layout for US computers. All standard keys are included.\nKeys to note:\n\n* 'OS' represents both the Windows key and the 'command' key, although 'command'\n  is also available when the client is running MacOS.\n\n* 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating\n  keyboard shortcuts in web apps.",
             "static": 1
         }
     },
@@ -629,7 +629,7 @@
             "itemtype": "property",
             "name": "options.keyboardLocale",
             "type": "Object",
-            "default": "springroll.USLocale",
+            "default": "springroll.keyboard.USLocale",
             "class": "springroll.Application",
             "namespace": "springroll"
         },
@@ -657,8 +657,8 @@
         {
             "file": "src/USLocale.js",
             "line": 1,
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -668,8 +668,8 @@
             "name": "cancel",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -679,8 +679,8 @@
             "name": "backspace",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -690,8 +690,8 @@
             "name": "tab",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -701,8 +701,8 @@
             "name": "enter",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -712,8 +712,8 @@
             "name": "shift",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -723,8 +723,8 @@
             "name": "ctrl",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -734,8 +734,8 @@
             "name": "alt",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -745,8 +745,8 @@
             "name": "pause/break",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -756,8 +756,8 @@
             "name": "caps_lock",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -767,8 +767,8 @@
             "name": "esc",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -778,8 +778,8 @@
             "name": "spacebar",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -789,8 +789,8 @@
             "name": "pageup",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -800,8 +800,8 @@
             "name": "pagedown",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -811,8 +811,8 @@
             "name": "end",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -822,8 +822,8 @@
             "name": "home",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -833,8 +833,8 @@
             "name": "arrow_left",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -844,8 +844,8 @@
             "name": "arrow_up",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -855,8 +855,8 @@
             "name": "arrow_right",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -866,8 +866,8 @@
             "name": "arrow_down",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -877,8 +877,8 @@
             "name": "print_screen",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -888,8 +888,8 @@
             "name": "insert",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -899,8 +899,8 @@
             "name": "delete",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -910,8 +910,8 @@
             "name": "scroll_lock",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -921,8 +921,8 @@
             "name": "OS",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -932,8 +932,8 @@
             "name": "context_menu",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -943,8 +943,8 @@
             "name": ";",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -954,8 +954,8 @@
             "name": "=",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -965,8 +965,8 @@
             "name": ",",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -976,8 +976,8 @@
             "name": "-",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -987,8 +987,8 @@
             "name": ".",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -998,8 +998,8 @@
             "name": "/",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1009,8 +1009,8 @@
             "name": "`",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1020,8 +1020,8 @@
             "name": "\\",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1031,8 +1031,8 @@
             "name": "[",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1042,8 +1042,8 @@
             "name": "]",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1053,8 +1053,8 @@
             "name": "'",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1064,8 +1064,8 @@
             "name": "num_*",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1075,8 +1075,8 @@
             "name": "num_+",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1086,8 +1086,8 @@
             "name": "num_enter",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1097,8 +1097,8 @@
             "name": "num_-",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1108,8 +1108,8 @@
             "name": "num_.",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1119,8 +1119,8 @@
             "name": "num_/",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1130,8 +1130,8 @@
             "name": "num_lock",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1141,8 +1141,8 @@
             "name": "clear",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1152,8 +1152,8 @@
             "name": "A",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1163,8 +1163,8 @@
             "name": "B",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1174,8 +1174,8 @@
             "name": "C",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1185,8 +1185,8 @@
             "name": "D",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1196,8 +1196,8 @@
             "name": "E",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1207,8 +1207,8 @@
             "name": "F",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1218,8 +1218,8 @@
             "name": "G",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1229,8 +1229,8 @@
             "name": "H",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1240,8 +1240,8 @@
             "name": "I",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1251,8 +1251,8 @@
             "name": "J",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1262,8 +1262,8 @@
             "name": "K",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1273,8 +1273,8 @@
             "name": "L",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1284,8 +1284,8 @@
             "name": "M",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1295,8 +1295,8 @@
             "name": "N",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1306,8 +1306,8 @@
             "name": "O",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1317,8 +1317,8 @@
             "name": "P",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1328,8 +1328,8 @@
             "name": "Q",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1339,8 +1339,8 @@
             "name": "R",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1350,8 +1350,8 @@
             "name": "S",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1361,8 +1361,8 @@
             "name": "T",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1372,8 +1372,8 @@
             "name": "U",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1383,8 +1383,8 @@
             "name": "V",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1394,8 +1394,8 @@
             "name": "W",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1405,8 +1405,8 @@
             "name": "X",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1416,8 +1416,8 @@
             "name": "Y",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1427,8 +1427,8 @@
             "name": "Z",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1438,8 +1438,8 @@
             "name": "num_1",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1449,8 +1449,8 @@
             "name": "num_2",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1460,8 +1460,8 @@
             "name": "num_3",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1471,8 +1471,8 @@
             "name": "num_4",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1482,8 +1482,8 @@
             "name": "num_5",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1493,8 +1493,8 @@
             "name": "num_6",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1504,8 +1504,8 @@
             "name": "num_7",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1515,8 +1515,8 @@
             "name": "num_8",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1526,8 +1526,8 @@
             "name": "num_9",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1537,8 +1537,8 @@
             "name": "num_0",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1548,8 +1548,8 @@
             "name": "F1",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1559,8 +1559,8 @@
             "name": "F2",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1570,8 +1570,8 @@
             "name": "F3",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1581,8 +1581,8 @@
             "name": "F4",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1592,8 +1592,8 @@
             "name": "F5",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1603,8 +1603,8 @@
             "name": "F6",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1614,8 +1614,8 @@
             "name": "F7",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1625,8 +1625,8 @@
             "name": "F8",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1636,8 +1636,8 @@
             "name": "F9",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1647,8 +1647,8 @@
             "name": "F10",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1658,8 +1658,8 @@
             "name": "F11",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1669,8 +1669,8 @@
             "name": "F12",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         },
         {
             "file": "src/USLocale.js",
@@ -1680,8 +1680,8 @@
             "name": "meta",
             "type": "Int",
             "readonly": "",
-            "class": "springroll.USLocale",
-            "namespace": "springroll"
+            "class": "springroll.keyboard.USLocale",
+            "namespace": "springroll.keyboard"
         }
     ],
     "warnings": [
