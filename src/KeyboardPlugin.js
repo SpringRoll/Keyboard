@@ -21,9 +21,9 @@
 		/**
 		 *	The locale to use for keycodes.
 		 *	@property {Object} options.keyboardLocale
-		 *	@default springroll.USLocale
+		 *	@default springroll.keyboard.USLocale
 		 */
-		this.options.add("keyboardLocale", null, true);
+		this.options.add("keyboardLocale", USLocale, true);
 		
 		/**
 		 *	The target DOM to listen to all keyboard events from.

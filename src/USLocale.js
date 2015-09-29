@@ -1,5 +1,5 @@
 /**
- * @namespace springroll
+ * @namespace springroll.keyboard
  */
 (function()
 {
@@ -47,7 +47,7 @@
 	*
 	*  * 'OS' represents both the Windows key and the 'command' key, although 'command'
 	*    is also available when the client is running MacOS.
-	*    
+	*
 	*  * 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating
 	*    keyboard shortcuts in web apps.
 	*
