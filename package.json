@@ -1,8 +1,24 @@
 {
-	"private": true,
+	"name": "springroll-keyboard",
 	"version": "0.1.5",
-	"dependencies": {
+    "main": "dist/keyboard.min.js",
+	"devDependencies": {
 		"grunt": "~0.4.5",
 		"library-grunt": "~0.6.0"
-	}
+	},
+    "repository":{
+        "type": "git",
+        "url": "https://github.com/SpringRoll/Keyboard"
+    },
+    "bugs": {
+        "url": "https://github.com/SpringRoll/Keyboard/issues"
+    },
+    "keywords": [
+        "keyboard",
+        "input",
+        "springroll",
+        "educational",
+        "cross-browser"
+    ],
+    "license": "MIT"
 }
