@@ -1956,6 +1956,13 @@
 		 * @private
 		 */
 		this.modifiers = ["ctrl", "alt", "shift", "command"];
+
+		/**
+		 * The list of key names for scrolling control keys
+		 * @property {Array} scrollKeys
+		 * @private
+		 */
+		 this.scrollKeys = ['arrow_down', 'arrow_up', 'arrow_left', 'arrow_right', 'spacebar'];
 		
 		for(var keyName in locale)
 		{
@@ -1987,6 +1994,9 @@
 		var app = Application.instance;
 		app.on('paused', this._onPaused);
 		app.on('resumed', this._onResumed);
+
+		if (app.options.preventScrollingKeys)
+			this.restrictScrollingKeys();
 	};
 
 	// Reference to the prototype
@@ -2077,6 +2087,18 @@
 		var key = this._keysByName[keyName];
 		if(key)
 			key.preventDownDefault = preventDefault;
+	};
+
+	/**
+	 * Restricts the arrow keys and spacebar from scrolling the page.
+	 * @method restrictScrollingKeys
+	 */
+	p.restrictScrollingKeys = function()
+	{
+		for (var i = 0; i < this.scrollKeys.length; i++)
+		{
+			this.setPreventDefaultOnKey(this.scrollKeys[i], true);
+		}
 	};
 	
 	/**
@@ -2393,7 +2415,7 @@
 			}
 		}
 		
-		var preventDefault = false;
+		var preventDefault = key.preventDownDefault ? key.preventDownDefault : false;
 		if(key && !key.isDown)
 		{
 			key.isDown = key.justDown = true;
@@ -2792,6 +2814,8 @@
 		 *	@default document
 		 */
 		this.options.add("keyboardTarget", null, true);
+
+		this.options.add("preventScrollingKeys", false, true);
 	};
 	
 	//not actually async, but needs to happen after App options have been done

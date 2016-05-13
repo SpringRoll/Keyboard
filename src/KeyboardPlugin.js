@@ -31,6 +31,8 @@
 		 *	@default document
 		 */
 		this.options.add("keyboardTarget", null, true);
+
+		this.options.add("preventScrollingKeys", false, true);
 	};
 	
 	//not actually async, but needs to happen after App options have been done
