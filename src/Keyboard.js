@@ -546,7 +546,7 @@
 			}
 		}
 		
-		var preventDefault = false;
+		var preventDefault = key.preventDownDefault ? key.preventDownDefault : false;
 		if(key && !key.isDown)
 		{
 			key.isDown = key.justDown = true;
