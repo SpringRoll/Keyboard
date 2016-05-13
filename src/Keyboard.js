@@ -126,7 +126,7 @@
 		app.on('paused', this._onPaused);
 		app.on('resumed', this._onResumed);
 
-		if (app.options.preventKeys)
+		if (app.options.preventScrollingKeys)
 			this.restrictScrollingKeys();
 	};
 

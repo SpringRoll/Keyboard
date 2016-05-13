@@ -1995,7 +1995,7 @@
 		app.on('paused', this._onPaused);
 		app.on('resumed', this._onResumed);
 
-		if (app.options.preventKeys)
+		if (app.options.preventScrollingKeys)
 			this.restrictScrollingKeys();
 	};
 
@@ -2415,7 +2415,7 @@
 			}
 		}
 		
-		var preventDefault = false;
+		var preventDefault = key.preventDownDefault ? key.preventDownDefault : false;
 		if(key && !key.isDown)
 		{
 			key.isDown = key.justDown = true;
@@ -2814,6 +2814,8 @@
 		 *	@default document
 		 */
 		this.options.add("keyboardTarget", null, true);
+
+		this.options.add("preventScrollingKeys", false, true);
 	};
 	
 	//not actually async, but needs to happen after App options have been done
