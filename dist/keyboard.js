@@ -1875,6 +1875,10 @@
 	var Application = include('springroll.Application'),
 		Debug = include('springroll.Debug', false);
 	
+	var DOWN = 1;
+	var REPEAT = 2;
+	var UP = 3;
+	
 	/**
 	*  A class for easier keyboard controls, from simple key events to complex key combinations.
 	*
@@ -2006,16 +2010,23 @@
 	//event type functions
 	
 	/**
-	 * Adds a listener for keydown events on a specific key. The callback will be passed the key
-	 * name, in case the same callback is used for multiple keys.
+	 * Adds a listener for keydown events on a specific key, when a key is first pressed down. The
+	 * callback will be passed the key name, in case the same callback is used for multiple keys.
 	 * @method addKeyDown
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to call when the key is first pressed.
 	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
 	 *                                         while this listener is attached.
 	 */
 	p.addKeyDown = function(keyName, callback, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyDown(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(!key)
 		{
@@ -2024,33 +2035,96 @@
 			return;
 		}
 		
-		key.addListener(callback, false, keyName, !!preventDefault);
+		key.addListener(callback, DOWN, keyName, !!preventDefault);
 	};
 	
 	/**
 	 * Removes a listener for keydown events on a specific key.
 	 * @method removeKeyDown
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to be removed from the listener list.
 	 */
 	p.removeKeyDown = function(keyName, callback)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyDown(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
-			key.removeListener(callback, false);
+			key.removeListener(callback, DOWN);
+	};
+	
+	/**
+	 * Adds a listener for repeated keydown events on a specific key. The callback will be passed
+	 * the key name, in case the same callback is used for multiple keys.
+	 * @method addKeyRepeat
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
+	 * @param {Function} callback The function to call when the key is first pressed.
+	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
+	 *                                         while this listener is attached.
+	 */
+	p.addKeyRepeat = function(keyName, callback, preventDefault)
+	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyRepeat(keyName[i], callback, preventDefault);
+			return;
+		}
+		
+		var key = this._keysByName[keyName];
+		if(!key)
+		{
+			if(Debug)
+				Debug.warn("No key found with name '" + keyName + "'");
+			return;
+		}
+		
+		key.addListener(callback, REPEAT, keyName, !!preventDefault);
+	};
+	
+	/**
+	 * Removes a listener for repeated keydown events on a specific key.
+	 * @method removeKeyRepeat
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
+	 * @param {Function} callback The function to be removed from the listener list.
+	 */
+	p.removeKeyRepeat = function(keyName, callback)
+	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyRepeat(keyName[i], callback, preventDefault);
+			return;
+		}
+		
+		var key = this._keysByName[keyName];
+		if(key)
+			key.removeListener(callback, REPEAT);
 	};
 	
 	/**
 	 * Adds a listener for keyup events on a specific key. The callback will be passed the key
 	 * name, in case the same callback is used for multiple keys.
 	 * @method addKeyUp
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to call when the key is released.
 	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
 	 *                                         while this listener is attached.
 	 */
 	p.addKeyUp = function(keyName, callback, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyUp(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(!key)
 		{
@@ -2059,34 +2133,48 @@
 			return;
 		}
 		
-		key.addListener(callback, true, keyName, !!preventDefault);
+		key.addListener(callback, UP, keyName, !!preventDefault);
 	};
 	
 	/**
 	 * Removes a listener for keyup events on a specific key.
 	 * @method removeKeyUp
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to be removed from the listener list.
 	 */
 	p.removeKeyUp = function(keyName, callback)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyUp(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
-			key.removeListener(callback, true);
+			key.removeListener(callback, UP);
 	};
 	
 	/**
 	 * Sets if the default browser action should be prevented on a specific key. This is good
 	 * for keys that are only checked with justPressed(), isDown(), and justReleased().
 	 * @method setPreventDefaultOnKey
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Boolean} preventDefault If the key should have the default action prevented.
 	 */
 	p.setPreventDefaultOnKey = function(keyName, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.setPreventDefaultOnKey(keyName[i], preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
-			key.preventDownDefault = preventDefault;
+			key.setManualPreventDefault(preventDefault);
 	};
 
 	/**
@@ -2095,10 +2183,7 @@
 	 */
 	p.restrictScrollingKeys = function()
 	{
-		for (var i = 0; i < this.scrollKeys.length; i++)
-		{
-			this.setPreventDefaultOnKey(this.scrollKeys[i], true);
-		}
+		this.setPreventDefaultOnKey(this.scrollKeys, true);
 	};
 	
 	/**
@@ -2415,26 +2500,32 @@
 			}
 		}
 		
-		var preventDefault = key.preventDownDefault ? key.preventDownDefault : false;
-		if(key && !key.isDown)
+		if (key)
 		{
-			key.isDown = key.justDown = true;
-			if(this._updatedKeys.indexOf(key) == -1)
-				this._updatedKeys.push(key);
-			if(key.trigger())
-				preventDefault = true;
-			
-			//handle combos
-			for(i = this._activeCombos.length - 1; i >= 0; --i)
+			var preventDefault = false;
+			if(key.isDown)
 			{
-				if(this._activeCombos[i].testKeyDown(ev.keyCode))
-					preventDefault = true;
+				key.trigger(REPEAT);
 			}
-		}
-		if(preventDefault)
-		{
-			ev.preventDefault();
-			return true;
+			else
+			{
+				key.isDown = key.justDown = true;
+				if(this._updatedKeys.indexOf(key) == -1)
+					this._updatedKeys.push(key);
+				key.trigger(DOWN);
+				
+				//handle combos
+				for(i = this._activeCombos.length - 1; i >= 0; --i)
+				{
+					if(this._activeCombos[i].testKeyDown(ev.keyCode))
+						preventDefault = true;
+				}
+			}
+			if(key.shouldPreventDefault || preventDefault)
+			{
+				ev.preventDefault();
+				return true;
+			}
 		}
 	};
 	
@@ -2447,28 +2538,29 @@
 	p._keyUp = function(ev)
 	{
 		var key = this._keysByCode[ev.keyCode];
-		
-		var preventDefault = false;
-		if(key && key.isDown)
+		if(key)
 		{
-			key.isDown = false;
-			key.justUp = true;
-			if(this._updatedKeys.indexOf(key) == -1)
-				this._updatedKeys.push(key);
-			if(key.trigger())
-				preventDefault = true;
-			
-			//handle combos
-			for(var i = this._activeCombos.length - 1; i >= 0; --i)
+			var preventDefault = false;
+			if (key.isDown)
 			{
-				if(this._activeCombos[i].testKeyUp(ev.keyCode))
-					preventDefault = true;
+				key.isDown = false;
+				key.justUp = true;
+				if(this._updatedKeys.indexOf(key) == -1)
+					this._updatedKeys.push(key);
+				key.trigger(UP);
+				
+				//handle combos
+				for(var i = this._activeCombos.length - 1; i >= 0; --i)
+				{
+					if(this._activeCombos[i].testKeyUp(ev.keyCode))
+						preventDefault = true;
+				}
 			}
-		}
-		if(preventDefault)
-		{
-			ev.preventDefault();
-			return true;
+			if(key.shouldPreventDefault || preventDefault)
+			{
+				ev.preventDefault();
+				return true;
+			}
 		}
 	};
 	
@@ -2511,9 +2603,10 @@
 		this.preferredName = null;
 		//listener functions
 		this.upListeners = [];
+		this.repeatListeners = [];
 		this.downListeners = [];
-		this.preventDownDefault = false;
-		this.preventUpDefault = false;
+		this.manualPreventDefault = false;
+		this.shouldPreventDefault = false;
 		
 		this.isDown = false;
 		this.justDown = false;
@@ -2540,9 +2633,48 @@
 		this.names.push(name);
 	};
 	
-	p.addListener = function(listener, isUp, requestedName, preventDefault)
+	p.setManualPreventDefault = function(preventDefault)
 	{
-		var listeners = isUp ? this.upListeners : this.downListeners;
+		this.manualPreventDefault = preventDefault;
+		if (preventDefault)
+		{
+			this.shouldPreventDefault = true;
+		}
+		else
+		{
+			preventDefault = false;
+			var listenerList = [this.downListeners, this.repeatListeners, this.upListeners];
+			for(var i = 0; i < listenerList.length && !preventDefault; ++i)
+			{
+				var listeners = listenerList[i];
+				for(var index = listeners.length - 1; index >= 0; --index)
+				{
+					if(listeners[index] && listeners[index].preventDefault)
+					{
+						preventDefault = true;
+						break;
+					}
+				}
+			}
+			this.shouldPreventDefault = preventDefault;
+		}
+	};
+	
+	p.addListener = function(listener, type, requestedName, preventDefault)
+	{
+		var listeners;
+		switch(type)
+		{
+			case DOWN:
+				listeners = this.downListeners;
+				break;
+			case REPEAT:
+				listeners = this.repeatListeners;
+				break;
+			case UP:
+				listeners = this.upListeners;
+				break;
+		}
 		if(listeners.indexOf(listener) == -1)
 			listeners.push(listener);
 		if(this.preferredName != requestedName)
@@ -2550,17 +2682,26 @@
 		listener.preventDefault = preventDefault;
 		if(preventDefault)
 		{
-			if(isUp)
-				this.preventUpDefault = true;
-			else
-				this.preventDownDefault = true;
+			this.shouldPreventDefault = true;
 		}
 	};
 	
-	p.removeListener = function(listener, isUp)
+	p.removeListener = function(listener, type)
 	{
-		var listeners = isUp ? this.upListeners : this.downListeners,
-			index = listeners.indexOf(listener);
+		var listeners;
+		switch(type)
+		{
+			case DOWN:
+				listeners = this.downListeners;
+				break;
+			case REPEAT:
+				listeners = this.repeatListeners;
+				break;
+			case UP:
+				listeners = this.upListeners;
+				break;
+		}
+		var index = listeners.indexOf(listener);
 		if(index >= 0)
 		{
 			if(index < 1)
@@ -2569,34 +2710,34 @@
 				listeners.splice(index, 1);
 		}
 		//see if we should clear the prevent default status
-		var preventDefault = false;
-		for(index = listeners.length - 1; index >= 0; --index)
-		{
-			if(listeners[index] && listeners[index].preventDefault)
-			{
-				preventDefault = true;
-				break;
-			}
-		}
-		if(isUp)
-			this.preventUpDefault = preventDefault;
-		else
-			this.preventDownDefault = preventDefault;
+		this.setManualPreventDefault(this.manualPreventDefault);
 	};
 	
-	p.trigger = function()
+	p.trigger = function(type)
 	{
-		var listeners = this.isDown ? this.downListeners : this.upListeners;
+		var listeners;
+		switch(type)
+		{
+			case DOWN:
+				listeners = this.downListeners;
+				break;
+			case REPEAT:
+				listeners = this.repeatListeners;
+				break;
+			case UP:
+				listeners = this.upListeners;
+				break;
+		}
 		for(var i = 0; i < listeners.length; ++i)
 		{
 			listeners[i](this.preferredName);
 		}
-		return this.isDown ? this.preventDownDefault : this.preventUpDefault;
 	};
 	
 	p.destroy = function()
 	{
-		this.codes = this.names = this.upListeners = this.downListeners = null;
+		this.codes = this.names = this.upListeners = this.repeatListeners =
+			this.downListeners = null;
 	};
 	
 	var Combo = function(name, preventDefault, keysByNameRef)
