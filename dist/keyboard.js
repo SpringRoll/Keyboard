@@ -2013,13 +2013,20 @@
 	 * Adds a listener for keydown events on a specific key, when a key is first pressed down. The
 	 * callback will be passed the key name, in case the same callback is used for multiple keys.
 	 * @method addKeyDown
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to call when the key is first pressed.
 	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
 	 *                                         while this listener is attached.
 	 */
 	p.addKeyDown = function(keyName, callback, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyDown(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(!key)
 		{
@@ -2034,11 +2041,18 @@
 	/**
 	 * Removes a listener for keydown events on a specific key.
 	 * @method removeKeyDown
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to be removed from the listener list.
 	 */
 	p.removeKeyDown = function(keyName, callback)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyDown(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
 			key.removeListener(callback, DOWN);
@@ -2048,13 +2062,20 @@
 	 * Adds a listener for repeated keydown events on a specific key. The callback will be passed
 	 * the key name, in case the same callback is used for multiple keys.
 	 * @method addKeyRepeat
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to call when the key is first pressed.
 	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
 	 *                                         while this listener is attached.
 	 */
 	p.addKeyRepeat = function(keyName, callback, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyRepeat(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(!key)
 		{
@@ -2069,11 +2090,18 @@
 	/**
 	 * Removes a listener for repeated keydown events on a specific key.
 	 * @method removeKeyRepeat
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to be removed from the listener list.
 	 */
 	p.removeKeyRepeat = function(keyName, callback)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyRepeat(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
 			key.removeListener(callback, REPEAT);
@@ -2083,13 +2111,20 @@
 	 * Adds a listener for keyup events on a specific key. The callback will be passed the key
 	 * name, in case the same callback is used for multiple keys.
 	 * @method addKeyUp
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to call when the key is released.
 	 * @param {Boolean} [preventDefault=false] If the key should have the default action prevented
 	 *                                         while this listener is attached.
 	 */
 	p.addKeyUp = function(keyName, callback, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.addKeyUp(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(!key)
 		{
@@ -2104,11 +2139,18 @@
 	/**
 	 * Removes a listener for keyup events on a specific key.
 	 * @method removeKeyUp
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Function} callback The function to be removed from the listener list.
 	 */
 	p.removeKeyUp = function(keyName, callback)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.removeKeyUp(keyName[i], callback, preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
 			key.removeListener(callback, UP);
@@ -2118,11 +2160,18 @@
 	 * Sets if the default browser action should be prevented on a specific key. This is good
 	 * for keys that are only checked with justPressed(), isDown(), and justReleased().
 	 * @method setPreventDefaultOnKey
-	 * @param {String} keyName The name of the key, from the locale, to listen for.
+	 * @param {String|Array} keyName The name(s) of the key, from the locale, to listen for.
 	 * @param {Boolean} preventDefault If the key should have the default action prevented.
 	 */
 	p.setPreventDefaultOnKey = function(keyName, preventDefault)
 	{
+		if (Array.isArray(keyName))
+		{
+			for(var i = 0; i < keyName.length; ++i)
+				this.setPreventDefaultOnKey(keyName[i], preventDefault);
+			return;
+		}
+		
 		var key = this._keysByName[keyName];
 		if(key)
 			key.setManualPreventDefault(preventDefault);
@@ -2134,10 +2183,7 @@
 	 */
 	p.restrictScrollingKeys = function()
 	{
-		for (var i = 0; i < this.scrollKeys.length; i++)
-		{
-			this.setPreventDefaultOnKey(this.scrollKeys[i], true);
-		}
+		this.setPreventDefaultOnKey(this.scrollKeys, true);
 	};
 	
 	/**
