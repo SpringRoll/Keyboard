@@ -217,7 +217,7 @@
 	{
 		var key = this._keysByName[keyName];
 		if(key)
-			key.preventDownDefault = preventDefault;
+			key.setManualPreventDefault(preventDefault);
 	};
 
 	/**
@@ -546,26 +546,28 @@
 			}
 		}
 		
-		var preventDefault = key.preventDownDefault ? key.preventDownDefault : false;
-		if(key && !key.isDown)
+		if (key)
 		{
-			key.isDown = key.justDown = true;
-			if(this._updatedKeys.indexOf(key) == -1)
-				this._updatedKeys.push(key);
-			if(key.trigger())
-				preventDefault = true;
-			
-			//handle combos
-			for(i = this._activeCombos.length - 1; i >= 0; --i)
+			var preventDefault = false;
+			if(!key.isDown)
 			{
-				if(this._activeCombos[i].testKeyDown(ev.keyCode))
-					preventDefault = true;
+				key.isDown = key.justDown = true;
+				if(this._updatedKeys.indexOf(key) == -1)
+					this._updatedKeys.push(key);
+				key.trigger();
+				
+				//handle combos
+				for(i = this._activeCombos.length - 1; i >= 0; --i)
+				{
+					if(this._activeCombos[i].testKeyDown(ev.keyCode))
+						preventDefault = true;
+				}
 			}
-		}
-		if(preventDefault)
-		{
-			ev.preventDefault();
-			return true;
+			if(key.shouldPreventDefault || preventDefault)
+			{
+				ev.preventDefault();
+				return true;
+			}
 		}
 	};
 	
@@ -578,28 +580,29 @@
 	p._keyUp = function(ev)
 	{
 		var key = this._keysByCode[ev.keyCode];
-		
-		var preventDefault = false;
-		if(key && key.isDown)
+		if(key)
 		{
-			key.isDown = false;
-			key.justUp = true;
-			if(this._updatedKeys.indexOf(key) == -1)
-				this._updatedKeys.push(key);
-			if(key.trigger())
-				preventDefault = true;
-			
-			//handle combos
-			for(var i = this._activeCombos.length - 1; i >= 0; --i)
+			var preventDefault = false;
+			if (key.isDown)
 			{
-				if(this._activeCombos[i].testKeyUp(ev.keyCode))
-					preventDefault = true;
+				key.isDown = false;
+				key.justUp = true;
+				if(this._updatedKeys.indexOf(key) == -1)
+					this._updatedKeys.push(key);
+				key.trigger();
+				
+				//handle combos
+				for(var i = this._activeCombos.length - 1; i >= 0; --i)
+				{
+					if(this._activeCombos[i].testKeyUp(ev.keyCode))
+						preventDefault = true;
+				}
 			}
-		}
-		if(preventDefault)
-		{
-			ev.preventDefault();
-			return true;
+			if(key.shouldPreventDefault || preventDefault)
+			{
+				ev.preventDefault();
+				return true;
+			}
 		}
 	};
 	
@@ -643,8 +646,8 @@
 		//listener functions
 		this.upListeners = [];
 		this.downListeners = [];
-		this.preventDownDefault = false;
-		this.preventUpDefault = false;
+		this.manualPreventDefault = false;
+		this.shouldPreventDefault = false;
 		
 		this.isDown = false;
 		this.justDown = false;
@@ -671,6 +674,33 @@
 		this.names.push(name);
 	};
 	
+	p.setManualPreventDefault = function(preventDefault)
+	{
+		this.manualPreventDefault = preventDefault;
+		if (preventDefault)
+		{
+			this.shouldPreventDefault = true;
+		}
+		else
+		{
+			preventDefault = false;
+			var listenerList = [this.downListeners, this.upListeners];
+			for(var i = 0; i < listenerList.length && !preventDefault; ++i)
+			{
+				var listeners = listenerList[i];
+				for(var index = listeners.length - 1; index >= 0; --index)
+				{
+					if(listeners[index] && listeners[index].preventDefault)
+					{
+						preventDefault = true;
+						break;
+					}
+				}
+			}
+			this.shouldPreventDefault = preventDefault;
+		}
+	};
+	
 	p.addListener = function(listener, isUp, requestedName, preventDefault)
 	{
 		var listeners = isUp ? this.upListeners : this.downListeners;
@@ -681,10 +711,7 @@
 		listener.preventDefault = preventDefault;
 		if(preventDefault)
 		{
-			if(isUp)
-				this.preventUpDefault = true;
-			else
-				this.preventDownDefault = true;
+			this.shouldPreventDefault = true;
 		}
 	};
 	
@@ -700,19 +727,7 @@
 				listeners.splice(index, 1);
 		}
 		//see if we should clear the prevent default status
-		var preventDefault = false;
-		for(index = listeners.length - 1; index >= 0; --index)
-		{
-			if(listeners[index] && listeners[index].preventDefault)
-			{
-				preventDefault = true;
-				break;
-			}
-		}
-		if(isUp)
-			this.preventUpDefault = preventDefault;
-		else
-			this.preventDownDefault = preventDefault;
+		this.setManualPreventDefault(this.manualPreventDefault);
 	};
 	
 	p.trigger = function()
@@ -722,7 +737,6 @@
 		{
 			listeners[i](this.preferredName);
 		}
-		return this.isDown ? this.preventDownDefault : this.preventUpDefault;
 	};
 	
 	p.destroy = function()
