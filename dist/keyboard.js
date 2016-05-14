@@ -1,4 +1,4 @@
-/*! Keyboard 0.1.5 */
+/*! Keyboard 1.0.0 */
 /**
  * @namespace springroll
  */

@@ -1,6 +1,6 @@
 {
 	"name": "springroll-keyboard",
-	"version": "0.1.5",
+	"version": "1.0.0",
 	"main": "dist/keyboard.min.js",
 	"dependencies": {
 		"springroll": "^0.4.25"
