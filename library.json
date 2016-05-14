@@ -2,7 +2,7 @@
 	"name": "Keyboard",
 	"version": "1.0.0",
 	"description": "A SpringRoll plugin to ease keyboard input use",
-	"url": "https://github.com/CloudKidStudio/Keyboard",
+	"url": "https://github.com/SpringRoll/Keyboard",
 	"output": "keyboard",
 	"main": [
 		"src/Detect.js",
