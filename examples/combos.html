@@ -23,11 +23,10 @@
 		<!-- SpringRoll and modules -->
 		<script src="../components/springroll/dist/core.js"></script>
 		<script src="../components/springroll/dist/modules/debug.js"></script>
-		<script src="../components/springroll/dist/modules/tasks.js"></script>
 		<script src="../components/springroll/dist/modules/ui.js"></script>
+		<script src="../components/springroll/dist/modules/animation.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-display.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-ui.js"></script>
-		<script src="../components/springroll/dist/modules/easeljs-utils.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-animation.js"></script>
 		
 		<!-- Library -->
@@ -49,14 +48,8 @@
 <script>
 
 var Application = include('springroll.Application'),
-	UIScaler = include('springroll.UIScaler'),
 	Button = include('springroll.easeljs.Button'),
-	LoadTask = include('springroll.LoadTask'),
-	TaskManager = include('springroll.TaskManager'),
-	EaselJSDisplay = include('springroll.EaselJSDisplay'),
-	AssetManager = include('springroll.easeljs.AssetManager'),
-	BitmapMovieClip = include('springroll.easeljs.BitmapMovieClip'),
-	Animator = include('springroll.easeljs.Animator');
+	EaselJSDisplay = include('springroll.EaselJSDisplay');
 
 // Create the new application
 var app = new Application({
@@ -67,7 +60,16 @@ var app = new Application({
 	display: EaselJSDisplay,
 	displayOptions: {
 		clearView: true // clear the stage on render
-	}
+	},
+	preload: [
+		{
+			id: 'flowerAnim',
+			anim: "assets/images/FlowerData.json",
+			atlas: "assets/images/FlowerSheet.json",
+			image: "assets/images/FlowerSheet.png",
+			type: "easeljs"
+		}
+	]
 });
 
 	//combo to play flower open anim is the Konami Code
@@ -78,34 +80,12 @@ var wetCombo = "arrow_up > arrow_up > arrow_down > arrow_down > arrow_left > arr
 
 var images = {};
 
-app.on('loading', function(tasks)
-{	
-	//load the button
-	AssetManager.load(
-	[
-		{
-			id:'FlowerData',
-			src:'assets/images/FlowerData.json',
-			bmcConfig:true
-		},
-		{
-			id:'FlowerSheet',
-			atlasData:'assets/images/FlowerSheet.json',
-			atlasImage:'assets/images/FlowerSheet.png'
-		}
-	],
-	tasks);
-});
-
 // Wait until the app is ready
 app.on('init', function()
 {
 	var stage = this.display.stage;
 	
-	this.flower = new BitmapMovieClip(
-		AssetManager.getAtlas("FlowerSheet"),
-		AssetManager.getBitmapMovieClipConfig("FlowerData")
-	);
+	this.flower = this.getCache("flowerAnim");
 	
 	var text = "Close flower: " + dryCombo +
 			"\nOpen Flower: " + wetCombo;
@@ -115,7 +95,7 @@ app.on('init', function()
 
 	stage.addChild(this.flower, this.animHint);
 	
-	Animator.play(this.flower, "dry");
+	this.animator.play(this.flower, "dry");
 	
 	this.keyboard.addCombo(wetCombo, onWetCombo);
 	//preventDefault defaults to true for combos, so dryCombo will override the browser's save
@@ -125,12 +105,12 @@ app.on('init', function()
 
 function onWetCombo()
 {
-	Animator.play(app.flower, "wet");
+	app.animator.play(app.flower, "wet");
 }
 
 function onDryCombo()
 {
-	Animator.play(app.flower, "dry");
+	app.animator.play(app.flower, "dry");
 }
 
 </script>
