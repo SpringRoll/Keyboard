@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-	<title>Keyboard v0.1.5 API Documentation : springroll.Keyboard</title>
+	<title>Keyboard v1.0.0 API Documentation : springroll.Keyboard</title>
 	<meta charset='utf-8'>
 	<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=0.1.5'>
+	<link rel='shortcut icon' type='image/png' href='../assets/images/favicon.ico?v=1.0.0'>
 	<link href='//fonts.googleapis.com/css?family=Titillium+Web:300,200,600' rel='stylesheet' type='text/css'>
-	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=0.1.5'>
-	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=0.1.5'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/libraries.css?v=1.0.0'>
+	<link rel='stylesheet' type='text/css' href='../assets/css/main.css?v=1.0.0'>
 </head>
 <body>
 <header>
@@ -21,11 +21,11 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href='https://github.com/CloudKidStudio/Keyboard'>
-						<img src='../assets/images/logo.png?v=0.1.5' class="logo">
+				<a class="navbar-brand" href='https://github.com/SpringRoll/Keyboard'>
+						<img src='../assets/images/logo.png?v=1.0.0' class="logo">
 					<span class='project-name'>Keyboard</span>
 					<span class="sr-only">API Documentation for:</span>
-					<span class='version hidden-xs'>v0.1.5</span>
+					<span class='version hidden-xs'>v1.0.0</span>
 				</a>
 			</div>
 			<div class="collapse navbar-collapse" id="docs-navbar">
@@ -127,7 +127,7 @@
 
 
 <div class='foundat'>
-Defined in: <a href='../files/src_Keyboard.js.html#l9'><code>springroll.Keyboard:9</code></a>
+Defined in: <a href='../files/src_Keyboard.js.html#l13'><code>springroll.Keyboard:13</code></a>
 </div>
 
 
@@ -167,7 +167,7 @@ Defined in: <a href='../files/src_Keyboard.js.html#l9'><code>springroll.Keyboard
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l9'><code>springroll.Keyboard:9</code></a>
+<a href='../files/src_Keyboard.js.html#l13'><code>springroll.Keyboard:13</code></a>
 </p>
 
 
@@ -200,7 +200,7 @@ Defined in
 
 <div class='param-description'>
 <p>The keyboard locale, like springroll.USLocale, which defines keys to
-                       keep track of.</p>
+keep track of.</p>
 
 </div>
 
@@ -266,6 +266,10 @@ Defined in
 
 </li>
 <li class='col-xs-6 col-md-4 index-item method'>
+<a href='#method_addKeyRepeat'>addKeyRepeat</a>
+
+</li>
+<li class='col-xs-6 col-md-4 index-item method'>
 <a href='#method_addKeyUp'>addKeyUp</a>
 
 </li>
@@ -298,11 +302,19 @@ Defined in
 
 </li>
 <li class='col-xs-6 col-md-4 index-item method'>
+<a href='#method_removeKeyRepeat'>removeKeyRepeat</a>
+
+</li>
+<li class='col-xs-6 col-md-4 index-item method'>
 <a href='#method_removeKeyUp'>removeKeyUp</a>
 
 </li>
 <li class='col-xs-6 col-md-4 index-item method'>
 <a href='#method_removeKeyUp'>removeKeyUp</a>
+
+</li>
+<li class='col-xs-6 col-md-4 index-item method'>
+<a href='#method_restrictScrollingKeys'>restrictScrollingKeys</a>
 
 </li>
 <li class='col-xs-6 col-md-4 index-item method'>
@@ -357,6 +369,10 @@ Defined in
 
 </li>
 <li class='col-xs-6 col-md-4 index-item property private'>
+<a href='#property_scrollKeys'>scrollKeys</a>
+
+</li>
+<li class='col-xs-6 col-md-4 index-item property private'>
 <a href='#property_target'>target</a>
 
 </li>
@@ -393,7 +409,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l462'><code>_keyDown:462</code></a>
+<a href='../files/src_Keyboard.js.html#l569'><code>_keyDown:569</code></a>
 </p>
 
 
@@ -449,7 +465,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l550'><code>_keyUp:550</code></a>
+<a href='../files/src_Keyboard.js.html#l663'><code>_keyUp:663</code></a>
 </p>
 
 
@@ -505,7 +521,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l405'><code>_onFocusLost:405</code></a>
+<a href='../files/src_Keyboard.js.html#l512'><code>_onFocusLost:512</code></a>
 </p>
 
 
@@ -554,7 +570,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l416'><code>_onPaused:416</code></a>
+<a href='../files/src_Keyboard.js.html#l523'><code>_onPaused:523</code></a>
 </p>
 
 
@@ -562,7 +578,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;paused&#39; events. Disables the Keyboard.</p>
+<p>Listener for Application 'paused' events. Disables the Keyboard.</p>
 
 </div>
 
@@ -586,7 +602,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l426'><code>_onResumed:426</code></a>
+<a href='../files/src_Keyboard.js.html#l533'><code>_onResumed:533</code></a>
 </p>
 
 
@@ -594,7 +610,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;resumed&#39; events. Enables the Keyboard and gives browser focus
+<p>Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus
 to the target.</p>
 
 </div>
@@ -626,7 +642,7 @@ to the target.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l441'><code>_update:441</code></a>
+<a href='../files/src_Keyboard.js.html#l548'><code>_update:548</code></a>
 </p>
 
 
@@ -634,7 +650,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Listener for Application &#39;update&#39; events. This is created with a priority of -1000 so that
+<p>Listener for Application 'update' events. This is created with a priority of -1000 so that
 it can reset justPressed() and justReleased() states after other code has had a chance to
 check them.</p>
 
@@ -689,7 +705,7 @@ check them.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l213'><code>addCombo:213</code></a>
+<a href='../files/src_Keyboard.js.html#l320'><code>addCombo:320</code></a>
 </p>
 
 
@@ -697,9 +713,9 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Creates a key combination. Combination syntax is key names separated by &#39;+&#39; for simultaneous
-keys and &#39;&gt;&#39; for sequential keys. Whitespace is required around the &#39;+&#39; and &#39;&gt;&#39; separators.
-Keys must be fully released between &#39;&gt;&#39; stages.</p>
+<p>Creates a key combination. Combination syntax is key names separated by '+' for simultaneous
+keys and '&gt;' for sequential keys. Whitespace is required around the '+' and '&gt;' separators.
+Keys must be fully released between '&gt;' stages.</p>
 
 </div>
 
@@ -737,7 +753,7 @@ Keys must be fully released between &#39;&gt;&#39; stages.</p>
 
 <div class='param-description'>
 <p>If the combo should have the default action prevented,
-                                       for any successful step of it that is completed.</p>
+for any successful step of it that is completed.</p>
 
 </div>
 
@@ -776,7 +792,7 @@ Keys must be fully released between &#39;&gt;&#39; stages.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l129'><code>addKeyDown:129</code></a>
+<a href='../files/src_Keyboard.js.html#l143'><code>addKeyDown:143</code></a>
 </p>
 
 
@@ -784,8 +800,8 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Adds a listener for keydown events on a specific key. The callback will be passed the key
-name, in case the same callback is used for multiple keys.</p>
+<p>Adds a listener for keydown events on a specific key, when a key is first pressed down. The
+callback will be passed the key name, in case the same callback is used for multiple keys.</p>
 
 </div>
 
@@ -795,11 +811,11 @@ name, in case the same callback is used for multiple keys.</p>
 <ul class='params-list'>
 <li class='param'>
 <code class='param-name'>keyName</code>
-<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
 <div class='param-description'>
-<p>The name of the key, from the locale, to listen for.</p>
+<p>The name(s) of the key, from the locale, to listen for.</p>
 
 </div>
 
@@ -823,7 +839,93 @@ name, in case the same callback is used for multiple keys.</p>
 
 <div class='param-description'>
 <p>If the key should have the default action prevented
-                                        while this listener is attached.</p>
+while this listener is attached.</p>
+
+</div>
+
+</li>
+</ul>
+</div>
+
+
+</div><div class='method_addKeyRepeat method item'>
+<h3 class='name'><a class="deeplink" href="#method_addKeyRepeat"><span class="glyphicon glyphicon-link"></span></a> <code>addKeyRepeat</code></h3>
+
+<div class='args'>
+<span class='paren'>(</span>
+<ul class='args-list inline commas'>
+<li class='arg'>
+<code>keyName</code>
+</li>
+<li class='arg'>
+<code>callback</code>
+</li>
+<li class='arg'>
+<code class='optional'>[preventDefault=false]</code>
+</li>
+</ul><span class='paren'>)</span>
+</div>
+
+
+<div class='flags'>
+
+
+
+
+
+</div> 
+
+<div class='meta'>
+<p>
+Defined in
+<a href='../files/src_Keyboard.js.html#l192'><code>addKeyRepeat:192</code></a>
+</p>
+
+
+
+</div>
+
+<div class='description'>
+<p>Adds a listener for repeated keydown events on a specific key. The callback will be passed
+the key name, in case the same callback is used for multiple keys.</p>
+
+</div>
+
+<div class='params'>
+<h4>Parameters:</h4>
+
+<ul class='params-list'>
+<li class='param'>
+<code class='param-name'>keyName</code>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+
+<div class='param-description'>
+<p>The name(s) of the key, from the locale, to listen for.</p>
+
+</div>
+
+</li>
+<li class='param'>
+<code class='param-name'>callback</code>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+<div class='param-description'>
+<p>The function to call when the key is first pressed.</p>
+
+</div>
+
+</li>
+<li class='param'>
+<code class='param-name optional'>[preventDefault=false]</code>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+<span class='flag optional' title='This parameter is optional.'>optional</span>
+
+
+<div class='param-description'>
+<p>If the key should have the default action prevented
+while this listener is attached.</p>
 
 </div>
 
@@ -862,7 +964,7 @@ name, in case the same callback is used for multiple keys.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l164'><code>addKeyUp:164</code></a>
+<a href='../files/src_Keyboard.js.html#l241'><code>addKeyUp:241</code></a>
 </p>
 
 
@@ -881,11 +983,11 @@ name, in case the same callback is used for multiple keys.</p>
 <ul class='params-list'>
 <li class='param'>
 <code class='param-name'>keyName</code>
-<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
 <div class='param-description'>
-<p>The name of the key, from the locale, to listen for.</p>
+<p>The name(s) of the key, from the locale, to listen for.</p>
 
 </div>
 
@@ -909,7 +1011,7 @@ name, in case the same callback is used for multiple keys.</p>
 
 <div class='param-description'>
 <p>If the key should have the default action prevented
-                                        while this listener is attached.</p>
+while this listener is attached.</p>
 
 </div>
 
@@ -935,7 +1037,7 @@ name, in case the same callback is used for multiple keys.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l387'><code>clearKeys:387</code></a>
+<a href='../files/src_Keyboard.js.html#l494'><code>clearKeys:494</code></a>
 </p>
 
 
@@ -967,7 +1069,7 @@ again.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l584'><code>destroy:584</code></a>
+<a href='../files/src_Keyboard.js.html#l698'><code>destroy:698</code></a>
 </p>
 
 
@@ -1011,7 +1113,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l273'><code>detectNextKey:273</code></a>
+<a href='../files/src_Keyboard.js.html#l380'><code>detectNextKey:380</code></a>
 </p>
 
 
@@ -1022,7 +1124,7 @@ Defined in
 <p>Begins listening for the next key to be pressed (or repeated). The callback is passed
 the name of that key, so that it can then be used with other functions. Additionally, if
 the key pressed does not have a recognized keyCode, then an entry is created for it with the
-name <code>&#39;key_%keyCode%&#39;</code>. If the cancel key is pressed, then the callback is passed
+name <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed
 <code>null</code>. If allowModifiers is true, then the result should be considered a key
 combination to be used with addCombo().</p>
 
@@ -1051,9 +1153,9 @@ combination to be used with addCombo().</p>
 
 <div class='param-description'>
 <p>The name of the key to cancel the listener. If explictly
-                                  passed <code>null</code>, then the "esc" key can be
-                                  detected and this action can only be cancelled with
-                                  stopDetecting().</p>
+passed <code>null</code>, then the "esc" key can be
+detected and this action can only be cancelled with
+stopDetecting().</p>
 
 </div>
 
@@ -1066,8 +1168,8 @@ combination to be used with addCombo().</p>
 
 <div class='param-description'>
 <p>If key modifiers (ctrl, alt, shift, command) should
-                                        be detected as modifications of the pressed key
-                                        instead of as their own keypresses.</p>
+be detected as modifications of the pressed key
+instead of as their own keypresses.</p>
 
 </div>
 
@@ -1103,7 +1205,7 @@ combination to be used with addCombo().</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l330'><code>isDown:330</code></a>
+<a href='../files/src_Keyboard.js.html#l437'><code>isDown:437</code></a>
 </p>
 
 
@@ -1170,7 +1272,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l315'><code>justPressed:315</code></a>
+<a href='../files/src_Keyboard.js.html#l422'><code>justPressed:422</code></a>
 </p>
 
 
@@ -1178,7 +1280,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Checks to see if a key has begun to be pressed since the last Application &#39;update&#39; event.</p>
+<p>Checks to see if a key has begun to be pressed since the last Application 'update' event.</p>
 
 </div>
 
@@ -1237,7 +1339,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l345'><code>justReleased:345</code></a>
+<a href='../files/src_Keyboard.js.html#l452'><code>justReleased:452</code></a>
 </p>
 
 
@@ -1245,7 +1347,7 @@ Defined in
 </div>
 
 <div class='description'>
-<p>Checks to see if a key has been released since the last Application &#39;update&#39; event.</p>
+<p>Checks to see if a key has been released since the last Application 'update' event.</p>
 
 </div>
 
@@ -1304,7 +1406,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l151'><code>removeKeyDown:151</code></a>
+<a href='../files/src_Keyboard.js.html#l172'><code>removeKeyDown:172</code></a>
 </p>
 
 
@@ -1322,11 +1424,80 @@ Defined in
 <ul class='params-list'>
 <li class='param'>
 <code class='param-name'>keyName</code>
-<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
 <div class='param-description'>
-<p>The name of the key, from the locale, to listen for.</p>
+<p>The name(s) of the key, from the locale, to listen for.</p>
+
+</div>
+
+</li>
+<li class='param'>
+<code class='param-name'>callback</code>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+
+
+<div class='param-description'>
+<p>The function to be removed from the listener list.</p>
+
+</div>
+
+</li>
+</ul>
+</div>
+
+
+</div><div class='method_removeKeyRepeat method item'>
+<h3 class='name'><a class="deeplink" href="#method_removeKeyRepeat"><span class="glyphicon glyphicon-link"></span></a> <code>removeKeyRepeat</code></h3>
+
+<div class='args'>
+<span class='paren'>(</span>
+<ul class='args-list inline commas'>
+<li class='arg'>
+<code>keyName</code>
+</li>
+<li class='arg'>
+<code>callback</code>
+</li>
+</ul><span class='paren'>)</span>
+</div>
+
+
+<div class='flags'>
+
+
+
+
+
+</div> 
+
+<div class='meta'>
+<p>
+Defined in
+<a href='../files/src_Keyboard.js.html#l221'><code>removeKeyRepeat:221</code></a>
+</p>
+
+
+
+</div>
+
+<div class='description'>
+<p>Removes a listener for repeated keydown events on a specific key.</p>
+
+</div>
+
+<div class='params'>
+<h4>Parameters:</h4>
+
+<ul class='params-list'>
+<li class='param'>
+<code class='param-name'>keyName</code>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+
+<div class='param-description'>
+<p>The name(s) of the key, from the locale, to listen for.</p>
 
 </div>
 
@@ -1373,7 +1544,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l248'><code>removeKeyUp:248</code></a>
+<a href='../files/src_Keyboard.js.html#l355'><code>removeKeyUp:355</code></a>
 </p>
 
 
@@ -1443,7 +1614,7 @@ combination is destroyed.</p>
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l186'><code>removeKeyUp:186</code></a>
+<a href='../files/src_Keyboard.js.html#l270'><code>removeKeyUp:270</code></a>
 </p>
 
 
@@ -1461,11 +1632,11 @@ Defined in
 <ul class='params-list'>
 <li class='param'>
 <code class='param-name'>keyName</code>
-<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
 <div class='param-description'>
-<p>The name of the key, from the locale, to listen for.</p>
+<p>The name(s) of the key, from the locale, to listen for.</p>
 
 </div>
 
@@ -1483,6 +1654,37 @@ Defined in
 </li>
 </ul>
 </div>
+
+
+</div><div class='method_restrictScrollingKeys method item'>
+<h3 class='name'><a class="deeplink" href="#method_restrictScrollingKeys"><span class="glyphicon glyphicon-link"></span></a> <code>restrictScrollingKeys</code></h3>
+
+<span class='paren'>()</span>
+
+
+<div class='flags'>
+
+
+
+
+
+</div> 
+
+<div class='meta'>
+<p>
+Defined in
+<a href='../files/src_Keyboard.js.html#l311'><code>restrictScrollingKeys:311</code></a>
+</p>
+
+
+
+</div>
+
+<div class='description'>
+<p>Restricts the arrow keys and spacebar from scrolling the page.</p>
+
+</div>
+
 
 
 </div><div class='method_setPreventDefaultOnKey method item'>
@@ -1512,7 +1714,7 @@ Defined in
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l199'><code>setPreventDefaultOnKey:199</code></a>
+<a href='../files/src_Keyboard.js.html#l290'><code>setPreventDefaultOnKey:290</code></a>
 </p>
 
 
@@ -1531,11 +1733,11 @@ for keys that are only checked with justPressed(), isDown(), and justReleased().
 <ul class='params-list'>
 <li class='param'>
 <code class='param-name'>keyName</code>
-<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+<span class='type'><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
 
 
 <div class='param-description'>
-<p>The name of the key, from the locale, to listen for.</p>
+<p>The name(s) of the key, from the locale, to listen for.</p>
 
 </div>
 
@@ -1572,7 +1774,7 @@ for keys that are only checked with justPressed(), isDown(), and justReleased().
 <div class='meta'>
 <p>
 Defined in
-<a href='../files/src_Keyboard.js.html#l302'><code>stopDetecting:302</code></a>
+<a href='../files/src_Keyboard.js.html#l409'><code>stopDetecting:409</code></a>
 </p>
 
 
@@ -1602,7 +1804,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l49"><code>_activeCombos:49</code></a>
+<a href="../files/src_Keyboard.js.html#l53"><code>_activeCombos:53</code></a>
 </p>
 
 
@@ -1627,7 +1829,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l37"><code>_keysByCode:37</code></a>
+<a href="../files/src_Keyboard.js.html#l41"><code>_keysByCode:41</code></a>
 </p>
 
 
@@ -1652,7 +1854,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l43"><code>_keysByName:43</code></a>
+<a href="../files/src_Keyboard.js.html#l47"><code>_keysByName:47</code></a>
 </p>
 
 
@@ -1677,7 +1879,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l55"><code>_updatedKeys:55</code></a>
+<a href="../files/src_Keyboard.js.html#l59"><code>_updatedKeys:59</code></a>
 </p>
 
 
@@ -1703,7 +1905,7 @@ each _update call.</p>
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l69"><code>detectCancelKey:69</code></a>
+<a href="../files/src_Keyboard.js.html#l73"><code>detectCancelKey:73</code></a>
 </p>
 
 
@@ -1728,7 +1930,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l63"><code>detectKeyCallback:63</code></a>
+<a href="../files/src_Keyboard.js.html#l67"><code>detectKeyCallback:67</code></a>
 </p>
 
 
@@ -1753,7 +1955,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l76"><code>detectModifiers:76</code></a>
+<a href="../files/src_Keyboard.js.html#l80"><code>detectModifiers:80</code></a>
 </p>
 
 
@@ -1778,7 +1980,7 @@ by themselves</p>
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l360"><code>enabled:360</code></a>
+<a href="../files/src_Keyboard.js.html#l467"><code>enabled:467</code></a>
 </p>
 
 
@@ -1804,14 +2006,39 @@ resets the status of any keys that are currently pressed.</p>
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l84"><code>modifiers:84</code></a>
+<a href="../files/src_Keyboard.js.html#l88"><code>modifiers:88</code></a>
 </p>
 
 
 </div>
 
 <div class="description">
-<p>The list of key names for modifier keys - &#39;ctrl&#39;, &#39;alt&#39;, &#39;shift&#39;, and &#39;command&#39;.</p>
+<p>The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.</p>
+
+</div>
+
+
+
+</div><div class="property_scrollKeys property item private">
+<h3 class="name"><a class="deeplink" href="#property_scrollKeys"><span class="glyphicon glyphicon-link"></span></a> <code>scrollKeys</code></h3>
+<span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+
+
+<span class="flag private">private</span>
+
+
+
+<div class="meta">
+<p>
+Defined in
+<a href="../files/src_Keyboard.js.html#l95"><code>scrollKeys:95</code></a>
+</p>
+
+
+</div>
+
+<div class="description">
+<p>The list of key names for scrolling control keys</p>
 
 </div>
 
@@ -1829,7 +2056,7 @@ Defined in
 <div class="meta">
 <p>
 Defined in
-<a href="../files/src_Keyboard.js.html#l28"><code>target:28</code></a>
+<a href="../files/src_Keyboard.js.html#l32"><code>target:32</code></a>
 </p>
 
 
@@ -1850,7 +2077,7 @@ Defined in
 </div>
 </div>
 </div>
-<script src='../assets/js/libraries.js?v=0.1.5'></script>
-<script src='../assets/js/main.js?v=0.1.5'></script>
+<script src='../assets/js/libraries.js?v=1.0.0'></script>
+<script src='../assets/js/main.js?v=1.0.0'></script>
 </body>
 </html>

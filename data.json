@@ -2,12 +2,12 @@
     "project": {
         "name": "Keyboard",
         "description": "A SpringRoll plugin to ease keyboard input use",
-        "version": "0.1.5",
-        "url": "https://github.com/CloudKidStudio/Keyboard"
+        "version": "1.0.0",
+        "url": "https://github.com/SpringRoll/Keyboard"
     },
     "files": {
-        "src/Detect.js": {
-            "name": "src/Detect.js",
+        "src\\Detect.js": {
+            "name": "src\\Detect.js",
             "modules": {},
             "classes": {},
             "fors": {},
@@ -15,8 +15,8 @@
                 "springroll": 1
             }
         },
-        "src/Keyboard.js": {
-            "name": "src/Keyboard.js",
+        "src\\Keyboard.js": {
+            "name": "src\\Keyboard.js",
             "modules": {},
             "classes": {
                 "springroll.Keyboard": 1
@@ -26,8 +26,8 @@
                 "springroll": 1
             }
         },
-        "src/KeyboardPlugin.js": {
-            "name": "src/KeyboardPlugin.js",
+        "src\\KeyboardPlugin.js": {
+            "name": "src\\KeyboardPlugin.js",
             "modules": {},
             "classes": {
                 "springroll.Application": 1
@@ -37,8 +37,8 @@
                 "springroll": 1
             }
         },
-        "src/USLocale.js": {
-            "name": "src/USLocale.js",
+        "src\\USLocale.js": {
+            "name": "src\\USLocale.js",
             "modules": {},
             "classes": {
                 "springroll.keyboard.USLocale": 1
@@ -60,8 +60,8 @@
             "plugin_for": [],
             "extension_for": [],
             "namespace": "springroll",
-            "file": "src/Keyboard.js",
-            "line": 9,
+            "file": "src\\Keyboard.js",
+            "line": 13,
             "description": "A class for easier keyboard controls, from simple key events to complex key combinations.",
             "is_constructor": 1,
             "params": [
@@ -86,7 +86,7 @@
             "plugin_for": [],
             "extension_for": [],
             "namespace": "springroll",
-            "file": "src/KeyboardPlugin.js",
+            "file": "src\\KeyboardPlugin.js",
             "line": 11,
             "description": "Create an app plugin for Keyboard, all properties and methods documented\nin this class are mixed-in to the main Application"
         },
@@ -99,7 +99,7 @@
             "plugin_for": [],
             "extension_for": [],
             "namespace": "springroll.keyboard",
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 44,
             "description": "USLocale is the standard keyboard layout for US computers. All standard keys are included.\nKeys to note:\n\n* 'OS' represents both the Windows key and the 'command' key, although 'command'\n  is also available when the client is running MacOS.\n\n* 'meta' represents 'ctrl' on Windows and Linux, and 'command' on OSX. Use this when creating\n  keyboard shortcuts in web apps.",
             "static": 1
@@ -107,20 +107,20 @@
     },
     "classitems": [
         {
-            "file": "src/Detect.js",
+            "file": "src\\Detect.js",
             "line": 1,
             "class": "springroll.Keyboard",
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
+            "file": "src\\Keyboard.js",
             "line": 1,
             "class": "springroll.Keyboard",
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 28,
+            "file": "src\\Keyboard.js",
+            "line": 32,
             "description": "The DOM element that the key event listeners are attached to.",
             "itemtype": "property",
             "name": "target",
@@ -132,8 +132,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 37,
+            "file": "src\\Keyboard.js",
+            "line": 41,
             "description": "All keys that are listened to, arranged by key code.",
             "itemtype": "property",
             "name": "_keysByCode",
@@ -144,8 +144,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 43,
+            "file": "src\\Keyboard.js",
+            "line": 47,
             "description": "All keys that are listened to, arranged by key name.",
             "itemtype": "property",
             "name": "_keysByName",
@@ -156,8 +156,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 49,
+            "file": "src\\Keyboard.js",
+            "line": 53,
             "description": "All key combinations that have been registered",
             "itemtype": "property",
             "name": "_activeCombos",
@@ -168,8 +168,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 55,
+            "file": "src\\Keyboard.js",
+            "line": 59,
             "description": "Keys that have been updated since the most recent frame update. This array gets wiped\neach _update call.",
             "itemtype": "property",
             "name": "_updatedKeys",
@@ -180,8 +180,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 63,
+            "file": "src\\Keyboard.js",
+            "line": 67,
             "description": "The callback used when key detection has ended.",
             "itemtype": "property",
             "name": "detectKeyCallback",
@@ -192,8 +192,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 69,
+            "file": "src\\Keyboard.js",
+            "line": 73,
             "description": "The key object that is used to cancel key detection.",
             "itemtype": "property",
             "name": "detectCancelKey",
@@ -204,8 +204,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 76,
+            "file": "src\\Keyboard.js",
+            "line": 80,
             "description": "If key detection should allow key modifiers, instead of just detecting those keys\nby themselves",
             "itemtype": "property",
             "name": "detectModifiers",
@@ -216,8 +216,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 84,
+            "file": "src\\Keyboard.js",
+            "line": 88,
             "description": "The list of key names for modifier keys - 'ctrl', 'alt', 'shift', and 'command'.",
             "itemtype": "property",
             "name": "modifiers",
@@ -228,16 +228,28 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 129,
-            "description": "Adds a listener for keydown events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
+            "file": "src\\Keyboard.js",
+            "line": 95,
+            "description": "The list of key names for scrolling control keys",
+            "itemtype": "property",
+            "name": "scrollKeys",
+            "type": "Array",
+            "access": "private",
+            "tagname": "",
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 143,
+            "description": "Adds a listener for keydown events on a specific key, when a key is first pressed down. The\ncallback will be passed the key name, in case the same callback is used for multiple keys.",
             "itemtype": "method",
             "name": "addKeyDown",
             "params": [
                 {
                     "name": "keyName",
-                    "description": "The name of the key, from the locale, to listen for.",
-                    "type": "String"
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
                 },
                 {
                     "name": "callback",
@@ -256,16 +268,16 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 151,
+            "file": "src\\Keyboard.js",
+            "line": 172,
             "description": "Removes a listener for keydown events on a specific key.",
             "itemtype": "method",
             "name": "removeKeyDown",
             "params": [
                 {
                     "name": "keyName",
-                    "description": "The name of the key, from the locale, to listen for.",
-                    "type": "String"
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
                 },
                 {
                     "name": "callback",
@@ -277,16 +289,65 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 164,
+            "file": "src\\Keyboard.js",
+            "line": 192,
+            "description": "Adds a listener for repeated keydown events on a specific key. The callback will be passed\nthe key name, in case the same callback is used for multiple keys.",
+            "itemtype": "method",
+            "name": "addKeyRepeat",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to call when the key is first pressed.",
+                    "type": "Function"
+                },
+                {
+                    "name": "preventDefault",
+                    "description": "If the key should have the default action prevented\n                                        while this listener is attached.",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 221,
+            "description": "Removes a listener for repeated keydown events on a specific key.",
+            "itemtype": "method",
+            "name": "removeKeyRepeat",
+            "params": [
+                {
+                    "name": "keyName",
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
+                },
+                {
+                    "name": "callback",
+                    "description": "The function to be removed from the listener list.",
+                    "type": "Function"
+                }
+            ],
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 241,
             "description": "Adds a listener for keyup events on a specific key. The callback will be passed the key\nname, in case the same callback is used for multiple keys.",
             "itemtype": "method",
             "name": "addKeyUp",
             "params": [
                 {
                     "name": "keyName",
-                    "description": "The name of the key, from the locale, to listen for.",
-                    "type": "String"
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
                 },
                 {
                     "name": "callback",
@@ -305,16 +366,16 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 186,
+            "file": "src\\Keyboard.js",
+            "line": 270,
             "description": "Removes a listener for keyup events on a specific key.",
             "itemtype": "method",
             "name": "removeKeyUp",
             "params": [
                 {
                     "name": "keyName",
-                    "description": "The name of the key, from the locale, to listen for.",
-                    "type": "String"
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
                 },
                 {
                     "name": "callback",
@@ -326,16 +387,16 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 199,
+            "file": "src\\Keyboard.js",
+            "line": 290,
             "description": "Sets if the default browser action should be prevented on a specific key. This is good\nfor keys that are only checked with justPressed(), isDown(), and justReleased().",
             "itemtype": "method",
             "name": "setPreventDefaultOnKey",
             "params": [
                 {
                     "name": "keyName",
-                    "description": "The name of the key, from the locale, to listen for.",
-                    "type": "String"
+                    "description": "The name(s) of the key, from the locale, to listen for.",
+                    "type": "String|Array"
                 },
                 {
                     "name": "preventDefault",
@@ -347,8 +408,17 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 213,
+            "file": "src\\Keyboard.js",
+            "line": 311,
+            "description": "Restricts the arrow keys and spacebar from scrolling the page.",
+            "itemtype": "method",
+            "name": "restrictScrollingKeys",
+            "class": "springroll.Keyboard",
+            "namespace": "springroll"
+        },
+        {
+            "file": "src\\Keyboard.js",
+            "line": 320,
             "description": "Creates a key combination. Combination syntax is key names separated by '+' for simultaneous\nkeys and '>' for sequential keys. Whitespace is required around the '+' and '>' separators.\nKeys must be fully released between '>' stages.",
             "itemtype": "method",
             "name": "addCombo",
@@ -375,8 +445,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 248,
+            "file": "src\\Keyboard.js",
+            "line": 355,
             "description": "Removes a listener for a key combination. If no listeners remain, that key\ncombination is destroyed.",
             "itemtype": "method",
             "name": "removeKeyUp",
@@ -396,8 +466,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 273,
+            "file": "src\\Keyboard.js",
+            "line": 380,
             "description": "Begins listening for the next key to be pressed (or repeated). The callback is passed\nthe name of that key, so that it can then be used with other functions. Additionally, if\nthe key pressed does not have a recognized keyCode, then an entry is created for it with the\nname <code>'key_%keyCode%'</code>. If the cancel key is pressed, then the callback is passed\n<code>null</code>. If allowModifiers is true, then the result should be considered a key\ncombination to be used with addCombo().",
             "itemtype": "method",
             "name": "detectNextKey",
@@ -426,8 +496,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 302,
+            "file": "src\\Keyboard.js",
+            "line": 409,
             "description": "Cancels a detectNextKey() action.",
             "itemtype": "method",
             "name": "stopDetecting",
@@ -435,8 +505,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 315,
+            "file": "src\\Keyboard.js",
+            "line": 422,
             "description": "Checks to see if a key has begun to be pressed since the last Application 'update' event.",
             "itemtype": "method",
             "name": "justPressed",
@@ -455,8 +525,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 330,
+            "file": "src\\Keyboard.js",
+            "line": 437,
             "description": "Checks to see if a key is being held down.",
             "itemtype": "method",
             "name": "isDown",
@@ -475,8 +545,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 345,
+            "file": "src\\Keyboard.js",
+            "line": 452,
             "description": "Checks to see if a key has been released since the last Application 'update' event.",
             "itemtype": "method",
             "name": "justReleased",
@@ -495,8 +565,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 360,
+            "file": "src\\Keyboard.js",
+            "line": 467,
             "description": "If the Keyboard should be handling key events or not. Setting this to false immediately\nresets the status of any keys that are currently pressed.",
             "itemtype": "property",
             "name": "enabled",
@@ -505,8 +575,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 387,
+            "file": "src\\Keyboard.js",
+            "line": 494,
             "description": "Clears the status of all keys that are pressed, requiring them to be released and pressed\nagain.",
             "itemtype": "method",
             "name": "clearKeys",
@@ -514,8 +584,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 405,
+            "file": "src\\Keyboard.js",
+            "line": 512,
             "description": "Listener for when the target has lost focus, to call clearKeys().",
             "itemtype": "method",
             "name": "_onFocusLost",
@@ -532,8 +602,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 416,
+            "file": "src\\Keyboard.js",
+            "line": 523,
             "description": "Listener for Application 'paused' events. Disables the Keyboard.",
             "itemtype": "method",
             "name": "_onPaused",
@@ -543,8 +613,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 426,
+            "file": "src\\Keyboard.js",
+            "line": 533,
             "description": "Listener for Application 'resumed' events. Enables the Keyboard and gives browser focus\nto the target.",
             "itemtype": "method",
             "name": "_onResumed",
@@ -554,8 +624,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 441,
+            "file": "src\\Keyboard.js",
+            "line": 548,
             "description": "Listener for Application 'update' events. This is created with a priority of -1000 so that\nit can reset justPressed() and justReleased() states after other code has had a chance to\ncheck them.",
             "itemtype": "method",
             "name": "_update",
@@ -572,8 +642,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 462,
+            "file": "src\\Keyboard.js",
+            "line": 569,
             "description": "Listener for keydown events on the target.",
             "itemtype": "method",
             "name": "_keyDown",
@@ -590,8 +660,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 550,
+            "file": "src\\Keyboard.js",
+            "line": 663,
             "description": "Listener for keyup events on the target.",
             "itemtype": "method",
             "name": "_keyUp",
@@ -608,8 +678,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/Keyboard.js",
-            "line": 584,
+            "file": "src\\Keyboard.js",
+            "line": 698,
             "description": "Destroys the keyboard and removes all listeners. Do not use after this is called.",
             "itemtype": "method",
             "name": "destroy",
@@ -617,13 +687,13 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/KeyboardPlugin.js",
+            "file": "src\\KeyboardPlugin.js",
             "line": 1,
             "class": "springroll.Application",
             "namespace": "springroll"
         },
         {
-            "file": "src/KeyboardPlugin.js",
+            "file": "src\\KeyboardPlugin.js",
             "line": 21,
             "description": "The locale to use for keycodes.",
             "itemtype": "property",
@@ -634,7 +704,7 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/KeyboardPlugin.js",
+            "file": "src\\KeyboardPlugin.js",
             "line": 28,
             "description": "The target DOM to listen to all keyboard events from.",
             "itemtype": "property",
@@ -645,8 +715,8 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/KeyboardPlugin.js",
-            "line": 47,
+            "file": "src\\KeyboardPlugin.js",
+            "line": 49,
             "description": "The Keyboard instance",
             "itemtype": "property",
             "name": "keyboard",
@@ -655,13 +725,13 @@
             "namespace": "springroll"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 1,
             "class": "springroll.keyboard.USLocale",
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 59,
             "description": "Cancel key",
             "itemtype": "property",
@@ -672,7 +742,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 66,
             "description": "backspace key",
             "itemtype": "property",
@@ -683,7 +753,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 73,
             "description": "tab key",
             "itemtype": "property",
@@ -694,7 +764,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 80,
             "description": "enter key",
             "itemtype": "property",
@@ -705,7 +775,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 87,
             "description": "shift key",
             "itemtype": "property",
@@ -716,7 +786,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 94,
             "description": "ctrl key",
             "itemtype": "property",
@@ -727,7 +797,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 101,
             "description": "alt key",
             "itemtype": "property",
@@ -738,7 +808,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 108,
             "description": "Pause or break key",
             "itemtype": "property",
@@ -749,7 +819,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 115,
             "description": "CAPS lock key",
             "itemtype": "property",
@@ -760,7 +830,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 122,
             "description": "Escape key",
             "itemtype": "property",
@@ -771,7 +841,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 129,
             "description": "Spacebar key",
             "itemtype": "property",
@@ -782,7 +852,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 136,
             "description": "Page Up key",
             "itemtype": "property",
@@ -793,7 +863,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 143,
             "description": "Page Down key",
             "itemtype": "property",
@@ -804,7 +874,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 150,
             "description": "end key",
             "itemtype": "property",
@@ -815,7 +885,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 157,
             "description": "home key",
             "itemtype": "property",
@@ -826,7 +896,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 164,
             "description": "Toggle left key",
             "itemtype": "property",
@@ -837,7 +907,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 171,
             "description": "Toggle up key",
             "itemtype": "property",
@@ -848,7 +918,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 178,
             "description": "Toggle right key",
             "itemtype": "property",
@@ -859,7 +929,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 185,
             "description": "Toggle down key",
             "itemtype": "property",
@@ -870,7 +940,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 192,
             "description": "Print screen key",
             "itemtype": "property",
@@ -881,7 +951,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 200,
             "description": "insert key",
             "itemtype": "property",
@@ -892,7 +962,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 207,
             "description": "delete key",
             "itemtype": "property",
@@ -903,7 +973,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 214,
             "description": "Scroll lock key",
             "itemtype": "property",
@@ -914,7 +984,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 221,
             "description": "The OS button, either Windows or Apple Button",
             "itemtype": "property",
@@ -925,7 +995,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 238,
             "description": "on windows keyboard, located where the right 'windows' key might be\nnot fired by Safari/Chrome on OSX (but is on FF?)",
             "itemtype": "property",
@@ -936,7 +1006,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 246,
             "description": "Semi-colon",
             "itemtype": "property",
@@ -947,7 +1017,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 253,
             "description": "Equals",
             "itemtype": "property",
@@ -958,7 +1028,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 260,
             "description": "Comma",
             "itemtype": "property",
@@ -969,7 +1039,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 267,
             "description": "Hyphen",
             "itemtype": "property",
@@ -980,7 +1050,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 274,
             "description": "Period",
             "itemtype": "property",
@@ -991,7 +1061,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 281,
             "description": "Backslash",
             "itemtype": "property",
@@ -1002,7 +1072,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 288,
             "description": "Tick mark",
             "itemtype": "property",
@@ -1013,7 +1083,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 295,
             "description": "Forward slash",
             "itemtype": "property",
@@ -1024,7 +1094,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 302,
             "description": "Left bracket",
             "itemtype": "property",
@@ -1035,7 +1105,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 309,
             "description": "Right bracket",
             "itemtype": "property",
@@ -1046,7 +1116,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 316,
             "description": "An apostrophe",
             "itemtype": "property",
@@ -1057,7 +1127,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 324,
             "description": "Number pad times",
             "itemtype": "property",
@@ -1068,7 +1138,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 331,
             "description": "Number pad plus",
             "itemtype": "property",
@@ -1079,7 +1149,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 338,
             "description": "Number pad enter",
             "itemtype": "property",
@@ -1090,7 +1160,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 345,
             "description": "Number pad minus",
             "itemtype": "property",
@@ -1101,7 +1171,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 352,
             "description": "Number pad decimal",
             "itemtype": "property",
@@ -1112,7 +1182,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 359,
             "description": "Number pad divide",
             "itemtype": "property",
@@ -1123,7 +1193,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 366,
             "description": "Number pad lock, 'num lock' is 'clear' on Mac keyboards",
             "itemtype": "property",
@@ -1134,7 +1204,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 373,
             "description": "Number pad clear",
             "itemtype": "property",
@@ -1145,7 +1215,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 381,
             "description": "Alpha letter A",
             "itemtype": "property",
@@ -1156,7 +1226,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 386,
             "description": "Alpha letter B",
             "itemtype": "property",
@@ -1167,7 +1237,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 391,
             "description": "Alpha letter C",
             "itemtype": "property",
@@ -1178,7 +1248,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 396,
             "description": "Alpha letter D",
             "itemtype": "property",
@@ -1189,7 +1259,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 401,
             "description": "Alpha letter E",
             "itemtype": "property",
@@ -1200,7 +1270,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 406,
             "description": "Alpha letter F",
             "itemtype": "property",
@@ -1211,7 +1281,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 411,
             "description": "Alpha letter G",
             "itemtype": "property",
@@ -1222,7 +1292,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 416,
             "description": "Alpha letter H",
             "itemtype": "property",
@@ -1233,7 +1303,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 421,
             "description": "Alpha letter I",
             "itemtype": "property",
@@ -1244,7 +1314,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 426,
             "description": "Alpha letter J",
             "itemtype": "property",
@@ -1255,7 +1325,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 431,
             "description": "Alpha letter K",
             "itemtype": "property",
@@ -1266,7 +1336,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 436,
             "description": "Alpha letter L",
             "itemtype": "property",
@@ -1277,7 +1347,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 441,
             "description": "Alpha letter M",
             "itemtype": "property",
@@ -1288,7 +1358,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 446,
             "description": "Alpha letter N",
             "itemtype": "property",
@@ -1299,7 +1369,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 451,
             "description": "Alpha letter O",
             "itemtype": "property",
@@ -1310,7 +1380,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 456,
             "description": "Alpha letter P",
             "itemtype": "property",
@@ -1321,7 +1391,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 461,
             "description": "Alpha letter Q",
             "itemtype": "property",
@@ -1332,7 +1402,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 466,
             "description": "Alpha letter R",
             "itemtype": "property",
@@ -1343,7 +1413,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 471,
             "description": "Alpha letter S",
             "itemtype": "property",
@@ -1354,7 +1424,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 476,
             "description": "Alpha letter T",
             "itemtype": "property",
@@ -1365,7 +1435,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 481,
             "description": "Alpha letter U",
             "itemtype": "property",
@@ -1376,7 +1446,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 486,
             "description": "Alpha letter V",
             "itemtype": "property",
@@ -1387,7 +1457,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 491,
             "description": "Alpha letter W",
             "itemtype": "property",
@@ -1398,7 +1468,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 496,
             "description": "Alpha letter X",
             "itemtype": "property",
@@ -1409,7 +1479,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 501,
             "description": "Alpha letter Y",
             "itemtype": "property",
@@ -1420,7 +1490,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 506,
             "description": "Alpha letter Z",
             "itemtype": "property",
@@ -1431,7 +1501,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 524,
             "description": "Number pad 1",
             "itemtype": "property",
@@ -1442,7 +1512,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 529,
             "description": "Number pad 2",
             "itemtype": "property",
@@ -1453,7 +1523,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 534,
             "description": "Number pad 3",
             "itemtype": "property",
@@ -1464,7 +1534,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 539,
             "description": "Number pad 4",
             "itemtype": "property",
@@ -1475,7 +1545,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 544,
             "description": "Number pad 5",
             "itemtype": "property",
@@ -1486,7 +1556,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 549,
             "description": "Number pad 6",
             "itemtype": "property",
@@ -1497,7 +1567,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 554,
             "description": "Number pad 7",
             "itemtype": "property",
@@ -1508,7 +1578,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 559,
             "description": "Number pad 8",
             "itemtype": "property",
@@ -1519,7 +1589,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 564,
             "description": "Number pad 9",
             "itemtype": "property",
@@ -1530,7 +1600,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 569,
             "description": "Number pad 0",
             "itemtype": "property",
@@ -1541,7 +1611,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 578,
             "description": "Function key F1",
             "itemtype": "property",
@@ -1552,7 +1622,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 583,
             "description": "Function key F2",
             "itemtype": "property",
@@ -1563,7 +1633,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 588,
             "description": "Function key F3",
             "itemtype": "property",
@@ -1574,7 +1644,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 593,
             "description": "Function key F4",
             "itemtype": "property",
@@ -1585,7 +1655,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 598,
             "description": "Function key F5",
             "itemtype": "property",
@@ -1596,7 +1666,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 603,
             "description": "Function key F6",
             "itemtype": "property",
@@ -1607,7 +1677,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 608,
             "description": "Function key F7",
             "itemtype": "property",
@@ -1618,7 +1688,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 613,
             "description": "Function key F8",
             "itemtype": "property",
@@ -1629,7 +1699,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 618,
             "description": "Function key F9",
             "itemtype": "property",
@@ -1640,7 +1710,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 623,
             "description": "Function key F10",
             "itemtype": "property",
@@ -1651,7 +1721,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 628,
             "description": "Function key F11",
             "itemtype": "property",
@@ -1662,7 +1732,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 633,
             "description": "Function key F12",
             "itemtype": "property",
@@ -1673,7 +1743,7 @@
             "namespace": "springroll.keyboard"
         },
         {
-            "file": "src/USLocale.js",
+            "file": "src\\USLocale.js",
             "line": 647,
             "description": "The command (Mac OSX) or ctrl (Windows) key",
             "itemtype": "property",
@@ -1687,19 +1757,19 @@
     "warnings": [
         {
             "message": "Missing item type",
-            "line": " src/Detect.js:1"
+            "line": " src\\Detect.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src/Keyboard.js:1"
+            "line": " src\\Keyboard.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src/KeyboardPlugin.js:1"
+            "line": " src\\KeyboardPlugin.js:1"
         },
         {
             "message": "Missing item type",
-            "line": " src/USLocale.js:1"
+            "line": " src\\USLocale.js:1"
         }
     ]
 }
