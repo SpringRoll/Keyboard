@@ -23,11 +23,10 @@
 		<!-- SpringRoll and modules -->
 		<script src="../components/springroll/dist/core.js"></script>
 		<script src="../components/springroll/dist/modules/debug.js"></script>
-		<script src="../components/springroll/dist/modules/tasks.js"></script>
 		<script src="../components/springroll/dist/modules/ui.js"></script>
+		<script src="../components/springroll/dist/modules/animation.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-display.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-ui.js"></script>
-		<script src="../components/springroll/dist/modules/easeljs-utils.js"></script>
 		<script src="../components/springroll/dist/modules/easeljs-animation.js"></script>
 		
 		<!-- Library -->
@@ -49,14 +48,8 @@
 <script>
 
 var Application = include('springroll.Application'),
-	UIScaler = include('springroll.UIScaler'),
 	Button = include('springroll.easeljs.Button'),
-	LoadTask = include('springroll.LoadTask'),
-	TaskManager = include('springroll.TaskManager'),
-	EaselJSDisplay = include('springroll.EaselJSDisplay'),
-	AssetManager = include('springroll.easeljs.AssetManager'),
-	BitmapMovieClip = include('springroll.easeljs.BitmapMovieClip'),
-	Animator = include('springroll.easeljs.Animator');
+	EaselJSDisplay = include('springroll.EaselJSDisplay');
 
 // Create the new application
 var app = new Application({
@@ -67,7 +60,20 @@ var app = new Application({
 	display: EaselJSDisplay,
 	displayOptions: {
 		clearView: true // clear the stage on render
-	}
+	},
+	preload: [
+		{
+			id: 'flowerAnim',
+			anim: "assets/images/FlowerData.json",
+			atlas: "assets/images/FlowerSheet.json",
+			image: "assets/images/FlowerSheet.png",
+			type: "easeljs"
+		},
+		{
+			id:'button',
+			src:'assets/images/button.png'
+		}
+	]
 });
 
 var leftKey = "arrow_left",
@@ -76,57 +82,30 @@ var leftKey = "arrow_left",
 
 var images = {};
 
-app.on('loading', function(tasks)
-{
-	//load the button
-	AssetManager.load(
-	[
-		{
-			id:'button',
-			src:'assets/images/button.png'
-		},
-		{
-			id:'FlowerData',
-			src:'assets/images/FlowerData.json',
-			bmcConfig:true
-		},
-		{
-			id:'FlowerSheet',
-			atlasData:'assets/images/FlowerSheet.json',
-			atlasImage:'assets/images/FlowerSheet.png'
-		}
-	],
-	tasks);
-});
-
 // Wait until the app is ready
 app.on('init', function()
 {
 	var stage = this.display.stage;
 
-	this.flower = new BitmapMovieClip(
-		AssetManager.getAtlas("FlowerSheet"),
-		AssetManager.getBitmapMovieClipConfig("FlowerData")
-	);
+	this.flower = this.getCache('flowerAnim');
 	
 	//create a button for key rebinding
-	this.rebindButton = new Button(images.button, {
+	this.rebindButton = new Button(this.getCache('button'), {
 		text: 'Rebind Anim',
 		font: "16px Arial",
 		color: "#ffffff"
 	});
-	this.animHint = new createjs.Text(
-		'Press ' + animKey + ' to animate', "16px Arial", "#000000");
+	this.animHint = new createjs.Text('Press ' + animKey + ' to animate', "16px Arial", "#000000");
 
 	stage.addChild(
-		this.flower, 
-		this.rebindButton, 
+		this.flower,
+		this.rebindButton,
 		this.animHint
 	);
 	
 	this.rebindButton.addEventListener(Button.BUTTON_PRESS, rebind);
 	
-	Animator.play(this.flower, "dry");
+	this.animator.play(this.flower, "dry");
 	
 	this.on("update", update);
 });
@@ -150,7 +129,7 @@ function update(elapsed)
 	//meaning it is not true for repeat events
 	if(keyboard.justPressed(animKey))
 	{
-		Animator.play(this.flower, ["wet", "dry"]);
+		this.animator.play(this.flower, ["wet", "dry"]);
 	}
 }
 
