@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "dist/keyboard.min.js",
 	"dependencies": {
-		"springroll": "^0.4.25"
+		"springroll": "^1.0.0"
 	},
 	"devDependencies": {
 		"easeljs": "https://github.com/SpringRoll/EaselJS.git",
