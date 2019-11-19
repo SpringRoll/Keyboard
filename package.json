@@ -3,12 +3,16 @@
 	"version": "1.0.0",
 	"main": "dist/keyboard.min.js",
 	"dependencies": {
-		"grunt": "~0.4.5",
-		"library-grunt": "~0.6.0"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/SpringRoll/Keyboard"
+	},
+	"scripts": {
+		"postinstall": "bower install",
+		"concat": "cat src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.js",
+		"minify": "terser src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.min.js",
+		"build": "npm run concat && npm run minify"
 	},
 	"bugs": {
 		"url": "https://github.com/SpringRoll/Keyboard/issues"
@@ -20,5 +24,9 @@
 		"educational",
 		"cross-browser"
 	],
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {
+		"bower": "^1.8.8",
+		"terser": "^4.4.0"
+	}
 }

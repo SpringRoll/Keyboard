@@ -1,4 +1,3 @@
-/*! Keyboard 1.0.0 */
 /**
  * @namespace springroll
  */
@@ -1203,8 +1202,7 @@
 	// Assign to namespace
 	namespace('springroll').Detect = detect();
 
-}());
-/**
+}());/**
  * @namespace springroll.keyboard
  */
 (function()
@@ -1866,8 +1864,7 @@
 	// Assign to namespace
 	namespace('springroll.keyboard').USLocale = USLocale;
 
-}());
-/**
+}());/**
  * @namespace springroll
  */
 (function()
@@ -2921,8 +2918,7 @@
 		this.listeners = this.steps = null;
 	};
 
-}());
-/**
+}());/**
  * @namespace springroll
  */
 (function()
