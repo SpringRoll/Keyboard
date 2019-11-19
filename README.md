@@ -36,6 +36,13 @@ Key combo syntax:
 "ctrl + x > ctrl + v";
 ```
 
+## Development
+The code is bundled via the use of NPM scripts:
+
+* `npm run concat` will generate `dist/keyboard.js`
+* `npm run minify` will generate `dist/keyboard.min.js`
+* `npm run build` will run both the `concat` and `minify` build.
+
 ##License
 
 Copyright (c) 2015 [CloudKid](http://github.com/cloudkidstudio)
