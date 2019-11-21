@@ -10,8 +10,8 @@
 	},
 	"scripts": {
 		"postinstall": "bower install",
-		"concat": "cat src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.js",
-		"minify": "terser src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.min.js",
+		"concat": "cat src/{USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.js",
+		"minify": "terser src/{USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.min.js",
 		"build": "npm run concat && npm run minify"
 	},
 	"bugs": {
