@@ -1,6 +1,6 @@
 {
 	"name": "springroll-keyboard",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dist/keyboard.min.js",
 	"dependencies": {
 	},
@@ -10,8 +10,8 @@
 	},
 	"scripts": {
 		"postinstall": "bower install",
-		"concat": "cat src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.js",
-		"minify": "terser src/{Detect,USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.min.js",
+		"concat": "cat src/{USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.js",
+		"minify": "terser src/{USLocale,Keyboard,KeyboardPlugin}.js > dist/keyboard.min.js",
 		"build": "npm run concat && npm run minify"
 	},
 	"bugs": {

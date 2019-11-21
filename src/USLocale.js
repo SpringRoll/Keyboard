@@ -3,17 +3,17 @@
  */
 (function()
 {
-	var parsed = include('springroll.Detect').parse(navigator.userAgent);
-	var browser, os;
-	if(parsed.browser.family.indexOf("Safari") >= 0)
+	var userAgent = navigator.userAgent;
+
+	if(userAgent.indexOf("Safari") >= 0)
 	{
 		browser = "Safari";
 	}
-	else if(parsed.browser.family.indexOf("Firefox") >= 0)
+	else if(userAgent.indexOf("Firefox") >= 0)
 	{
 		browser = "Firefox";
 	}
-	else if(parsed.browser.family.indexOf("IE") >= 0)
+	else if(userAgent.indexOf("IE") >= 0 || userAgent.indexOf("Edge"))
 	{
 		browser = "IE";
 	}
@@ -21,26 +21,24 @@
 	{
 		browser = "Chrome";
 	}
-	if(parsed.os.name.indexOf("Windows") >= 0)
+
+	if(userAgent.indexOf("Windows") >= 0)
 	{
 		os = "Windows";
 	}
-	else if(parsed.os.name.indexOf("Mac") >= 0)
+	else if(userAgent.indexOf("Mac") >= 0)
 	{
 		os = "Mac";
 	}
-	else if(parsed.os.name.indexOf("iOS") >= 0)
+	else if(userAgent.indexOf("iOS") >= 0 || userAgent.indexOf('iPhone') >= 0 || userAgent.indexOf('iPad') >= 0)
 	{
-		//iOS would probably report the same as OSX, right?
 		os = "Mac";
-		//all iOS browsers use a WebView that is similar to iOS Safari
-		browser = "Safari";
 	}
 	else//Assume some form of Linux, including Android
 	{
 		os = "Linux";
 	}
-	
+
 	/**
 	*  USLocale is the standard keyboard layout for US computers. All standard keys are included.
 	*  Keys to note:
