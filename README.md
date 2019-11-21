@@ -43,8 +43,6 @@ The code is bundled via the use of NPM scripts:
 * `npm run minify` will generate `dist/keyboard.min.js`
 * `npm run build` will run both the `concat` and `minify` build.
 
-##License
-
-Copyright (c) 2015 [CloudKid](http://github.com/cloudkidstudio)
+## License
 
 Released under the MIT License.
