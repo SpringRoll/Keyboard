@@ -1125,7 +1125,7 @@
 			a.browser = find(ua, browser_parsers);
 
 			// Check if the device is an iPad
-			if (navigator.maxTouchPoints > 0 && navigator.platform == 'MacIntel'){
+			if ( a.browser.family === "Safari" && navigator.maxTouchPoints > 0 && navigator.platform == 'MacIntel'){
 				a.browser = find('iPad', browser_parsers);
 			}
 
@@ -1139,9 +1139,10 @@
 			a.os = find(ua, os_parsers);
 
 			// Check if the device is an iPad
-			if (navigator.maxTouchPoints > 0 && navigator.platform == 'MacIntel'){
+			if ( a.os.family === "Mac OS X" && navigator.maxTouchPoints > 0 && navigator.platform == 'MacIntel'){
 				a.os = find('iPad; Mac OS X Version/12.1.1', os_parsers);
 			}
+
 			if (/*check(*/a.os/*)*/) {
 				a.os.name = toString(a.os);
 				a.os.version = toVersionString(a.os);
